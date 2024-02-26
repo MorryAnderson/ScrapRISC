@@ -1,0 +1,203 @@
+@startuml M3Hierachy
+
+left to right direction
+hide empty members
+hide circle
+
+/'
+所有种类的寄存器皆被隐去，包括：
+    M3_dff
+    M3_dff_2
+    M3_dff_4
+    M3_dff_8
+    M3_dff_16
+    M3_dff_32
+所有mux和demux作为属性显示，包括：
+    M3_demux16
+    M3_mux2
+    M3_mux2_8
+    M3_mux2_32
+    M3_mux4
+    M3_mux4_4
+    M3_mux4_8
+    M3_mux4_32
+    M3_mux8
+    M3_mux16_2
+    M3_mux16_16
+    M3_mux16_32
+'/
+
+
+' [top]
+'===============================================================================
+
+M3_top --> M3_clk_gen
+M3_top --> M3_rst_gen 
+M3_top --> M3_rs_latch 
+M3_top --> M3_cdc_sync 
+M3_top --> M3_input_sync 
+    M3_input_sync --> M3_cdc_sync
+        M3_cdc_sync --> M3_d_latch
+M3_top --> M3_matrix
+    M3_matrix --> M3_vsync
+        M3_vsync --> M3_counter_8
+            M3_counter_8 --> M3_incr_8
+            class M3_counter_8 {
+                M3_mux2_8
+            }
+        M3_vsync --> M3_is_equal_8
+        M3_vsync --> M3_pulse_expansion
+    M3_matrix --> M3_counter_8
+    M3_matrix --> M3_screen
+    M3_screen --> M3_frame_buffer
+        M3_frame_buffer --> M3_pixel_array
+        class M3_frame_buffer {
+            M3_demux16
+        }
+    M3_screen --> M3_frame
+    class M3_matrix {
+        M3_mux16_16
+        M3_mux4_4
+    }
+
+M3_top --> M3_key
+    M3_key --> M3_random_8
+M3_top --> M3_led
+
+M3_top --> M3_instr_rom
+M3_top --> M3_data_rom
+M3_top --> M3_data_ram
+
+M3_top --> M3_bus_interconnect
+
+M3_top --> M3_cpu
+
+
+' [cpu]
+'===============================================================================
+
+M3_cpu --> M3_ppl_IF_ID 
+M3_cpu --> M3_ppl_ID_EX 
+M3_cpu --> M3_ppl_EX_MEM 
+M3_cpu --> M3_ppl_MEM_WB 
+M3_cpu --> M3_ppl_exception 
+
+
+M3_cpu --> M3_reg_file
+    class M3_reg_file {
+        M3_demux16
+        M3_mux16_32
+        M3_mux2_32
+    }
+
+
+M3_cpu --> M3_IF 
+    M3_IF --> M3_pc_nxt 
+        M3_pc_nxt --> M3_incr4_32
+            M3_incr4_32 --> M3_incr_32
+        class M3_pc_nxt {
+            M3_mux2_32
+        }
+    M3_IF --> M3A_bj_type 
+
+
+M3_cpu --> M3_ID 
+    M3_ID --> M3_imm_gen
+    M3_ID --> M3_imm_mux
+    M3_ID --> M3_decoder
+    class M3_ID {
+        M3_mux2_32
+        M3_mux4_32
+    }
+
+
+M3_cpu --> M3_EX 
+    M3_EX --> M3_alu
+        M3_alu --> M3_addsub_32
+            M3_addsub_32 --> M3_adder_cla_32
+                M3_adder_cla_32 --> M3_adder_cla_8
+                    M3_adder_cla_8 --> M3_full_adder_pg
+                    M3_adder_cla_8 --> M3_lcu_8
+                M3_adder_cla_32 --> M3_lcu_4
+        M3_alu --> M3_shift_left_32
+            class M3_shift_left_32 {
+                M3_mux4_32
+                M3_mux2_32
+            }
+        M3_alu --> M3_shift_right_32
+            class M3_shift_right_32 {
+                M3_mux4_32
+                M3_mux2_32
+            }
+        M3_alu --> M3_comparator_32
+            M3_comparator_32 --> M3_comparator_8
+            M3_comparator_32 --> M3_comparator_4
+            M3_comparator_32 --> M3_msbn_32
+        class M3_alu {
+            M3_mux8_32
+        }
+    M3_EX --> M3_bcu
+        M3_bcu --> M3_comparator_32
+        class M3_bcu {
+            M3_mux8
+        }
+
+
+M3_cpu --> M3_MEM 
+    class M3_MEM {
+        M3_mux2_32
+    }
+    M3_MEM --> M3_incr4_32
+    M3_MEM --> M3_align
+        class M3_align {
+            M3_mux4_8
+        }
+    M3_MEM --> M3_dealign
+        class M3_dealign {
+            M3_mux4_8
+            M3_mux2
+        }
+    M3_MEM --> M3_misalign
+
+
+M3_cpu --> M3_WB 
+    class M3_WB {
+        M3_mux2_32
+    } 
+
+
+M3_cpu --> M3_bpu 
+    M3_bpu --> M3_btb
+        class M3_bpu {
+            M3_mux2_32
+        }
+    M3_bpu --> M3_bht
+        class M3_bht {
+            M3_demux16
+            M3_mux16_2
+        }
+    M3_bpu --> M3_bpu_fsm
+    M3_bpu --> M3_is_equal_32
+
+
+M3_cpu --> M3_dfu 
+    M3_dfu --> M3_forwarding_alu
+        M3_forwarding_alu --> M3_dependency
+            M3_dependency --> M3_is_equal_5
+        M3_forwarding_alu --> M3_priority
+    M3_dfu --> M3_forwarding_mem
+        M3_forwarding_mem --> M3_dependency
+    M3_dfu --> M3_select4_32
+    M3_dfu --> M3_select2_32
+
+
+M3_cpu --> M3_hdu 
+    M3_hdu --> M3_dependency 
+
+
+M3_cpu --> M3_eiu 
+M3_cpu --> M3_cu 
+
+
+
+@enduml
