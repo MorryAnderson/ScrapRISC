@@ -13,7 +13,7 @@ Email: morry4c@163.com
 - 115197 wires
 
 - Clock period：20 ticks (2Hz)
-- RV32E instructions set (39 instructions)
+- RV32E instruction set (39 instructions)
 - 5 stage pipeline：
   - (Instruction Fetch, IF)
   - (Instruction Decode, ID)
