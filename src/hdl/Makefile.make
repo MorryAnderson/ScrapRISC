@@ -1,0 +1,16 @@
+SRC_DIR         = "./"
+NET_DIR         = "../../outputs/net"
+OUTPUT_DIR      = "../../outputs/temp"
+TOP = M4_top
+KEEP_HIERARCHY  = true
+SHAPE           = cube
+X_LEN           = 0
+Y_LEN           = 0
+DEFAULT_ORIENT  = front
+INPUT_ORIENT    = left
+OUTPUT_ORIENT   = right
+DEBUG_ORIENT    = front
+DEFAULT_COLOR   = DF7F01
+INPUT_COLOR     = 00EE00
+OUTPUT_COLOR    = 0000EE
+DEBUG_COLOR     = EE00EE

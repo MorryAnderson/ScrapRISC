@@ -1,0 +1,418 @@
+module M4_top (
+    input  I_ena,
+    input  I_rstn,
+    input  I_dbg_break,
+    input  I_dbg_clk,
+    input  I_dbg_run,
+    input  I_ext_intr,
+
+    input  I_key_up,
+    input  I_key_down,
+    input  I_key_left,
+    input  I_key_right,
+    input  I_key_esc,
+    input  I_key_ok,
+    input  I_key_x,
+    input  I_key_y,
+
+    output O_sepc[32],
+    output O_scause[4],
+
+    output O_led[8]
+);
+
+
+gate buf_ena       = buf(I_ena);
+gate buf_rstn      = buf(I_rstn);
+gate buf_dbg_clk   = buf(I_dbg_clk);
+gate buf_dbg_break = buf(I_dbg_break);
+gate buf_dbg_run   = buf(I_dbg_run);
+gate buf_ext_intr  = buf(I_ext_intr);
+gate buf_key_up    = buf(I_key_up);
+gate buf_key_down  = buf(I_key_down);
+gate buf_key_left  = buf(I_key_left);
+gate buf_key_right = buf(I_key_right);
+gate buf_key_esc   = buf(I_key_esc);
+gate buf_key_ok    = buf(I_key_ok);
+gate buf_key_x     = buf(I_key_x);
+gate buf_key_y     = buf(I_key_y);
+
+
+place buf_ena       @(0, 0,0);
+place buf_rstn      @(0, 1,0);
+
+place buf_dbg_clk   @(0, 2,0);
+place buf_dbg_break @(0, 3,0);
+place buf_dbg_run   @(0, 4,0);
+place buf_ext_intr  @(0, 5,0);
+
+place buf_key_up    @(0,7,0);
+place buf_key_down  @(0,8,0);
+place buf_key_left  @(0,9,0);
+place buf_key_right @(0,10,0);
+
+place buf_key_esc   @(0,12,0);
+place buf_key_ok    @(0,13,0);
+
+place buf_key_x     @(0,15,0);
+place buf_key_y     @(0,16,0);
+
+
+wire w_instr_rom_adr[7];
+wire w_instr_rom_dout[32];
+
+wire w_ram_adr[32];
+wire w_ram_re;
+wire w_ram_we;
+wire w_ram_be[4];
+wire w_ram_din[32];
+wire w_ram_dout[32];
+
+wire w_data_ram_adr[6];
+wire w_data_ram_we;
+wire w_data_ram_be[4];
+wire w_data_ram_din[32];
+wire w_data_ram_dout[32];
+
+wire buf_data_ram_clk      ;
+wire buf_data_ram_srn      ;
+wire buf_data_ram_rd_adr[6];
+wire buf_data_ram_wr_adr[6];
+wire buf_data_ram_we       ;
+wire buf_data_ram_be[4]    ;
+wire buf_data_ram_din[32]  ;
+wire buf_data_ram_dout[32] ;
+
+wire w_data_rom_adr[6];
+wire w_data_rom_we;
+wire w_data_rom_be[4];
+wire w_data_rom_din[32];
+wire w_data_rom_dout[32];
+
+
+wire buf_instr_rom_adr[7];
+wire buf_instr_rom_dout[32];
+wire buf_data_rom_adr[6];
+wire buf_data_rom_dout[32];
+
+
+wire w_matrix_adr[32];
+wire w_matrix_we;
+wire w_matrix_be[4];
+wire w_matrix_din[32];
+wire w_matrix_dout[32];
+
+wire w_gpio_adr[32];
+wire w_gpio_we;
+wire w_gpio_be[4];
+wire w_gpio_din[32];
+wire w_key_dout[32];
+wire w_key_csn;
+
+wire clk;
+wire srn;
+wire clk_src;
+wire debug_clk;
+
+wire dbg;
+wire ebreak;
+
+wire cdc_dbg_break ;
+wire cdc_dgb_run ;
+wire cdc_ext_intr;
+
+wire w_key_up;
+wire w_key_down;
+wire w_key_left;
+wire w_key_right;
+wire w_key_x;
+wire w_key_y;
+wire w_key_ok;
+wire w_key_esc;
+
+wire zero_adr[6];
+
+
+
+assign zero_adr = {{6{GND}}};
+assign w_key_csn = {w_gpio_adr[2]};
+
+
+gate debug_break = or(cdc_dbg_break, ebreak);
+place debug_break @(2,2,0);
+
+
+debug O_led;
+place dbg_O_led @(0,18,0);
+
+
+place GND @(2,0,0);
+place VCC @(3,0,0);
+
+
+
+sub M3_clk_gen (
+    .I_ena <= buf_ena,
+    .O_clk => clk_src
+);
+place M3_clk_gen @(2,1,0);
+
+
+sub M3_rst_gen (
+    .I_arn <= buf_rstn,
+    .I_clk <= clk_src,
+    .O_srn => srn
+);
+place M3_rst_gen @(3,1,0);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_src,
+    .I_rstn <= srn,
+    .I_d    <= buf_dbg_break,
+    .O_q    => cdc_dbg_break
+);
+place M3_cdc_sync @(2,3,0);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_src,
+    .I_rstn <= srn,
+    .I_d    <= buf_dbg_run,
+    .O_q    => cdc_dgb_run
+);
+place M3_cdc_sync @(2,4,0);
+
+
+sub M3_rs_latch (
+    .I_rn <= srn,
+    .I_r  <= cdc_dgb_run,
+    .I_s  <= debug_break,
+    .O_q  => dbg
+);
+place M3_rs_latch @(2,2,1);
+
+
+sub M3_dbg_clk_filter (
+    .I_debug_clk <= buf_dbg_clk,
+    .O_debug_clk => debug_clk
+);
+place M3_dbg_clk_filter @(2,2,5);
+
+
+sub M3_mux2 (
+    .I_sel <= dbg,
+    .I_d0  <= clk_src,
+    .I_d1  <= debug_clk,
+    .O_q   => clk
+);
+place M3_mux2 @(2,2,10);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk,
+    .I_rstn <= srn,
+    .I_d    <= buf_ext_intr,
+    .O_q    => cdc_ext_intr
+);
+place M3_cdc_sync @(2,5,0);
+
+
+sub M3_input_sync (
+    .I_clk   <= clk,
+    .I_rstn  <= srn,
+    .I_up    <= buf_key_up,
+    .I_down  <= buf_key_down,
+    .I_left  <= buf_key_left,
+    .I_right <= buf_key_right,
+    .I_x     <= buf_key_x,
+    .I_y     <= buf_key_y,
+    .I_ok    <= buf_key_ok,
+    .I_esc   <= buf_key_esc,
+    .O_up    => w_key_up,
+    .O_down  => w_key_down,
+    .O_left  => w_key_left,
+    .O_right => w_key_right,
+    .O_x     => w_key_x,
+    .O_y     => w_key_y,
+    .O_ok    => w_key_ok,
+    .O_esc   => w_key_esc
+);
+place M3_input_sync @(2,7,0);
+
+
+sub M3_key (
+    .I_clk   <= clk,
+    .I_rstn  <= srn,
+    .I_csn   <= w_key_csn,
+
+    .I_up    <= w_key_up,
+    .I_down  <= w_key_down,
+    .I_left  <= w_key_left,
+    .I_right <= w_key_right,
+    .I_x     <= w_key_x,
+    .I_y     <= w_key_y,
+    .I_ok    <= w_key_ok,
+    .I_esc   <= w_key_esc,
+
+    .O_key   => w_key_dout
+);
+place M3_key @(6,7,0);
+
+
+sub M3_led (
+    .I_clk   <= clk,
+    .I_rstn  <= srn,
+
+    .I_led_we   <= w_gpio_we,
+    .I_led_be   <= w_gpio_be,
+    .I_led_din  <= w_gpio_din,
+
+    .O_led      => O_led
+);
+place M3_led @(6,0,0);
+
+
+sub M3_matrix (
+    .I_clk      <= clk,
+    .I_rstn     <= srn,
+    .I_ram_adr  <= w_matrix_adr,
+    .I_ram_we   <= w_matrix_we,
+    .I_ram_be   <= w_matrix_be,
+    .I_ram_din  <= w_matrix_din,
+    .O_ram_dout => w_matrix_dout
+);
+place M3_matrix @(0,23,0);
+
+
+sub M3_instr_rom_plug (
+    .I_adr <= w_instr_rom_adr,
+    .O_adr => buf_instr_rom_adr,
+    .I_dat <= buf_instr_rom_dout,
+    .O_dat => w_instr_rom_dout
+);
+place M3_instr_rom_plug @(66,0,0);
+
+
+sub M3_instr_rom (
+    .I_adr <= buf_instr_rom_adr,
+    .O_dat => buf_instr_rom_dout
+);
+place M3_instr_rom @(66,2,0);
+
+
+sub M3_data_rom_plug (
+    .I_adr <= w_data_rom_adr,
+    .O_adr => buf_data_rom_adr,
+    .I_dat <= buf_data_rom_dout,
+    .O_dat => w_data_rom_dout
+);
+place M3_data_rom_plug @(66,23,0);
+
+
+sub M3_data_rom (
+    .I_adr <= buf_data_rom_adr,
+    .O_dat => buf_data_rom_dout
+);
+place M3_data_rom @(66,25,0);
+
+
+sub M3_data_ram_plug (
+    .I_clk       <= clk,
+    .I_rstn      <= srn,
+    .I_rd_adr_1  <= w_data_ram_adr,
+    .I_wr_adr    <= w_data_ram_adr,
+    .I_we        <= w_data_ram_we,
+    .I_be        <= w_data_ram_be,
+    .I_din       <= w_data_ram_din,
+    .O_dout_1    => w_data_ram_dout,
+    .O_clk       => buf_data_ram_clk,
+    .O_rstn      => buf_data_ram_srn,
+    .O_rd_adr_1  => buf_data_ram_rd_adr,
+    .O_wr_adr    => buf_data_ram_wr_adr,
+    .O_we        => buf_data_ram_we,
+    .O_be        => buf_data_ram_be,
+    .O_din       => buf_data_ram_din,
+    .I_dout_1    <= buf_data_ram_dout
+);
+place M3_data_ram_plug @(62,45,0);
+
+
+sub M3_data_ram (
+    .I_clk       <= buf_data_ram_clk,
+    .I_rstn      <= buf_data_ram_srn,
+    .I_rd_adr_1  <= buf_data_ram_rd_adr,
+    .I_we        <= buf_data_ram_we,
+    .I_be        <= buf_data_ram_be,
+    .I_din       <= buf_data_ram_din,
+    .O_dout_1    => buf_data_ram_dout,
+    .I_wr_adr    <= buf_data_ram_wr_adr
+);
+place M3_data_ram @(64,45,0);
+
+
+sub M3_bus_interconnect (
+    .I_ram_adr  <= w_ram_adr,
+    .I_ram_re   <= w_ram_re,
+    .I_ram_we   <= w_ram_we,
+    .I_ram_be   <= w_ram_be,
+    .I_ram_din  <= w_ram_din,
+    .O_ram_dout => w_ram_dout,
+
+    .O_s0_adr  => w_data_ram_adr,
+    .O_s0_we   => w_data_ram_we,
+    .O_s0_be   => w_data_ram_be,
+    .O_s0_din  => w_data_ram_din,
+    .I_s0_dout <= w_data_ram_dout,
+
+    .O_s1_adr  => w_data_rom_adr,
+    .O_s1_we   => w_data_rom_we,
+    .O_s1_be   => w_data_rom_be,
+    .O_s1_din  => w_data_rom_din,
+    .I_s1_dout <= w_data_rom_dout,
+
+    .O_s2_adr  => w_matrix_adr,
+    .O_s2_we   => w_matrix_we,
+    .O_s2_be   => w_matrix_be,
+    .O_s2_din  => w_matrix_din,
+    .I_s2_dout <= w_matrix_dout,
+
+    .O_s3_adr  => w_gpio_adr,
+    .O_s3_we   => w_gpio_we,
+    .O_s3_be   => w_gpio_be,
+    .O_s3_din  => w_gpio_din,
+    .I_s3_dout <= w_key_dout    
+);
+place M3_bus_interconnect @(15,11,0);
+
+
+sub M4_cpu (
+    .I_clk      <= clk,
+    .I_rstn     <= srn,
+    .I_ext_intr <= cdc_ext_intr,
+
+    .O_sepc     => O_sepc,
+    .O_scause   => O_scause,
+    .O_ebreak   => ebreak,
+
+    .O_rom_adr  => w_instr_rom_adr,
+    .I_rom_dout <= w_instr_rom_dout,
+
+    .O_ram_adr  => w_ram_adr,
+    .O_ram_re   => w_ram_re,
+    .O_ram_we   => w_ram_we,
+    .O_ram_be   => w_ram_be,
+    .O_ram_din  => w_ram_din,
+    .I_ram_dout <= w_ram_dout
+);
+place M4_cpu @(19,0,0);
+
+
+debug O_sepc;
+debug O_scause;
+
+place dbg_O_sepc   @(19,0,0);
+place dbg_O_scause @(20,0,0);
+
+
+endmodule

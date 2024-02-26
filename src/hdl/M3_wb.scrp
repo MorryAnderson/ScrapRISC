@@ -1,0 +1,27 @@
+module M3_wb (
+    input I_a_in[32],
+    input I_m_in[32],
+    input I_wb_ctrl_in[8],
+    output O_rd_data[32],
+    output O_rd_sel[5],
+    output O_rd_we
+);
+
+
+wire is_load;
+assign is_load = {I_wb_ctrl_in[6]};
+
+assign O_rd_sel = {I_wb_ctrl_in[4:0]};
+assign O_rd_we = {I_wb_ctrl_in[5]};
+
+
+sub M3_mux2_32 (
+    .I_sel <= is_load,
+    .I_d0  <= I_a_in,
+    .I_d1  <= I_m_in,
+    .O_q   => O_rd_data
+);
+place M3_mux2_32 @(0,0,0);
+
+
+endmodule

@@ -1,0 +1,70 @@
+module M3_vsync (
+    input I_clk,
+    input I_rstn,
+    input I_period[8],
+    output O_vsync[8],
+    output O_vsync_cnt[8]
+);
+
+
+wire byte_00[8];
+wire cnt[8];
+wire is_equal;
+wire extended;
+wire ext8[8];
+wire vsync[8];
+
+assign byte_00 = {{8{GND}}};
+
+
+sub M3_counter_8 (
+    .I_clk  <= I_clk,
+    .I_rstn <= I_rstn,
+    .I_d    <= byte_00,
+    .I_ena  <= VCC,
+    .I_load <= is_equal,
+    .O_q    => cnt
+);
+assign O_vsync_cnt = {cnt};
+
+
+sub M3_is_equal_8 (
+    .I_a <= cnt,
+    .I_b <= I_period,
+    .O_equal => is_equal
+);
+
+
+sub M3_pulse_expansion (
+    .I_clk  <= I_clk,
+    .I_rstn <= I_rstn,
+    .I_in   <= is_equal,
+    .O_out  => extended
+);
+
+
+assign ext8 = {{7{GND}},extended};
+
+
+sub M3_dff_8 (
+    .I_clk  <= I_clk,
+    .I_rstn <= I_rstn,
+    .I_ena  <= VCC,
+    .I_d    <= ext8,
+    .O_q    => vsync
+);
+
+
+assign O_vsync = {vsync};
+
+
+place GND @(7,0,11);
+place VCC @(7,0,12);
+
+place M3_counter_8       @(0,1,0);
+place M3_dff_8           @(3,0,0);
+place M3_is_equal_8      @(2,0,0);
+place M3_pulse_expansion @(0,0,0);
+
+
+endmodule
