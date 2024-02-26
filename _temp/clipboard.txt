@@ -1,0 +1,160 @@
+SRC_DIR         = "./"
+NET_DIR         = "../../outputs/net"
+OUTPUT_DIR      = "../../outputs/temp"
+TOP = M4_top
+KEEP_HIERARCHY  = true
+SHAPE           = cube
+X_LEN           = 0
+Y_LEN           = 0
+DEFAULT_ORIENT  = front
+INPUT_ORIENT    = left
+OUTPUT_ORIENT   = right
+DEBUG_ORIENT    = front
+DEFAULT_COLOR   = DF7F01
+INPUT_COLOR     = 00EE00
+OUTPUT_COLOR    = 0000EE
+DEBUG_COLOR     = EE00EE
+
+-------------------------------------------------
+
+SRC_DIR         = "./"
+NET_DIR         = "../../outputs/net"
+OUTPUT_DIR      = "../../outputs/temp"
+TOP = M3_matrix
+KEEP_HIERARCHY  = true
+SHAPE           = cube
+X_LEN           = 0
+Y_LEN           = 0
+DEFAULT_ORIENT  = front
+INPUT_ORIENT    = front
+OUTPUT_ORIENT   = right
+DEBUG_ORIENT    = front
+DEFAULT_COLOR   = DF7F01
+INPUT_COLOR     = DF7F01
+OUTPUT_COLOR    = 0000EE
+DEBUG_COLOR     = EE00EE
+
+-------------------------------------------------
+
+
+
+
+brown color = 472800
+
+
+[DFF block placement]
+--------------------------
+place tm      @(0,0,0);
+place bm      @(1,0,0);
+place ena_q   @(0,1,0);
+place rst_q   @(0,2,0);
+place tl      @(0,3,0);
+place tr      @(1,1,0);
+place bl      @(1,2,0);
+place tl_q    @(1,3,0);
+place w_ena   @(2,1,0);
+place bm_q    @(2,2,0);
+place br_q    @(2,3,0);
+place br      @(2,0,0);
+
+
+[DFF line placement]
+--------------------------
+place w_ena   @(0,0,0);
+place ena_q   @(1,0,0);
+place rst_q   @(2,0,0);
+place tm      @(3,0,0);
+place bm      @(4,0,0);
+place tl      @(5,0,0);
+place tr      @(6,0,0);
+place bl      @(7,0,0);
+place tl_q    @(8,0,0);
+place bm_q    @(9,0,0);
+place br_q    @(10,0,0);
+place br      @(11,0,0);
+
+
+[mux x-axis placement]
+----------------------------
+place a0     @(0,0,0);
+place a1     @(1,0,0);
+place a2     @(2,0,0);
+place a3     @(3,0,0);
+place q      @(4,0,0);
+place sel0_n @(1,0,32);
+place sel1_n @(2,0,32);
+
+
+[mux y-axis placement]
+----------------------------
+place a0     @(0,0,0);
+place a1     @(0,1,0);
+place a2     @(0,2,0);
+place a3     @(0,3,0);
+place q      @(0,4,0);
+place sel0_n @(0,1,32);
+place sel1_n @(0,2,32);
+
+
+[mux L placement]
+----------------------------
+place a0    @(0,1,0);
+place a1    @(1,1,0);
+place q     @(1,0,0);
+place sel_n @(1,1,32);
+
+
+
+
+[M4_cpu debug]
+-----------------------------------
+debug if_pc     ;
+debug if_instr  ;    
+debug if_branch ;    
+debug if_jal    ;    
+debug if_jalr   ;    
+
+debug id_pc      ;
+debug id_b1      ;
+debug id_b2      ;
+debug id_a1      ;
+debug id_a2      ;
+debug id_m       ;
+debug id_ex_ctrl ;
+debug id_mem_ctrl;
+debug id_wb_ctrl ;
+debug rs2_sel    ;
+
+debug ex_pc         ;
+debug ex_b          ;
+debug ex_a          ;
+debug ex_m          ;
+debug ex_mem_ctrl   ;
+debug ex_wb_ctrl_out;
+debug ex_rs2_sel    ;
+
+
+place dbg_if_pc     @(18,0,0);
+place dbg_if_instr  @(18,1,0);
+place dbg_if_branch @(18,2,0);
+place dbg_if_jal    @(18,3,0);
+place dbg_if_jalr   @(18,4,0);
+
+place dbg_id_pc       @(18,6,0);
+place dbg_id_b1       @(18,7,0);
+place dbg_id_b2       @(18,8,0);
+place dbg_id_a1       @(18,9,0);
+place dbg_id_a2       @(18,10,0);
+place dbg_id_m        @(18,11,0);
+place dbg_id_ex_ctrl  @(18,12,0);
+place dbg_id_mem_ctrl @(18,13,0);
+place dbg_id_wb_ctrl  @(18,14,0);
+place dbg_rs2_sel     @(18,15,0);
+
+place dbg_ex_pc          @(18,18,0);
+place dbg_ex_b           @(18,19,0);
+place dbg_ex_a           @(18,20,0);
+place dbg_ex_m           @(18,21,0);
+place dbg_ex_mem_ctrl    @(18,22,0);
+place dbg_ex_wb_ctrl_out @(18,23,0);
+place dbg_ex_rs2_sel     @(18,24,0);
