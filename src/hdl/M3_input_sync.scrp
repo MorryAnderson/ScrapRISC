@@ -1,0 +1,105 @@
+module M3_input_sync (
+    input I_clk  ,
+    input I_rstn ,
+    input I_up   ,
+    input I_down ,
+    input I_left ,
+    input I_right,
+    input I_x    ,
+    input I_y    ,
+    input I_ok   ,
+    input I_esc  ,
+    output O_up   ,
+    output O_down ,
+    output O_left ,
+    output O_right,
+    output O_x    ,
+    output O_y    ,
+    output O_ok   ,
+    output O_esc  
+);
+
+
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+gate rstn_buf = buf(I_rstn);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_up,
+    .O_q    => O_up
+);
+place M3_cdc_sync @(0,0,0);
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_down,
+    .O_q    => O_down
+);
+place M3_cdc_sync @(0,1,0);
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_left,
+    .O_q    => O_left
+);
+place M3_cdc_sync @(0,2,0);
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_right,
+    .O_q    => O_right
+);
+place M3_cdc_sync @(0,3,0);
+
+
+place clk_buf  @(0,4,0);
+place clk_buf2 @(0,4,1);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_esc,
+    .O_q    => O_esc
+);
+place M3_cdc_sync @(0,5,0);
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_ok,
+    .O_q    => O_ok
+);
+place M3_cdc_sync @(0,6,0);
+
+
+place rstn_buf  @(0,7,0);
+
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_x,
+    .O_q    => O_x
+);
+place M3_cdc_sync @(0,8,0);
+
+sub M3_cdc_sync (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_d    <= I_y,
+    .O_q    => O_y
+);
+place M3_cdc_sync @(0,9,0);
+
+
+
+endmodule

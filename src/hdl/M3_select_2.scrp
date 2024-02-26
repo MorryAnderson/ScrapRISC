@@ -1,0 +1,21 @@
+module M3_select_2 (
+    input I_e1,
+    input I_e2,
+    input I_d1[32],
+    input I_d2[32],
+    output O_q[32]
+);
+
+
+gate a1 = and(I_d1, I_e1);
+gate a2 = and(I_d2, I_e2);
+gate q = or(a1,a2);
+assign O_q = {q};
+
+
+place a1 @(0,0,0);
+place a2 @(1,0,0);
+place q  @(2,0,0);
+
+
+endmodule

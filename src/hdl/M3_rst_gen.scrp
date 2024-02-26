@@ -1,0 +1,75 @@
+module M3_rst_gen (
+    input I_arn,
+    input I_clk,
+    output O_srn
+);
+
+
+gate clk_buf = buf(I_clk);
+gate clk_not = not(I_clk);
+gate arn_buf = buf(I_arn);
+gate arn_not = not(I_arn);
+
+wire ena;
+assign ena = {clk_buf};
+
+gate na1 = nand(I_clk, clk_not, arn_not);
+gate na1_q = buf(na1);
+gate arn_q = and(na1, na1_q, arn_buf);
+
+
+wire w_tm;
+wire w_bl;
+wire w_bm;
+wire w_tr;
+wire q;
+
+gate tl = not(w_tm);
+gate tl_q = buf(tl);
+gate tm = nand(tl_q, w_bm, ena);
+
+gate bm = nand(w_bl, arn_q, ena);
+gate bm_q = buf(bm);
+gate bl = nand(tl, bm_q);
+
+gate br = nand(w_tr, bm);
+gate br_q = buf(br);
+gate tr = nand(br_q, tm, arn_q);
+
+assign w_tm = {tm};
+assign w_bm = {bm};
+assign w_tr = {tr};
+
+assign q = {br}; 
+
+gate q1 = buf(q);
+gate q2 = buf(q1);
+gate q3 = buf(q2);
+gate q4 = buf(q3);
+assign O_srn = {q4};
+
+
+place clk_buf @(0,0, 0);
+place clk_not @(0,0, 1);
+place arn_buf @(0,0, 2);
+place arn_not @(0,0, 3);
+place na1     @(0,0, 4);
+place na1_q   @(0,0, 5);
+place arn_q   @(0,0, 6);
+place tl      @(0,0, 7);
+place tl_q    @(0,0, 8);
+place tm      @(0,0, 9);
+place bm      @(0,0,10);
+place bm_q    @(0,0,11);
+place bl      @(0,0,12);
+place tr      @(0,0,13);
+place br_q    @(0,0,14);
+place br      @(0,0,15);
+place q1      @(0,0,16);
+place q2      @(0,0,17);
+place q3      @(0,0,18);
+place q4      @(0,0,19);
+
+
+
+endmodule

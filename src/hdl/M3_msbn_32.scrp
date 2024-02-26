@@ -1,0 +1,15 @@
+module M3_msbn_32 (
+    input I_in[32],
+    input I_n,
+    output O_out[32]
+);
+
+gate n = xnor(I_n, I_in[31]);
+
+assign O_out = {n,I_in[30:0]};
+
+
+place n @(0,0,0);
+
+
+endmodule

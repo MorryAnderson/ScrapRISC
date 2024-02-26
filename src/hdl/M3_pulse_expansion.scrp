@@ -1,0 +1,32 @@
+module M3_pulse_expansion (
+    input I_clk,
+    input I_rstn,
+    input I_in,
+    output O_out
+);
+
+
+wire d[5];
+wire q[5];
+
+assign d = {q[3:0],I_in};
+
+sub M3_dff_5 (
+    .I_clk  <= I_clk,
+    .I_rstn <= I_rstn,
+    .I_ena  <= VCC,
+    .I_d    <= d,
+    .O_q    => q
+);
+
+gate pulse = or(q);
+assign O_out = {pulse};
+
+
+place M3_dff_5 @(0,0,0);
+place pulse @(2,0,17);
+place GND @(2,0,18);
+place VCC @(2,0,19);
+
+
+endmodule

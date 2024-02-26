@@ -1,0 +1,125 @@
+module M3_lcu_8 (
+    input I_p[8],
+    input I_g[8],
+
+    input I_c0,
+    output O_c[8],
+
+    output O_pg,
+    output O_gg
+);
+
+
+gate c1_and1 = and(I_c0  , I_p[0]);
+
+gate c2_and1 = and(I_c0  , I_p[1:0]);
+gate c2_and2 = and(I_g[0], I_p[1:1]);
+
+gate c3_and1 = and(I_c0  , I_p[2:0]);
+gate c3_and2 = and(I_g[0], I_p[2:1]);
+gate c3_and3 = and(I_g[1], I_p[2:2]);
+
+gate c4_and1 = and(I_c0  , I_p[3:0]);
+gate c4_and2 = and(I_g[0], I_p[3:1]);
+gate c4_and3 = and(I_g[1], I_p[3:2]);
+gate c4_and4 = and(I_g[2], I_p[3:3]);
+
+gate c5_and1 = and(I_c0  , I_p[4:0]);
+gate c5_and2 = and(I_g[0], I_p[4:1]);
+gate c5_and3 = and(I_g[1], I_p[4:2]);
+gate c5_and4 = and(I_g[2], I_p[4:3]);
+gate c5_and5 = and(I_g[3], I_p[4:4]);
+
+gate c6_and1 = and(I_c0  , I_p[5:0]);
+gate c6_and2 = and(I_g[0], I_p[5:1]);
+gate c6_and3 = and(I_g[1], I_p[5:2]);
+gate c6_and4 = and(I_g[2], I_p[5:3]);
+gate c6_and5 = and(I_g[3], I_p[5:4]);
+gate c6_and6 = and(I_g[4], I_p[5:5]);
+
+gate c7_and1 = and(I_c0  , I_p[6:0]);
+gate c7_and2 = and(I_g[0], I_p[6:1]);
+gate c7_and3 = and(I_g[1], I_p[6:2]);
+gate c7_and4 = and(I_g[2], I_p[6:3]);
+gate c7_and5 = and(I_g[3], I_p[6:4]);
+gate c7_and6 = and(I_g[4], I_p[6:5]);
+gate c7_and7 = and(I_g[5], I_p[6:6]);
+
+gate c8_and1 = and(I_c0  , I_p[7:0]);
+gate c8_and2 = and(I_g[0], I_p[7:1]);
+gate c8_and3 = and(I_g[1], I_p[7:2]);
+gate c8_and4 = and(I_g[2], I_p[7:3]);
+gate c8_and5 = and(I_g[3], I_p[7:4]);
+gate c8_and6 = and(I_g[4], I_p[7:5]);
+gate c8_and7 = and(I_g[5], I_p[7:6]);
+gate c8_and8 = and(I_g[6], I_p[7:7]);
+
+
+gate c1 = or(I_g[0], c1_and1);
+gate c2 = or(I_g[1], c2_and1, c2_and2);
+gate c3 = or(I_g[2], c3_and1, c3_and2, c3_and3);
+gate c4 = or(I_g[3], c4_and1, c4_and2, c4_and3, c4_and4);
+gate c5 = or(I_g[4], c5_and1, c5_and2, c5_and3, c5_and4, c5_and5);
+gate c6 = or(I_g[5], c6_and1, c6_and2, c6_and3, c6_and4, c6_and5, c6_and6);
+gate c7 = or(I_g[6], c7_and1, c7_and2, c7_and3, c7_and4, c7_and5, c7_and6, c7_and7);
+gate c8 = or(I_g[7], c8_and1, c8_and2, c8_and3, c8_and4, c8_and5, c8_and6, c8_and7, c8_and8);
+
+
+gate pg = and(I_p[7:0]);
+assign O_pg= {pg}; 
+
+
+assign O_c = {c8,c7,c6,c5,c4,c3,c2,c1};
+
+assign O_gg= {c8};
+
+
+place c1_and1 @(3,0,7);
+place c2_and1 @(2,0,7);
+place c2_and2 @(2,0,6);
+place c3_and1 @(1,0,7);
+place c3_and2 @(1,0,6);
+place c3_and3 @(1,0,5);
+place c4_and1 @(0,0,0);
+place c4_and2 @(0,0,1);
+place c4_and3 @(0,0,2);
+place c4_and4 @(0,0,3);
+place c5_and1 @(1,0,0);
+place c5_and2 @(1,0,1);
+place c5_and3 @(1,0,2);
+place c5_and4 @(1,0,3);
+place c5_and5 @(1,0,4);
+place c6_and1 @(2,0,0);
+place c6_and2 @(2,0,1);
+place c6_and3 @(2,0,2);
+place c6_and4 @(2,0,3);
+place c6_and5 @(2,0,4);
+place c6_and6 @(2,0,5);
+place c7_and1 @(3,0,0);
+place c7_and2 @(3,0,1);
+place c7_and3 @(3,0,2);
+place c7_and4 @(3,0,3);
+place c7_and5 @(3,0,4);
+place c7_and6 @(3,0,5);
+place c7_and7 @(3,0,6);
+place c8_and1 @(4,0,0);
+place c8_and2 @(4,0,1);
+place c8_and3 @(4,0,2);
+place c8_and4 @(4,0,3);
+place c8_and5 @(4,0,4);
+place c8_and6 @(4,0,5);
+place c8_and7 @(4,0,6);
+place c8_and8 @(4,0,7);
+place c1 @(5,0,0);
+place c2 @(5,0,1);
+place c3 @(5,0,2);
+place c4 @(5,0,3);
+place c5 @(5,0,4);
+place c6 @(5,0,5);
+place c7 @(5,0,6);
+place c8 @(5,0,7);
+place pg @(0,0,4);
+
+
+endmodule
+

@@ -1,0 +1,43 @@
+module M3_demux16 (
+    input I_ena,
+    input I_mux[4],
+    output O_out[16]
+);
+
+
+wire mux_0_p;
+wire mux_1_p;
+wire mux_2_p;
+wire mux_3_p;
+
+assign mux_0_p = {I_mux[0]};
+assign mux_1_p = {I_mux[1]};
+assign mux_2_p = {I_mux[2]};
+assign mux_3_p = {I_mux[3]};
+
+gate mux_0_n = not(I_mux[0]);
+gate mux_1_n = not(I_mux[1]);
+gate mux_2_n = not(I_mux[2]);
+gate mux_3_n = not(I_mux[3]);
+
+gate d_0 = and(I_ena, mux_3_n, mux_2_n, mux_1_n, mux_0_n);
+gate d_1 = and(I_ena, mux_3_n, mux_2_n, mux_1_n, mux_0_p);
+gate d_2 = and(I_ena, mux_3_n, mux_2_n, mux_1_p, mux_0_n);
+gate d_3 = and(I_ena, mux_3_n, mux_2_n, mux_1_p, mux_0_p);
+gate d_4 = and(I_ena, mux_3_n, mux_2_p, mux_1_n, mux_0_n);
+gate d_5 = and(I_ena, mux_3_n, mux_2_p, mux_1_n, mux_0_p);
+gate d_6 = and(I_ena, mux_3_n, mux_2_p, mux_1_p, mux_0_n);
+gate d_7 = and(I_ena, mux_3_n, mux_2_p, mux_1_p, mux_0_p);
+gate d_8 = and(I_ena, mux_3_p, mux_2_n, mux_1_n, mux_0_n);
+gate d_9 = and(I_ena, mux_3_p, mux_2_n, mux_1_n, mux_0_p);
+gate d_A = and(I_ena, mux_3_p, mux_2_n, mux_1_p, mux_0_n);
+gate d_B = and(I_ena, mux_3_p, mux_2_n, mux_1_p, mux_0_p);
+gate d_C = and(I_ena, mux_3_p, mux_2_p, mux_1_n, mux_0_n);
+gate d_D = and(I_ena, mux_3_p, mux_2_p, mux_1_n, mux_0_p);
+gate d_E = and(I_ena, mux_3_p, mux_2_p, mux_1_p, mux_0_n);
+gate d_F = and(I_ena, mux_3_p, mux_2_p, mux_1_p, mux_0_p);
+
+assign O_out = {d_F, d_E, d_D, d_C, d_B, d_A, d_9, d_8, d_7, d_6, d_5, d_4, d_3, d_2, d_1, d_0};
+
+
+endmodule

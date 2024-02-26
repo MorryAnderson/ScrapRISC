@@ -1,0 +1,26 @@
+module M3_full_adder_pg (
+    input I_a,
+    input I_b,
+    input I_c,
+    output O_p,
+    output O_g,
+    output O_s
+);
+
+
+gate g = and(I_a, I_b);
+gate p = xor(I_a, I_b);
+gate s = xor(I_c, p);
+
+assign O_g = {g};
+assign O_p = {p};
+assign O_s = {s};
+
+
+place g @(0,0,0);
+place p @(1,0,0);
+place s @(2,0,0);
+
+
+endmodule
+

@@ -1,0 +1,30 @@
+module M3_clk_gen (
+    input I_ena,
+    output O_clk
+);
+
+
+gate ena_p = buf(I_ena);
+gate ena_n = not(I_ena);
+
+wire w_delay[16];
+gate delay = buf(w_delay);
+assign w_delay = {O_clk, delay[15:1]};
+
+gate o1 = or(ena_n, delay[0]);
+gate o2 = or(ena_n, o1);
+gate o3 = or(ena_n, o2);
+gate a1 = and(ena_p, o3);
+assign O_clk = {a1};
+
+
+place a1     @(0,0,0);
+place o3     @(0,0,1);
+place o2     @(0,0,2);
+place o1     @(0,0,3);
+place delay  @(0,0,4);
+place ena_p  @(0,0,20);
+place ena_n  @(0,0,21);
+
+
+endmodule

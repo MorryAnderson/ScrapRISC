@@ -1,0 +1,67 @@
+module M3_pc_nxt (
+    input I_pc[32],
+    input I_pred_adr[32],
+    input I_jump_adr[32],
+    input I_intr_adr[32],
+    input I_pred,
+    input I_stall_n,
+    input I_jump,
+    input I_intr,
+    output O_nxt[32]
+);
+
+
+wire pc4[32];
+
+
+sub M3_incr4_32 (
+    .I_ena <= VCC,
+    .I_in  <= I_pc,
+    .O_out => pc4
+);
+
+
+gate intr_n   = not(I_intr);
+gate jump_n = not(I_jump);
+gate stall    = not(I_stall_n);
+gate pred_n   = not(I_pred);
+
+gate sel_jump  = and(intr_n, I_jump);
+gate sel_stall = and(intr_n, jump_n, stall);
+gate sel_pc4   = and(intr_n, jump_n, I_stall_n, pred_n);
+gate sel_pred  = and(intr_n, jump_n, I_stall_n, I_pred);
+
+gate intr_adr = and(I_intr_adr, I_intr);
+gate jump_adr = and(I_jump_adr, sel_jump);
+gate pc_adr   = and(I_pc, sel_stall);
+gate pc4_adr  = and(pc4, sel_pc4);
+gate pred_adr = and(I_pred_adr, sel_pred);
+
+gate nxt_adr = or(intr_adr, jump_adr, pc_adr, pc4_adr, pred_adr);
+assign O_nxt = {nxt_adr};
+
+
+place GND       @(0,4,32);
+place VCC       @(0,4,33);
+place intr_n    @(0,0,33);
+place jump_n    @(0,1,33);
+place stall     @(0,2,33);
+place pred_n    @(0,3,33);
+
+place sel_jump  @(0,0,32);
+place sel_stall @(0,1,32);
+place sel_pc4   @(0,2,32);
+place sel_pred  @(0,3,32);
+
+place intr_adr  @(0,0,0);
+place jump_adr  @(0,1,0);
+place pc_adr    @(0,2,0);
+place pc4_adr   @(0,3,0);
+place pred_adr  @(0,4,0);
+place nxt_adr   @(1,4,0);
+
+place M3_incr4_32 @(1,0,0);
+
+
+
+endmodule

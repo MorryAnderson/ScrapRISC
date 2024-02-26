@@ -1,0 +1,110 @@
+module M3_bus_interconnect (
+    input  I_ram_adr[32],
+    input  I_ram_re,
+    input  I_ram_we,
+    input  I_ram_be[4],
+    input  I_ram_din[32],
+    output O_ram_dout[32],
+
+    output O_s0_adr[6],
+    output O_s1_adr[6],
+    output O_s2_adr[32],
+    output O_s3_adr[32],
+
+    output O_s0_we,
+    output O_s1_we,
+    output O_s2_we,
+    output O_s3_we,
+
+    output O_s0_be[4],
+    output O_s1_be[4],
+    output O_s2_be[4],
+    output O_s3_be[4],
+
+    output O_s0_din[32],
+    output O_s1_din[32],
+    output O_s2_din[32],
+    output O_s3_din[32],
+
+    input  I_s0_dout[32],
+    input  I_s1_dout[32],
+    input  I_s2_dout[32],
+    input  I_s3_dout[32]
+);
+
+
+assign O_s0_adr = {I_ram_adr[7:2]};
+assign O_s1_adr = {I_ram_adr[7:2]};
+assign O_s2_adr = {I_ram_adr};
+assign O_s3_adr = {I_ram_adr};
+
+assign O_s0_be = {I_ram_be};
+assign O_s1_be = {I_ram_be};
+assign O_s2_be = {I_ram_be};
+assign O_s3_be = {I_ram_be};
+
+assign O_s0_din = {I_ram_din};
+assign O_s1_din = {I_ram_din};
+assign O_s2_din = {I_ram_din};
+assign O_s3_din = {I_ram_din};
+
+
+gate s0_cs_nor = nor(I_ram_adr[31:13]);
+gate s0_cs = and(I_ram_adr[12], s0_cs_nor);
+
+gate s1_cs_nor = nor(I_ram_adr[31:29]);
+gate s1_cs = and(I_ram_adr[28], s1_cs_nor);
+
+gate s2_adr31_n = not(I_ram_adr[31]);
+gate s2_cs = nor(s2_adr31_n, I_ram_adr[30:9]);
+
+gate s3_adr31_n = not(I_ram_adr[31]);
+gate s3_adr30_n = not(I_ram_adr[30]);
+gate s3_cs = nor(s3_adr31_n,s3_adr30_n,I_ram_adr[29:3]);
+
+
+gate s0_dout = and(I_s0_dout, I_ram_re, s0_cs);
+gate s1_dout = and(I_s1_dout, I_ram_re, s1_cs);
+gate s2_dout = and(I_s2_dout, I_ram_re, s2_cs);
+gate s3_dout = and(I_s3_dout, I_ram_re, s3_cs);
+gate ram_dout = or(s0_dout,s1_dout,s2_dout,s3_dout);
+assign O_ram_dout = {ram_dout};
+
+
+gate s0_we = and(s0_cs,I_ram_we);
+gate s1_we = and(s1_cs,I_ram_we);
+gate s2_we = and(s2_cs,I_ram_we);
+gate s3_we = and(s3_cs,I_ram_we);
+
+assign O_s0_we = {s0_we};
+assign O_s1_we = {s1_we};
+assign O_s2_we = {s2_we};
+assign O_s3_we = {s3_we};
+
+
+
+place ram_dout   @(0,0,0);
+
+place s0_dout    @(0,1,0);
+place s1_dout    @(0,2,0);
+place s2_dout    @(0,3,0);
+place s3_dout    @(0,4,0);
+
+place s0_we      @(0,1,32);
+place s1_we      @(0,2,32);
+place s2_we      @(0,3,32);
+place s3_we      @(0,4,32);
+
+place s0_cs      @(0,1,33);
+place s1_cs      @(0,2,33);
+place s2_cs      @(0,3,33);
+place s3_cs      @(0,4,33);
+
+place s0_cs_nor  @(0,0,32);
+place s1_cs_nor  @(0,0,33);
+place s2_adr31_n @(0,0,34);
+place s3_adr31_n @(0,0,35);
+place s3_adr30_n @(0,0,36);
+
+
+endmodule

@@ -1,0 +1,94 @@
+module M3_alu (
+    input I_a1[32],
+    input I_a2[32],
+    input I_op[3],
+    input I_neg,
+    output O_a[32]
+);
+
+
+gate a1 = buf(I_a1);
+gate a2 = buf(I_a2);
+gate op = buf(I_op);
+gate neg = buf(I_neg);
+
+wire a2_lsb5[5];
+assign a2_lsb5 = {a2[4:0]};
+
+wire op_addsub[32];
+wire op_shf_left[32];
+wire op_compare[32];
+wire op_shf_right[32];
+
+wire l;
+assign op_compare = {{31{GND}},l};
+
+
+sub M3_addsub_32 (
+    .I_a <= a1,
+    .I_b <= a2,
+    .I_neg <= neg,
+    .O_s => op_addsub
+);
+
+sub M3_shift_left_32 (
+    .I_in <= a1,
+    .I_len <= a2_lsb5,
+    .O_out => op_shf_left
+);
+
+
+wire op0;
+assign op0 = {op[0]};
+
+sub M3_comparator_32 (
+    .I_a <= a1,
+    .I_b <= a2,
+    .I_sgn <= op0,
+    .O_l => l
+);
+
+sub M3_shift_right_32 (
+    .I_in <= a1,
+    .I_len <= a2_lsb5,
+    .I_arith <= neg,
+    .O_out => op_shf_right
+);
+
+gate op_xor = xor(a1,a2);
+gate op_or = or(a1,a2);
+gate op_and = and(a1,a2);
+
+sub M3_mux8_32 (
+    .I_sel <= op,
+    .I_d0  <= op_addsub   ,
+    .I_d1  <= op_shf_left ,
+    .I_d2  <= op_compare  ,
+    .I_d3  <= op_compare  ,
+    .I_d4  <= op_xor      ,
+    .I_d5  <= op_shf_right,
+    .I_d6  <= op_or       ,
+    .I_d7  <= op_and      ,
+    .O_q   => O_a
+);
+
+
+place GND @(4,0,32);
+place a1  @(0,0,0);
+place a2  @(0,1,0);
+place op  @(0,2,0);
+place neg @(0,3,0);
+
+place M3_comparator_32  @(1,0,0);
+place M3_shift_left_32  @(1,1,0);
+place M3_shift_right_32 @(1,2,0);
+place M3_addsub_32      @(1,3,0);
+
+place op_xor @(11,3,0);
+place op_or  @(12,3,0);
+place op_and @(13,3,0);
+
+place M3_mux8_32 @(7,0,0);
+
+
+endmodule

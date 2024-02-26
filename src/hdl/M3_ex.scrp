@@ -1,0 +1,69 @@
+module M3_ex (
+    input I_a1[32],
+    input I_a2[32],
+    input I_b1[32],
+    input I_b2[32],
+    input I_pc_in[32],
+    input I_m_in[32],
+    input I_ex_ctrl_in[8],
+    input I_mem_ctrl_in[8],
+    input I_wb_ctrl_in[8],
+    input I_rs2_sel_in[5],
+    output O_a[32],
+    output O_b,
+    output O_pc[32],
+    output O_m[32],
+    output O_mem_ctrl[8],
+    output O_wb_ctrl[8],
+    output O_rs2_sel[5]
+);
+
+
+assign O_pc = {I_pc_in};
+assign O_m  = {I_m_in};
+assign O_mem_ctrl = {I_mem_ctrl_in};
+assign O_wb_ctrl  = {I_wb_ctrl_in};
+assign O_rs2_sel  = {I_rs2_sel_in};
+
+
+wire is_branch;
+wire is_jal;
+wire is_jalr;
+wire bcu_op[3];
+
+wire alu_op[3];
+wire alu_neg;
+
+
+assign is_branch = {I_mem_ctrl_in[4]};
+assign is_jal = {I_mem_ctrl_in[5]};
+assign is_jalr = {I_mem_ctrl_in[6]};
+
+assign alu_op = {I_ex_ctrl_in[2:0]};
+assign alu_neg = {I_ex_ctrl_in[3]};
+assign bcu_op = {I_ex_ctrl_in[6:4]};
+
+
+sub M3_alu (
+    .I_a1 <= I_a1,
+    .I_a2 <= I_a2,
+    .I_op <= alu_op,
+    .I_neg <= alu_neg,
+    .O_a => O_a
+);
+place M3_alu @(0,3,0);
+
+
+sub M3_bcu (
+    .I_b1 <= I_b1,
+    .I_b2 <= I_b2,
+    .I_op <= bcu_op,
+    .I_is_branch <= is_branch,
+    .I_is_jal    <= is_jal   ,
+    .I_is_jalr   <= is_jalr  ,
+    .O_b => O_b
+);
+place M3_bcu @(8,0,0);
+
+
+endmodule

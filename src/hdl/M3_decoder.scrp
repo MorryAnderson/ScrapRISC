@@ -1,0 +1,136 @@
+module M3_decoder (
+    input I_instr[32],
+    input I_is_branch,
+    input I_is_jal,
+    input I_is_jalr,
+    output O_unknown,
+    output O_id_ctrl[8],
+    output O_ex_ctrl[8],
+    output O_mem_ctrl[8],
+    output O_wb_ctrl[8],
+    output O_rs1_sel[5],
+    output O_rs2_sel[5]
+);
+
+
+wire funct7[7];
+wire rs2[5];
+wire rs1[5];
+wire funct3[3];
+wire rd[5];
+wire opcode[7];
+
+assign funct7 = {I_instr[31:25]};
+assign rs2    = {I_instr[24:20]};
+assign rs1    = {I_instr[19:15]};
+assign funct3 = {I_instr[14:12]};
+assign rd     = {I_instr[11:7]};
+assign opcode = {I_instr[6:0]};
+
+
+
+wire op_p[7];
+assign  op_p = {opcode};
+
+gate op_n = not(opcode);
+
+gate code_arith = and(op_n[6],op_p[5],op_p[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+gate code_imm   = and(op_n[6],op_n[5],op_p[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+gate code_load  = and(op_n[6],op_n[5],op_n[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+gate code_store = and(op_n[6],op_p[5],op_n[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+gate code_lui   = and(op_n[6],op_p[5],op_p[4],op_n[3],op_p[2],op_p[1],op_p[0]);
+gate code_auipc = and(op_n[6],op_n[5],op_p[4],op_n[3],op_p[2],op_p[1],op_p[0]);
+gate code_ecall = and(op_p[6],op_p[5],op_p[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+
+gate instr_is_zero = nor(I_instr[31:0]);
+gate unknown = nor(instr_is_zero,code_arith,code_imm,code_load,code_store,code_lui,code_auipc,code_ecall,I_is_branch,I_is_jal,I_is_jalr);
+
+assign O_unknown= {unknown};
+
+
+
+wire fmt_s;
+wire fmt_b;
+wire fmt_j;
+
+assign fmt_s = {code_store};
+assign fmt_b = {I_is_branch};
+assign fmt_j = {I_is_jal};
+
+gate fmt_i = or(code_imm,code_load,I_is_jalr);
+gate fmt_u = or(code_lui,code_auipc);
+
+
+
+wire alu_a_sel[2];
+wire alu_b_sel;
+wire bcu_op[3];
+wire mask[2];
+wire is_store;
+
+gate alu_a_sel0 = or(I_is_branch,I_is_jal,code_auipc);
+
+assign alu_a_sel = {code_lui, alu_a_sel0};
+assign alu_b_sel = {code_arith};
+
+gate alu_neg = and(funct7[5],code_arith);
+gate arith_imm = or(code_arith,code_imm);
+gate alu_op = and(funct3,arith_imm);
+
+assign bcu_op = {funct3};
+
+gate mask0 = or(funct3[1],funct3[0]);
+
+assign mask = {funct3[1],mask0};
+
+gate ext = not(funct3[2]);
+
+assign is_store = {code_store};
+
+
+
+wire rd_sel[5];
+wire is_load;
+
+assign rd_sel = {rd};
+assign is_load = {code_load};
+
+gate reg_we = or(code_load,code_arith,code_imm,I_is_jal,I_is_jalr,code_lui,code_auipc);
+
+
+
+assign O_id_ctrl  = {alu_b_sel,alu_a_sel,fmt_j,fmt_u,fmt_b,fmt_s,fmt_i};
+assign O_ex_ctrl  = {GND,bcu_op,alu_neg,alu_op};
+assign O_mem_ctrl = {GND,I_is_jalr,I_is_jal,I_is_branch,is_store,ext,mask};
+assign O_wb_ctrl  = {GND,is_load,reg_we,rd_sel};
+assign O_rs1_sel  = {rs1};
+assign O_rs2_sel  = {rs2};
+
+
+
+place op_n          @(0,0,0);
+place alu_op        @(0,1,0);
+place alu_neg       @(0,2,0);
+place reg_we        @(0,3,0);
+place instr_is_zero @(0,4,0);
+place unknown       @(0,5,0);
+place GND           @(0,6,0);
+
+place code_arith    @(1,0,0);
+place code_imm      @(1,1,0);
+place code_load     @(1,2,0);
+place code_store    @(1,3,0);
+place code_lui      @(1,4,0);
+place code_auipc    @(1,5,0);
+place code_ecall    @(1,6,0);
+
+place fmt_i         @(2,0,0);
+place fmt_u         @(2,1,0);
+place alu_a_sel0    @(2,2,0);
+place arith_imm     @(2,3,0);
+place mask0         @(2,4,0);
+place ext           @(2,5,0);
+
+
+
+endmodule

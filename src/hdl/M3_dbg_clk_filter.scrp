@@ -1,0 +1,27 @@
+module M3_dbg_clk_filter (
+    input I_debug_clk,
+    output O_debug_clk
+);
+
+
+
+wire in;
+assign in = {I_debug_clk};
+
+gate in_q = not(in);
+gate posedge = and(in, in_q);
+gate posedge_q1 = buf(posedge);
+gate posedge_q2 = buf(posedge_q1);
+gate posedge_extended = or(posedge, posedge_q1, posedge_q2);
+
+assign O_debug_clk = {posedge_extended};
+
+
+place in_q             @(0,0,0);
+place posedge          @(0,0,1);
+place posedge_q1       @(0,0,2);
+place posedge_q2       @(0,0,3);
+place posedge_extended @(0,0,4);
+
+
+endmodule

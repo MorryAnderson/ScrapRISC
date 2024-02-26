@@ -1,0 +1,183 @@
+module M3_matrix (
+    input  I_clk,
+    input  I_rstn,
+
+    input  I_ram_adr[32] ,
+    input  I_ram_we      ,
+    input  I_ram_be[4]   ,
+    input  I_ram_din[32] ,
+    output O_ram_dout[32]
+);
+
+
+gate rstn_buf = buf(I_rstn);
+
+
+wire reg_adr[8];
+wire is_reg_ctrl;
+
+
+assign reg_adr = {I_ram_adr[7:0]};
+gate is_reg_data = not(I_ram_adr[8]);
+assign is_reg_ctrl = {I_ram_adr[8]};
+
+gate we_reg_0   = and(I_ram_we,is_reg_ctrl);
+gate we_pixel   = and(we_reg_0, I_ram_be[0]);
+gate we_pos     = and(we_reg_0, I_ram_be[1]);
+gate we_refresh = and(we_reg_0, I_ram_be[2]);
+
+
+wire byte_pixel[8];
+wire byte_pos[8];
+wire byte_refresh[8];
+wire pixel;
+wire byte_refresh_0;
+
+assign byte_pixel   = {I_ram_din[7:0]};
+assign byte_pos     = {I_ram_din[15:8]};
+assign byte_refresh = {I_ram_din[23:16]};
+
+assign pixel            = {byte_pixel[0]};
+assign byte_refresh_0   = {byte_refresh[0]};
+gate refresh         = and(we_refresh,byte_refresh_0);
+gate byte_refresh_0n = not(byte_refresh_0);
+gate byte_we_refresh = nand(we_refresh, byte_refresh_0n);
+gate clear_n         = and(byte_we_refresh,rstn_buf);
+
+
+wire byte_00[8];
+wire PERIOD_CONST[8];
+wire w_vsync[8];
+wire vsync[32];
+wire vsync_cnt[8];
+
+assign byte_00 = {GND,GND,GND,GND,GND,GND,GND,GND};
+assign PERIOD_CONST = {GND,VCC,VCC,VCC,VCC,GND,GND,GND};
+
+gate period = buf(PERIOD_CONST);
+
+
+sub M3_vsync (
+    .I_clk  <= I_clk,
+    .I_rstn <= rstn_buf,
+    .I_period  <= period,
+    .O_vsync => w_vsync,
+    .O_vsync_cnt => vsync_cnt
+);
+
+
+gate vysnc_8 = and(w_vsync, is_reg_ctrl);
+assign  vsync = {vysnc_8,byte_00,byte_00,byte_00};
+
+
+wire pos[8];
+
+sub M3_counter_8 (
+    .I_clk  <= I_clk,
+    .I_rstn <= rstn_buf,
+    .I_d    <= byte_pos,
+    .I_ena  <= we_pixel,
+    .I_load <= we_pos,
+    .O_q    => pos
+);
+
+wire g[4];
+wire pixel_dout[32];
+wire wr_col[4];
+wire wr_row[4];
+wire rd_col[4];
+wire rd_row[4];
+
+assign wr_col = {pos[3:0]};
+assign wr_row = {pos[7:4]};
+assign rd_col = {reg_adr[3:0]};
+assign rd_row = {reg_adr[7:4]};
+
+
+wire buf_clk        ;
+wire buf_clear_n    ;
+wire buf_pixel      ;
+wire buf_we_pixel   ;
+wire buf_wr_col[4]  ;
+wire buf_wr_row[4]  ;
+wire buf_refresh    ;
+wire buf_rd_col[4]  ;
+wire buf_rd_row[4]  ;
+wire buf_is_reg_data;
+wire buf_g[4]       ;
+
+
+sub M3_screen_plug (
+    .I_clk     <= I_clk,
+    .I_clear_n <= clear_n,
+    .I_din     <= pixel,
+    .I_wr_ena  <= we_pixel,
+    .I_wr_col  <= wr_col,
+    .I_wr_row  <= wr_row,
+    .I_refresh <= refresh,
+    .I_rd_col  <= rd_col,
+    .I_rd_row  <= rd_row,
+    .I_rd_ena  <= is_reg_data,
+    .O_dout    => g,
+
+    .O_clk     => buf_clk,
+    .O_clear_n => buf_clear_n,
+    .O_din     => buf_pixel,
+    .O_wr_ena  => buf_we_pixel,
+    .O_wr_col  => buf_wr_col,
+    .O_wr_row  => buf_wr_row,
+    .O_refresh => buf_refresh,
+    .O_rd_col  => buf_rd_col,
+    .O_rd_row  => buf_rd_row,
+    .O_rd_ena  => buf_is_reg_data,
+    .I_dout    <= buf_g
+);
+
+sub M3_screen (
+    .I_clk     <= buf_clk,
+    .I_clear_n <= buf_clear_n,
+    .I_din     <= buf_pixel,
+    .I_wr_ena  <= buf_we_pixel,
+    .I_wr_col  <= buf_wr_col,
+    .I_wr_row  <= buf_wr_row,
+    .I_refresh <= buf_refresh,
+    .I_rd_col  <= buf_rd_col,
+    .I_rd_row  <= buf_rd_row,
+    .I_rd_ena  <= buf_is_reg_data,
+    .O_dout    => buf_g
+);
+
+assign pixel_dout = {{7{GND}},g[3],{7{GND}},g[2],{7{GND}},g[1],{7{GND}},g[0]};
+
+gate ram_dout = or(pixel_dout, vsync);
+
+assign O_ram_dout = {ram_dout};
+
+
+place M3_screen_plug @(0,0,0);
+place M3_screen      @(0,0,0);
+
+place M3_vsync         @(8,0,0);
+place M3_counter_8     @(8,9,0);
+place rstn_buf         @(8,5,0);
+place is_reg_data      @(8,5,1);
+place we_reg_0         @(8,5,2);
+place we_pixel         @(8,5,3);
+place we_pos           @(8,5,4);
+place we_refresh       @(8,5,5);
+place refresh          @(8,5,6);
+place byte_refresh_0n  @(8,5,7);
+place byte_we_refresh  @(8,5,8);
+place clear_n          @(8,5,9);
+place vysnc_8          @(9,5,0);
+place ram_dout         @(15,5,0);
+
+place GND           @(0,26,0);
+place VCC           @(0,26,1);
+place period        @(0,25,0);
+
+debug vsync_cnt;
+place dbg_vsync_cnt @(0,27,0);
+
+
+endmodule

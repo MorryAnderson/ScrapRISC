@@ -1,0 +1,82 @@
+module M3_instr_rom_plug (
+    input  I_adr[7],
+    output O_adr[7],
+    input  I_dat[32],
+    output O_dat[32]
+);
+
+gate buf_adr = buf(I_adr);
+assign O_adr = {buf_adr};
+
+gate d_0  = buf(I_dat[0]);
+gate d_1  = buf(I_dat[1]);
+gate d_2  = buf(I_dat[2]);
+gate d_3  = buf(I_dat[3]);
+gate d_4  = buf(I_dat[4]);
+gate d_5  = buf(I_dat[5]);
+gate d_6  = buf(I_dat[6]);
+gate d_7  = buf(I_dat[7]);
+gate d_8  = buf(I_dat[8]);
+gate d_9  = buf(I_dat[9]);
+gate d_10 = buf(I_dat[10]);
+gate d_11 = buf(I_dat[11]);
+gate d_12 = buf(I_dat[12]);
+gate d_13 = buf(I_dat[13]);
+gate d_14 = buf(I_dat[14]);
+gate d_15 = buf(I_dat[15]);
+gate d_16 = buf(I_dat[16]);
+gate d_17 = buf(I_dat[17]);
+gate d_18 = buf(I_dat[18]);
+gate d_19 = buf(I_dat[19]);
+gate d_20 = buf(I_dat[20]);
+gate d_21 = buf(I_dat[21]);
+gate d_22 = buf(I_dat[22]);
+gate d_23 = buf(I_dat[23]);
+gate d_24 = buf(I_dat[24]);
+gate d_25 = buf(I_dat[25]);
+gate d_26 = buf(I_dat[26]);
+gate d_27 = buf(I_dat[27]);
+gate d_28 = buf(I_dat[28]);
+gate d_29 = buf(I_dat[29]);
+gate d_30 = buf(I_dat[30]);
+gate d_31 = buf(I_dat[31]);
+
+assign O_dat = {d_31,d_30,d_29,d_28,d_27,d_26,d_25,d_24,d_23,d_22,d_21,d_20,d_19,d_18,d_17,d_16,d_15,d_14,d_13,d_12,d_11,d_10,d_9,d_8,d_7,d_6,d_5,d_4,d_3,d_2,d_1,d_0};
+
+
+place buf_adr @(0,0,0);
+place d_31 @(2,0,0);
+place d_30 @(3,0,0);
+place d_29 @(4,0,0);
+place d_28 @(5,0,0);
+place d_27 @(6,0,0);
+place d_26 @(7,0,0);
+place d_25 @(8,0,0);
+place d_24 @(9,0,0);
+place d_23 @(10,0,0);
+place d_22 @(11,0,0);
+place d_21 @(12,0,0);
+place d_20 @(13,0,0);
+place d_19 @(14,0,0);
+place d_18 @(15,0,0);
+place d_17 @(16,0,0);
+place d_16 @(17,0,0);
+place d_15 @(18,0,0);
+place d_14 @(19,0,0);
+place d_13 @(20,0,0);
+place d_12 @(21,0,0);
+place d_11 @(22,0,0);
+place d_10 @(23,0,0);
+place d_9  @(24,0,0);
+place d_8  @(25,0,0);
+place d_7  @(26,0,0);
+place d_6  @(27,0,0);
+place d_5  @(28,0,0);
+place d_4  @(29,0,0);
+place d_3  @(30,0,0);
+place d_2  @(31,0,0);
+place d_1  @(32,0,0);
+place d_0  @(33,0,0);
+
+
+endmodule

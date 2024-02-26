@@ -1,0 +1,30 @@
+module M3_imm_mux (
+    input I_fmt[5],
+    input I_imm_i[32],
+    input I_imm_s[32],
+    input I_imm_b[32],
+    input I_imm_u[32],
+    input I_imm_j[32],
+    output O_imm[32]
+);
+
+
+gate fmt_i = and(I_imm_i,I_fmt[0]);
+gate fmt_s = and(I_imm_s,I_fmt[1]);
+gate fmt_b = and(I_imm_b,I_fmt[2]);
+gate fmt_u = and(I_imm_u,I_fmt[3]);
+gate fmt_j = and(I_imm_j,I_fmt[4]);
+gate imm   = or(fmt_i,fmt_s,fmt_b,fmt_u,fmt_j);
+
+assign O_imm = {imm};
+
+
+place fmt_i @(0,0,0);
+place fmt_s @(0,1,0);
+place fmt_b @(0,2,0);
+place fmt_u @(0,3,0);
+place fmt_j @(0,4,0);
+place imm   @(0,5,0);
+
+
+endmodule

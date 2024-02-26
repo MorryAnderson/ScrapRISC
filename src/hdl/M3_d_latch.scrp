@@ -1,0 +1,36 @@
+module M3_d_latch (
+    input I_rstn,
+    input I_en,
+    input I_d,
+    output O_q
+);
+
+wire w_br;
+
+gate buf_rst = buf(I_rstn);
+gate buf_top = buf(I_d);
+gate buf_mid = buf(I_en);
+gate buf_but = not(I_d);
+
+gate tl = nand(buf_top, buf_mid, buf_rst);
+gate bl = nand(buf_but, buf_mid);
+gate tr = nand(tl, w_br);
+gate buf_right = buf(tr);
+gate br = nand(bl, buf_right, buf_rst);
+
+assign w_br = {br};
+assign O_q = {tr};
+
+
+place buf_rst   @(0,0,0);
+place buf_top   @(0,0,1);
+place buf_mid   @(0,0,2);
+place buf_but   @(0,0,3);
+place tl        @(0,0,4);
+place bl        @(0,0,5);
+place br        @(0,0,6);
+place buf_right @(0,0,7);
+place tr        @(0,0,8);
+
+
+endmodule

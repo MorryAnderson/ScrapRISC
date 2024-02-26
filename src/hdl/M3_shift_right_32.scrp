@@ -1,0 +1,86 @@
+module M3_shift_right_32 (
+    input I_in[32],
+    input I_len[5],
+    input I_arith,
+    output O_out[32]
+);
+
+
+
+gate shf_in = and(I_arith,I_in[31]);
+
+
+wire s1_sel[2];
+wire s2_sel[2];
+wire s3_sel;
+
+assign s1_sel = {I_len[1],I_len[0]};
+assign s2_sel = {I_len[3],I_len[2]};
+assign s3_sel = {I_len[4]};
+
+
+wire s1_0[32];
+wire s1_1[32];
+wire s1_2[32];
+wire s1_3[32];
+wire s1_q[32];
+
+wire s2_0[32];
+wire s2_1[32];
+wire s2_2[32];
+wire s2_3[32];
+wire s2_q[32];
+
+wire s3_0[32];
+wire s3_1[32];
+wire s3_q[32];
+
+
+assign s1_0 = {I_in[31:0]};
+assign s1_1 = {shf_in,I_in[31:1]};
+assign s1_2 = {{2{shf_in}},I_in[31:2]};
+assign s1_3 = {{3{shf_in}},I_in[31:3]};
+
+assign s2_0 = {s1_q[31:0]};
+assign s2_1 = {{4{shf_in}},s1_q[31:4]};
+assign s2_2 = {{8{shf_in}},s1_q[31:8]};
+assign s2_3 = {{12{shf_in}},s1_q[31:12]};
+
+assign s3_0 = {s2_q[31:0]};
+assign s3_1 = {{16{shf_in}},s2_q[31:16]};
+
+
+sub M3_mux4_32 (
+    .I_sel <= s1_sel,
+    .I_d0  <= s1_0,
+    .I_d1  <= s1_1,
+    .I_d2  <= s1_2,
+    .I_d3  <= s1_3,
+    .O_q   => s1_q
+);
+place M3_mux4_32 @(0,0,0);
+
+
+sub M3_mux4_32 (
+    .I_sel <= s2_sel,
+    .I_d0  <= s2_0,
+    .I_d1  <= s2_1,
+    .I_d2  <= s2_2,
+    .I_d3  <= s2_3,
+    .O_q   => s2_q
+);
+place M3_mux4_32 @(5,0,0);
+
+
+sub M3_mux2_32 (
+    .I_sel <= s3_sel,
+    .I_d0  <= s3_0,
+    .I_d1  <= s3_1,
+    .O_q   => O_out
+);
+place M3_mux2_32 @(10,0,0);
+
+place shf_in @(4,0,32);
+
+
+endmodule

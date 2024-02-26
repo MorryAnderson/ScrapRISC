@@ -1,0 +1,143 @@
+module M3_align (
+    input I_in_dat[32],
+    input I_adr_lsb[2],
+    input I_mask[2],
+    output O_out_dat[32],
+    output O_byte_ena[4]
+);
+
+
+wire shf[2];
+wire mask[4];
+
+assign shf = {I_adr_lsb};
+assign mask = {I_mask[1],I_mask[1],I_mask[0],VCC};
+
+
+wire zero[8];
+assign zero  = {{8{GND}}};
+
+
+wire byte_0[8];
+wire byte_1[8];
+wire byte_2[8];
+wire byte_3[8];
+
+assign byte_3 = {I_in_dat[31:24]};
+assign byte_2 = {I_in_dat[23:16]};
+assign byte_1 = {I_in_dat[15:8]};
+assign byte_0 = {I_in_dat[7:0]};
+
+
+wire dat_0[8];
+wire dat_1[8];
+wire dat_2[8];
+wire dat_3[8];
+
+
+sub M3_mux4_8 (
+    .I_sel <= shf,
+    .I_d0  <= byte_3,
+    .I_d1  <= zero,
+    .I_d2  <= byte_1,
+    .I_d3  <= byte_0,
+    .O_q   => dat_3
+);
+place M3_mux4_8 @(0,0,24);
+
+sub M3_mux4_8 (
+    .I_sel <= shf,
+    .I_d0  <= byte_2,
+    .I_d1  <= zero,
+    .I_d2  <= byte_0,
+    .I_d3  <= zero,
+    .O_q   => dat_2
+);
+place M3_mux4_8 @(0,0,16);
+
+sub M3_mux4_8 (
+    .I_sel <= shf,
+    .I_d0  <= byte_1,
+    .I_d1  <= byte_0,
+    .I_d2  <= zero,
+    .I_d3  <= zero,
+    .O_q   => dat_1
+);
+place M3_mux4_8 @(0,0,8);
+
+sub M3_mux4_8 (
+    .I_sel <= shf,
+    .I_d0  <= byte_0,
+    .I_d1  <= zero,
+    .I_d2  <= zero,
+    .I_d3  <= zero,
+    .O_q   => dat_0
+);
+place M3_mux4_8 @(0,0,0);
+
+
+assign O_out_dat = {dat_3, dat_2, dat_1, dat_0};
+
+
+wire ena_0;
+wire ena_1;
+wire ena_2;
+wire ena_3;
+
+wire mask_0;
+wire mask_1;
+wire mask_2;
+wire mask_3;
+
+assign mask_0 = {mask[0]};
+assign mask_1 = {mask[1]};
+assign mask_2 = {mask[2]};
+assign mask_3 = {mask[3]};
+
+
+sub M3_mux4 (
+    .I_sel <= shf,
+    .I_d0  <= mask_3,
+    .I_d1  <= GND,
+    .I_d2  <= mask_1,
+    .I_d3  <= mask_0,
+    .O_q   => ena_3
+);
+place M3_mux4 @(1,0,24);
+
+sub M3_mux4 (
+    .I_sel <= shf,
+    .I_d0  <= mask_2,
+    .I_d1  <= GND,
+    .I_d2  <= mask_0,
+    .I_d3  <= GND,
+    .O_q   => ena_2
+);
+place M3_mux4 @(1,0,16);
+
+sub M3_mux4 (
+    .I_sel <= shf,
+    .I_d0  <= mask_1,
+    .I_d1  <= mask_0,
+    .I_d2  <= GND,
+    .I_d3  <= GND,
+    .O_q   => ena_1
+);
+place M3_mux4 @(1,0,8);
+
+sub M3_mux4 (
+    .I_sel <= shf,
+    .I_d0  <= mask_0,
+    .I_d1  <= GND,
+    .I_d2  <= GND,
+    .I_d3  <= GND,
+    .O_q   => ena_0
+);
+place M3_mux4 @(1,0,0);
+
+assign O_byte_ena = {ena_3,ena_2,ena_1,ena_0};
+
+place GND @(0,0,1);
+place VCC @(0,0,2);
+
+endmodule

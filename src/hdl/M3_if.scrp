@@ -1,0 +1,123 @@
+module M3_if (
+    input I_clk,
+    input I_pc_rstn,
+    input I_pc_we,
+    input I_pred_adr[32],
+    input I_jump_adr[32],
+    input I_intr_adr[32],
+    input I_pred,
+    input I_stall_n,
+    input I_jump,
+    input I_intr,
+    output O_pc[32],
+    output O_rom_adr[7],
+    input I_rom_dout[32],
+    output O_is_ecall,
+    output O_is_ebreak,
+    output O_is_branch,
+    output O_is_jal,
+    output O_is_jalr,
+    output O_instr[32]
+);
+
+
+wire nxt[32];
+wire pc_reg[32];
+
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+
+sub M3_pc_nxt (
+    .I_pc       <= pc_reg,
+    .I_pred_adr <= I_pred_adr,
+    .I_jump_adr <= I_jump_adr,
+    .I_intr_adr <= I_intr_adr,
+    .I_pred     <= I_pred,
+    .I_stall_n  <= I_stall_n,
+    .I_jump     <= I_jump,
+    .I_intr     <= I_intr,
+    .O_nxt      => nxt
+);
+place M3_pc_nxt @(0,0,0);
+
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_pc_rstn,
+    .I_ena  <= I_pc_we,
+    .I_d    <= nxt,
+    .O_q    => pc_reg
+);
+place M3_dff_32 @(3,0,0);
+
+
+assign O_pc = {pc_reg};
+assign O_rom_adr = {pc_reg[8:2]};
+assign O_instr = {I_rom_dout};
+
+
+sub M3_bj_type (
+    .I_instr     <= I_rom_dout,
+    .O_is_branch => O_is_branch,
+    .O_is_jal    => O_is_jal,
+    .O_is_jalr   => O_is_jalr
+);
+
+
+wire funct7[7];
+wire rs2[5];
+wire rs1[5];
+wire funct3[3];
+wire rd[5];
+wire opcode[7];
+
+assign funct7 = {I_rom_dout[31:25]};
+assign rs2    = {I_rom_dout[24:20]};
+assign rs1    = {I_rom_dout[19:15]};
+assign funct3 = {I_rom_dout[14:12]};
+assign rd     = {I_rom_dout[11:7]};
+assign opcode = {I_rom_dout[6:0]};
+
+gate funct7_n = not(funct7);
+gate rs2_n = not(rs2);
+gate rs1_n = not(rs1);
+gate funct3_n = not(funct3);
+gate rd_n = not(rd);
+gate opcode_n = not(opcode);
+
+
+gate env = and(opcode[6:0]);
+gate funct3_0 = and(funct3_n[2:0]);
+gate rs2_0 = and(rs2_n[4:0]);
+gate rs2_1 = and(rs2[0], rs2_n[4:1]);
+gate funct7_0 = and(funct7_n[6:0]);
+
+gate is_ecall = and(env,funct3_0,funct7_0,rs2_0);
+gate is_ebreak = and(env,funct3_0,funct7_0,rs2_1);
+
+assign O_is_ecall = {is_ecall};
+assign O_is_ebreak = {is_ebreak};
+
+
+place funct7_n   @(2,0,25);
+place rs2_n      @(2,0,20);
+place rs1_n      @(2,0,15);
+place funct3_n   @(2,0,12);
+place rd_n       @(2,0,7);
+place opcode_n   @(2,0,0);
+
+place is_ecall   @(5,4,0);
+place is_ebreak  @(5,4,1);
+place M3_bj_type @(5,4,2);
+place clk_buf    @(5,4,12);
+place clk_buf2   @(5,4,13);
+place env        @(5,4,14);
+place funct3_0   @(5,4,15);
+place rs2_0      @(5,4,16);
+place rs2_1      @(5,4,17);
+place funct7_0   @(5,4,18);
+
+
+endmodule

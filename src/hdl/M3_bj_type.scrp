@@ -1,0 +1,31 @@
+module M3_bj_type (
+    input I_instr[32],
+    output O_is_branch,
+    output O_is_jal,
+    output O_is_jalr
+);
+
+wire opcode[7];
+assign opcode = {I_instr[6:0]};
+
+wire op_p[7];
+assign op_p = {opcode};
+gate op_n = not(opcode);
+
+gate is_branch = and(op_p[6],op_p[5],op_n[4],op_n[3],op_n[2],op_p[1],op_p[0]);
+gate is_jal    = and(op_p[6],op_p[5],op_n[4],op_p[3],op_p[2],op_p[1],op_p[0]);
+gate is_jalr   = and(op_p[6],op_p[5],op_n[4],op_n[3],op_p[2],op_p[1],op_p[0]);
+
+
+assign O_is_branch = {is_branch};
+assign O_is_jal    = {is_jal};
+assign O_is_jalr   = {is_jalr};
+
+
+place is_branch  @(0,0,0);
+place is_jal     @(0,0,1);
+place is_jalr    @(0,0,2);
+place op_n       @(0,0,3);
+
+
+endmodule

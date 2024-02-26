@@ -1,0 +1,33 @@
+module M3_forwarding_mem (
+    input I_mem_is_store,
+    input I_mem_rs_sel[5],
+    input I_wb_rd_we,
+    input I_wb_rd_sel[5],  
+    output O_mem_vld,  
+    output O_wb_vld
+);
+
+
+wire vld;
+
+sub M3_dependency (
+    .I_rd_we  <= I_wb_rd_we,
+    .I_rd_sel <= I_wb_rd_sel,
+    .I_rs_sel <= I_mem_rs_sel,
+    .O_vld    => vld
+);
+
+
+gate mem_vld = nand(I_mem_is_store, vld);
+gate wb_vld = and(I_mem_is_store, vld);
+
+assign O_mem_vld = {mem_vld};
+assign O_wb_vld = {wb_vld};
+
+
+place M3_dependency @(0,0,0);
+place mem_vld @(2,0,3);
+place wb_vld  @(2,0,4);
+
+
+endmodule

@@ -1,0 +1,42 @@
+module M3_priority (
+    input I_rst,
+    input I_d1,
+    input I_d2,
+    input I_d3,
+    output O_none,
+    output O_q1,
+    output O_q2,
+    output O_q3
+);
+
+
+gate rstn = not(I_rst);
+gate d1_n = not(I_d1);
+gate d2_n = not(I_d2);
+gate d3_n = not(I_d3);
+
+gate nor1 = nor(I_d1,I_d2,I_d3);
+gate none = or(I_rst,nor1);
+assign O_none = {none};
+
+gate q1 = and(rstn,I_d1);
+gate q2 = and(rstn,d1_n,I_d2);
+gate q3 = and(rstn,d1_n,d2_n,I_d3);
+
+assign O_q1 = {q1};
+assign O_q2 = {q2};
+assign O_q3 = {q3};
+
+
+place q1   @(0,0, 3);
+place d1_n @(0,0, 4);
+place nor1 @(0,0, 5);
+place q2   @(0,0, 9);
+place d2_n @(0,0,10);
+place rstn @(0,0,11);
+place q3   @(0,0,15);
+place d3_n @(0,0,16);
+place none @(0,0,17);
+
+
+endmodule

@@ -1,0 +1,17 @@
+module M3_screen (
+    input I_clk,
+    input I_clear_n,
+    input I_din,
+    input I_wr_ena,
+    input I_wr_col[4],
+    input I_wr_row[4],
+    input I_refresh,
+    input I_rd_col[4],
+    input I_rd_row[4],
+    input I_rd_ena,
+    output O_dout[4]
+);
+
+
+
+endmodule

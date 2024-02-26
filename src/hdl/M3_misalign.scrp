@@ -1,0 +1,45 @@
+module M3_misalign (
+    input I_adr_lsb[2],
+    input I_mask[2],
+    input I_is_store,
+    input I_is_load,
+    output O_misalign
+);
+
+
+wire msk_p[2];
+wire msk_n[2];
+
+assign msk_p = {I_mask};
+gate msk_n1 = not(I_mask[1]);
+gate msk_n0 = not(I_mask[0]);
+assign msk_n = {msk_n1,msk_n0};
+
+gate a1 = and(msk_p[0],msk_n[1],I_adr_lsb[0]);
+
+gate o1 = or(I_adr_lsb[1],I_adr_lsb[0]);
+gate a2 = and(msk_p[0],msk_p[1],o1);
+
+gate a3 = and(msk_n[0],msk_p[1]);
+
+gate o2 = or(I_is_load,I_is_store);
+
+gate o3 = or(a1,a2,a3);
+gate misalign = and(o3,o2);
+assign O_misalign = {misalign};
+
+
+place a1       @(0,0,0);
+place a2       @(0,0,1);
+place a3       @(0,0,2);
+place o3       @(0,0,3);
+
+place msk_n0   @(1,0,0);
+place msk_n1   @(1,0,1);
+place o1       @(1,0,2);
+place o2       @(1,0,3);
+
+place misalign @(0,0,4);
+
+
+endmodule

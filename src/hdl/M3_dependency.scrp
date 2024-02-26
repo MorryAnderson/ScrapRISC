@@ -1,0 +1,42 @@
+module M3_dependency (
+    input I_rd_we,
+    input I_rd_sel[5],
+    input I_rs_sel[5],
+    output O_vld
+);
+
+
+wire e1;
+wire e2;
+wire zero[5];
+
+assign zero = {{5{GND}}};
+
+sub M3_is_equal_5 (
+    .I_a <= I_rd_sel,
+    .I_b <= I_rs_sel,
+    .O_equal => e1
+);
+place M3_is_equal_5 @(0,0,0);
+
+
+sub M3_is_equal_5 (
+    .I_a <= I_rd_sel,
+    .I_b <= zero,
+    .O_equal => e2
+);
+place M3_is_equal_5 @(1,0,0);
+
+
+gate e2_n = not(e2);
+gate vld =  and(I_rd_we,e1,e2_n);
+assign O_vld = {vld};
+
+
+place GND @(2,0,2);
+place e2_n @(2,0,1);
+place vld @(2,0,0);
+
+
+
+endmodule

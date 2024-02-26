@@ -1,0 +1,461 @@
+module M3_cpu (
+    input  I_clk,
+    input  I_rstn,
+    input  I_ext_intr,
+
+    output O_sepc[32],
+    output O_scause[4],
+    output O_ebreak,
+
+    output O_rom_adr[7],
+    input I_rom_dout[32],
+
+    output O_ram_adr[32],
+    output O_ram_re,
+    output O_ram_we,
+    output O_ram_be[4],
+    output O_ram_din[32],
+    input  I_ram_dout[32]
+);
+
+
+wire pred_adr[32];
+wire jump_adr[32];
+wire intr_adr[32];
+wire rom_dout[32];
+
+wire if_stall_n;
+wire pred;
+wire jump;
+wire intr;
+wire pc_we;
+
+wire if_pc[32];
+wire if_instr[32];
+wire if_branch;
+wire if_jal;
+wire if_jalr;
+wire i_ecall;
+wire i_ebreak;
+wire rom_adr[7];
+
+wire if_ppl_pc[32];
+wire if_ppl_instr[32];
+wire if_ppl_branch;
+wire if_ppl_jal;
+wire if_ppl_jalr;
+
+wire id_pc[32];
+wire id_unknown;
+wire id_b1[32];
+wire id_b2[32];
+wire id_a1[32];
+wire id_a2[32];
+wire id_m[32];
+wire id_ex_ctrl[8];
+wire id_mem_ctrl[8];
+wire id_wb_ctrl[8];
+wire rs1_sel[5];
+wire rs2_sel[5];
+wire i_unknown;
+
+wire id_ppl_pc[32];
+wire id_ppl_b1[32];
+wire id_ppl_b2[32];
+wire id_ppl_a1[32];
+wire id_ppl_a2[32];
+wire id_ppl_m[32];
+wire id_ppl_ex_ctrl[8];
+wire id_ppl_mem_ctrl[8];
+wire ex_wb_ctrl_in[8];
+wire ex_wb_ctrl_out[8];
+wire rs2_ppl_sel[5];
+
+wire ex_pc[32];
+wire ex_b;
+wire ex_a[32];
+wire ex_m[32];
+wire ex_mem_ctrl[8];
+wire ex_rs2_sel[5];
+
+wire mem_pc[32];
+wire mem_b;
+wire mem_a[32];
+wire mem_m[32];
+wire mem_mem_ctrl[8];
+wire mem_ctrl[8];
+wire mem_wb_ctrl[8];
+wire mem_rs2_sel[5];
+wire mem_branch;
+wire mem_jal;
+wire mem_jalr;
+
+wire mem_o_pc[32];
+wire mem_pc4[32];
+wire i_misalign;
+wire mem_pc_a[32];
+wire mem_o_m[32];
+wire mem_o_wb_ctrl[8];
+wire ram_adr[32];
+wire ram_re;
+wire ram_we;
+wire ram_be[4];
+wire ram_din[32];
+wire ram_dout[32];
+
+
+wire wb_pc[32];
+wire wb_a_in[32];
+wire wb_m_in[32];
+wire wb_wb_ctrl[8];
+
+wire rd_sel[5];
+wire rd_we;
+wire rd_data[32];
+
+
+wire ext_intr;
+wire srn;
+wire clk;
+
+
+wire rs1_src[32];
+wire rs2_src[32];
+wire m_src[32];
+
+wire stall_n;
+wire scause[4];
+wire sepc[32];
+
+wire ppl_if_id_srn;
+wire ppl_if_id_ena;
+wire ppl_id_ex_srn;
+wire ppl_id_ex_ena;
+wire ppl_ex_mem_srn;
+wire ppl_ex_mem_ena;
+wire ppl_mem_wb_srn;
+wire ppl_mem_wb_ena;
+
+wire ecall;
+wire ebreak;
+wire unknown;
+wire misalign;
+
+wire reg_rs1[32];
+wire reg_rs2[32];
+
+wire zero32[32];
+assign zero32 = {{32{GND}}};
+
+
+gate rstn_buf = buf(I_rstn);
+assign srn = {rstn_buf};
+assign ext_intr = {I_ext_intr};
+
+
+sub M3_if (
+    .I_clk       <= I_clk,
+    .I_pc_rstn   <= srn,
+    .I_pc_we     <= pc_we,
+    .I_pred_adr  <= pred_adr,
+    .I_jump_adr  <= jump_adr,
+    .I_intr_adr  <= intr_adr,
+    .I_pred      <= pred,
+    .I_stall_n   <= if_stall_n,
+    .I_jump      <= jump,
+    .I_intr      <= intr,
+    .O_pc        => if_pc,
+    .O_rom_adr   => rom_adr,
+    .I_rom_dout  <= rom_dout,
+    .O_is_ecall  => i_ecall,
+    .O_is_ebreak => i_ebreak,
+    .O_is_branch => if_branch,
+    .O_is_jal    => if_jal,
+    .O_is_jalr   => if_jalr,
+    .O_instr     => if_instr
+);
+
+sub M3_ppl_if_id (
+    .I_clk  <= I_clk,
+    .I_rstn <= ppl_if_id_srn,
+    .I_ena  <= ppl_if_id_ena,
+    .I_d1   <= if_pc,
+    .I_d2   <= if_instr,
+    .I_d3   <= if_branch,
+    .I_d4   <= if_jal,
+    .I_d5   <= if_jalr,
+    .O_q1   => if_ppl_pc,
+    .O_q2   => if_ppl_instr,
+    .O_q3   => if_ppl_branch,
+    .O_q4   => if_ppl_jal,
+    .O_q5   => if_ppl_jalr
+);
+
+sub M3_id (
+    .I_instr     <= if_ppl_instr,
+    .I_is_branch <= if_ppl_branch,
+    .I_is_jal    <= if_ppl_jal,
+    .I_is_jalr   <= if_ppl_jalr,
+    .I_pc_in     <= if_ppl_pc,
+    .I_rs1_src   <= rs1_src,
+    .I_rs2_src   <= rs2_src,
+    .O_unknown   => i_unknown,
+    .O_ex_ctrl   => id_ex_ctrl,
+    .O_mem_ctrl  => id_mem_ctrl,
+    .O_wb_ctrl   => id_wb_ctrl,
+    .O_rs1_sel   => rs1_sel,
+    .O_rs2_sel   => rs2_sel,
+    .O_pc        => id_pc,
+    .O_a1        => id_a1,
+    .O_a2        => id_a2,
+    .O_b1        => id_b1,
+    .O_b2        => id_b2,
+    .O_m         => id_m
+);
+
+sub M3_ppl_id_ex (
+    .I_clk  <= I_clk,
+    .I_rstn <= ppl_id_ex_srn,
+    .I_ena  <= ppl_id_ex_ena,
+    .I_d1   <= id_pc,
+    .I_d2   <= id_b1,
+    .I_d3   <= id_b2,
+    .I_d4   <= id_a1,
+    .I_d5   <= id_a2,
+    .I_d6   <= id_m,
+    .I_d7   <= id_ex_ctrl,
+    .I_d8   <= id_mem_ctrl,
+    .I_d9   <= id_wb_ctrl,
+    .I_d10  <= rs2_sel,
+    .O_q1   => id_ppl_pc,
+    .O_q2   => id_ppl_b1,
+    .O_q3   => id_ppl_b2,
+    .O_q4   => id_ppl_a1,
+    .O_q5   => id_ppl_a2,
+    .O_q6   => id_ppl_m,
+    .O_q7   => id_ppl_ex_ctrl,
+    .O_q8   => id_ppl_mem_ctrl,
+    .O_q9   => ex_wb_ctrl_in,
+    .O_q10  => rs2_ppl_sel
+);
+
+sub M3_ex (
+    .I_a1          <= id_ppl_a1,
+    .I_a2          <= id_ppl_a2,
+    .I_b1          <= id_ppl_b1,
+    .I_b2          <= id_ppl_b2,
+    .I_pc_in       <= id_ppl_pc,
+    .I_m_in        <= id_ppl_m,
+    .I_ex_ctrl_in  <= id_ppl_ex_ctrl,
+    .I_mem_ctrl_in <= id_ppl_mem_ctrl,
+    .I_wb_ctrl_in  <= ex_wb_ctrl_in,
+    .I_rs2_sel_in  <= rs2_ppl_sel,
+    .O_a           => ex_a,
+    .O_b           => ex_b,
+    .O_pc          => ex_pc,
+    .O_m           => ex_m,
+    .O_mem_ctrl    => ex_mem_ctrl,
+    .O_wb_ctrl     => ex_wb_ctrl_out,
+    .O_rs2_sel     => ex_rs2_sel
+);
+
+sub M3_ppl_ex_mem (
+    .I_clk  <= I_clk,
+    .I_rstn <= ppl_ex_mem_srn,
+    .I_ena  <= ppl_ex_mem_ena,
+    .I_d1   <= ex_pc,
+    .I_d2   <= ex_b,
+    .I_d3   <= ex_a,
+    .I_d4   <= ex_m,
+    .I_d5   <= ex_mem_ctrl,
+    .I_d6   <= ex_wb_ctrl_out,
+    .I_d7   <= ex_rs2_sel,
+    .O_q1   => mem_pc,
+    .O_q2   => mem_b,
+    .O_q3   => mem_a,
+    .O_q4   => mem_m,
+    .O_q5   => mem_mem_ctrl,
+    .O_q6   => mem_wb_ctrl,
+    .O_q7   => mem_rs2_sel
+);
+
+assign mem_ctrl = {mem_mem_ctrl};
+
+
+sub M3_mem (
+    .I_a_in        <= mem_a,
+    .I_m_in        <= m_src,
+    .O_a           => mem_pc_a,
+    .O_m           => mem_o_m,
+    .I_pc_in       <= mem_pc,
+    .O_pc          => mem_o_pc,
+    .O_pc4         => mem_pc4,
+    .I_mem_ctrl_in <= mem_mem_ctrl,
+    .I_wb_ctrl_in  <= mem_wb_ctrl,
+    .O_wb_ctrl     => mem_o_wb_ctrl,
+    .O_misalign    => i_misalign,
+    .I_ram_dout    <= ram_dout,
+    .O_ram_adr     => ram_adr,
+    .O_ram_re      => ram_re,
+    .O_ram_we      => ram_we,
+    .O_ram_be      => ram_be,
+    .O_ram_din     => ram_din
+);
+
+sub M3_ppl_mem_wb (
+    .I_clk  <= I_clk,
+    .I_rstn <= ppl_mem_wb_srn,
+    .I_ena  <= ppl_mem_wb_ena,
+    .I_d1   <= mem_o_pc,
+    .I_d2   <= mem_pc_a,
+    .I_d3   <= mem_o_m,
+    .I_d4   <= mem_o_wb_ctrl,
+    .O_q1   => wb_pc,
+    .O_q2   => wb_a_in,
+    .O_q3   => wb_m_in,
+    .O_q4   => wb_wb_ctrl
+);
+
+sub M3_wb (
+    .I_a_in       <= wb_a_in,
+    .I_m_in       <= wb_m_in,
+    .I_wb_ctrl_in <= wb_wb_ctrl,
+    .O_rd_data    => rd_data,
+    .O_rd_sel     => rd_sel,
+    .O_rd_we      => rd_we  
+);
+
+sub M3_bpu (
+    .I_clk        <= I_clk,
+    .I_rstn       <= srn,
+    .I_if_pc      <= if_pc,
+    .I_if_branch  <= if_branch,
+    .I_if_jal     <= if_jal,
+    .I_if_jalr    <= if_jalr,
+    .I_mem_pc     <= mem_pc,
+    .I_mem_pc4    <= mem_pc4,
+    .I_mem_ctrl   <= mem_ctrl,
+    .I_mem_branch <= mem_branch,
+    .I_mem_jal    <= mem_jal,
+    .I_mem_jalr   <= mem_jalr,
+    .I_mem_a      <= mem_a,
+    .I_mem_b      <= mem_b,
+    .O_pred_adr   => pred_adr,
+    .O_jump_adr   => jump_adr,
+    .O_jump       => jump,
+    .O_pred       => pred    
+);
+
+sub M3_dfu (
+    .I_id_rs1_sel   <= rs1_sel,
+    .I_id_rs2_sel   <= rs2_sel,
+    .I_mem_rs2_sel  <= mem_rs2_sel,
+    .I_ex_wb_ctrl   <= ex_wb_ctrl_in,
+    .I_mem_wb_ctrl  <= mem_wb_ctrl,
+    .I_wb_wb_ctrl   <= wb_wb_ctrl,
+    .I_id_mem_ctrl  <= id_mem_ctrl,
+    .I_mem_mem_ctrl <= mem_mem_ctrl,
+    .I_reg_rs1      <= reg_rs1,
+    .I_reg_rs2      <= reg_rs2,
+    .I_ex_rs        <= zero32,
+    .I_mem_rs       <= mem_pc_a,
+    .I_mem_m        <= mem_m,
+    .I_wb_rs        <= rd_data,
+    .O_ex_rs1_src   => rs1_src,
+    .O_ex_rs2_src   => rs2_src,
+    .O_mem_rs2_src  => m_src
+);
+
+sub M3_hdu (
+    .I_id_rs1_sel  <= rs1_sel,
+    .I_id_rs2_sel  <= rs2_sel,
+    .I_ex_wb_ctrl  <= ex_wb_ctrl_in,
+    .I_mem_wb_ctrl <= mem_wb_ctrl,
+    .I_id_mem_ctrl <= id_mem_ctrl,
+    .O_stall_n     => stall_n 
+);
+
+sub M3_eiu (
+    .I_clk      <= I_clk,
+    .I_rstn     <= srn,
+    .I_pc       <= wb_pc,
+    .I_ecall    <= ecall,
+    .I_unknown  <= unknown,
+    .I_misalign <= misalign,
+    .I_ext_intr <= ext_intr,
+    .O_scause   => scause,
+    .O_sepc     => sepc,
+    .O_intr     => intr,
+    .O_intr_adr => intr_adr
+);
+
+sub M3_cu (
+    .I_stall_n    <= stall_n,
+    .I_jump       <= jump,
+    .I_intr       <= intr,
+    .I_rstn       <= srn,
+    .O_pc_we      => pc_we,
+    .O_if_stall_n => if_stall_n,
+    .O_if_id_ena  => ppl_if_id_ena,
+    .O_id_ex_ena  => ppl_id_ex_ena,
+    .O_ex_mem_ena => ppl_ex_mem_ena,
+    .O_mem_wb_ena => ppl_mem_wb_ena,
+    .O_id_ex_srn  => ppl_id_ex_srn,
+    .O_if_id_srn  => ppl_if_id_srn,
+    .O_ex_mem_srn => ppl_ex_mem_srn,
+    .O_mem_wb_srn => ppl_mem_wb_srn
+);
+
+sub M3_ppl_exception (
+    .I_clk        <= I_clk,
+    .I_if_id_srn  <= ppl_if_id_srn,
+    .I_id_ex_srn  <= ppl_id_ex_srn,
+    .I_ex_mem_srn <= ppl_ex_mem_srn,
+    .I_mem_wb_srn <= ppl_mem_wb_srn,
+    .I_ecall      <= i_ecall,
+    .I_ebreak     <= i_ebreak,
+    .I_unknown    <= i_unknown,
+    .I_misalign   <= i_misalign,
+    .O_ecall      => ecall,
+    .O_ebreak     => ebreak,
+    .O_unknown    => unknown,
+    .O_misalign   => misalign
+);
+
+
+wire rs1_sel4[4];
+wire rs2_sel4[4];
+wire rd_sel4[4];
+
+assign rs1_sel4 = {rs1_sel[3:0]};
+assign rs2_sel4 = {rs2_sel[3:0]};
+assign rd_sel4  = {rd_sel[3:0]};
+
+sub M3_reg_file (
+    .I_clk      <= I_clk,
+    .I_rstn     <= srn,
+    .I_rd_adr_1 <= rs1_sel4,
+    .I_rd_adr_2 <= rs2_sel4,
+    .I_wr_adr   <= rd_sel4,
+    .I_we       <= rd_we,
+    .I_din      <= rd_data,
+    .O_dout_1   => reg_rs1,
+    .O_dout_2   => reg_rs2
+);
+
+
+assign O_sepc     = {sepc};
+assign O_scause   = {scause};
+assign O_ebreak   = {ebreak};
+assign O_rom_adr  = {rom_adr};
+assign O_ram_adr  = {ram_adr};
+assign O_ram_re   = {ram_re};
+assign O_ram_we   = {ram_we};
+assign O_ram_be   = {ram_be};
+assign O_ram_din  = {ram_din};
+
+assign rom_dout = {I_rom_dout};
+assign ram_dout = {I_ram_dout};
+
+
+endmodule

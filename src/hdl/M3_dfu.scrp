@@ -1,0 +1,137 @@
+module M3_dfu (
+    input I_id_rs1_sel[5],
+    input I_id_rs2_sel[5],
+    input I_mem_rs2_sel[5],
+    input I_ex_wb_ctrl[8],
+    input I_mem_wb_ctrl[8],
+    input I_wb_wb_ctrl[8],
+    input I_id_mem_ctrl[8],
+    input I_mem_mem_ctrl[8],
+    input I_reg_rs1[32],
+    input I_reg_rs2[32],
+    input I_ex_rs[32],
+    input I_mem_rs[32],
+    input I_mem_m[32],
+    input I_wb_rs[32],
+    output O_ex_rs1_src[32],
+    output O_ex_rs2_src[32],
+    output O_mem_rs2_src[32]
+);
+
+
+wire ex_rd_we;
+wire ex_rd_sel[5];
+wire mem_is_load;
+wire mem_rd_we;
+wire mem_rd_sel[5];
+wire wb_rd_we;
+wire wb_rd_sel[5];
+wire id_is_store;
+wire mem_is_store;
+
+assign ex_rd_we     = {I_ex_wb_ctrl[5]};
+assign ex_rd_sel    = {I_ex_wb_ctrl[4:0]};
+assign mem_is_load  = {I_mem_wb_ctrl[6]};
+assign mem_rd_we    = {I_mem_wb_ctrl[5]};
+assign mem_rd_sel   = {I_mem_wb_ctrl[4:0]};
+assign wb_rd_we     = {I_wb_wb_ctrl[5]};
+assign wb_rd_sel    = {I_wb_wb_ctrl[4:0]};
+assign id_is_store  = {I_id_mem_ctrl[3]};
+assign mem_is_store = {I_mem_mem_ctrl[3]};
+
+
+wire alu1_reg_vld;
+wire alu1_ex_vld;
+wire alu1_mem_vld;
+wire alu1_wb_vld;
+
+wire alu2_reg_vld;
+wire alu2_ex_vld;
+wire alu2_mem_vld;
+wire alu2_wb_vld;
+
+wire mem_mem_vld;
+wire mem_wb_vld;
+
+
+sub M3_forwarding_alu (
+    .I_id_is_store <= id_is_store,
+    .I_id_rs_sel   <= I_id_rs1_sel,
+    .I_ex_rd_we    <= ex_rd_we,
+    .I_ex_rd_sel   <= ex_rd_sel,
+    .I_mem_is_load <= mem_is_load,
+    .I_mem_rd_we   <= mem_rd_we,
+    .I_mem_rd_sel  <= mem_rd_sel,
+    .I_wb_rd_we    <= wb_rd_we,
+    .I_wb_rd_sel   <= wb_rd_sel,  
+    .O_reg_vld     => alu1_reg_vld,
+    .O_ex_vld      => alu1_ex_vld,  
+    .O_mem_vld     => alu1_mem_vld,  
+    .O_wb_vld      => alu1_wb_vld
+);
+place M3_forwarding_alu @(0,2,0);
+
+sub M3_forwarding_alu (
+    .I_id_is_store <= id_is_store,
+    .I_id_rs_sel   <= I_id_rs2_sel,
+    .I_ex_rd_we    <= ex_rd_we,
+    .I_ex_rd_sel   <= ex_rd_sel,
+    .I_mem_is_load <= mem_is_load,
+    .I_mem_rd_we   <= mem_rd_we,
+    .I_mem_rd_sel  <= mem_rd_sel,
+    .I_wb_rd_we    <= wb_rd_we,
+    .I_wb_rd_sel   <= wb_rd_sel,  
+    .O_reg_vld     => alu2_reg_vld,
+    .O_ex_vld      => alu2_ex_vld,  
+    .O_mem_vld     => alu2_mem_vld,  
+    .O_wb_vld      => alu2_wb_vld
+);
+place M3_forwarding_alu @(0,1,0);
+
+sub M3_forwarding_mem (
+    .I_mem_is_store <= mem_is_store,
+    .I_mem_rs_sel   <= I_mem_rs2_sel,
+    .I_wb_rd_we     <= wb_rd_we,
+    .I_wb_rd_sel    <= wb_rd_sel,  
+    .O_mem_vld      => mem_mem_vld,  
+    .O_wb_vld       => mem_wb_vld
+);
+place M3_forwarding_mem @(0,0,0);
+
+sub M3_select_4 (
+    .I_e1 <= alu1_reg_vld,
+    .I_e2 <= alu1_ex_vld,
+    .I_e3 <= alu1_mem_vld,
+    .I_e4 <= alu1_wb_vld,
+    .I_d1 <= I_reg_rs1,
+    .I_d2 <= I_ex_rs,
+    .I_d3 <= I_mem_rs,
+    .I_d4 <= I_wb_rs,
+    .O_q  => O_ex_rs1_src
+);
+place M3_select_4 @(3,2,0);
+
+sub M3_select_4 (
+    .I_e1 <= alu2_reg_vld,
+    .I_e2 <= alu2_ex_vld,
+    .I_e3 <= alu2_mem_vld,
+    .I_e4 <= alu2_wb_vld,
+    .I_d1 <= I_reg_rs2,
+    .I_d2 <= I_ex_rs,
+    .I_d3 <= I_mem_rs,
+    .I_d4 <= I_wb_rs,
+    .O_q  => O_ex_rs2_src
+);
+place M3_select_4 @(3,1,0);
+
+sub M3_select_2 (
+    .I_e1 <= mem_mem_vld,
+    .I_e2 <= mem_wb_vld,
+    .I_d1 <= I_mem_m,
+    .I_d2 <= I_wb_rs,
+    .O_q  => O_mem_rs2_src
+);
+place M3_select_2 @(5,0,0);
+
+
+endmodule

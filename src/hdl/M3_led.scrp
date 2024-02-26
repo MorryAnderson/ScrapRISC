@@ -1,0 +1,42 @@
+module M3_led (
+    input I_clk    ,
+    input I_rstn   ,
+    input I_led_we ,
+    input I_led_be[4] ,
+    input I_led_din[32],
+    output O_led[8]
+);
+
+
+wire w_led_din[8];
+wire w_led_be;
+
+
+assign w_led_din = {I_led_din[7:0]};
+assign w_led_be = {I_led_be[0]};
+
+gate w_led_ena = and(I_led_we, w_led_be);
+
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+gate rstn_buf = buf(I_rstn);
+
+sub M3_dff_8 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= w_led_ena,
+    .I_d    <= w_led_din,
+    .O_q    => O_led
+);
+
+
+place clk_buf   @(0,0,0);
+place clk_buf2  @(0,1,0);
+place rstn_buf  @(0,2,0);
+place w_led_ena @(0,3,0);
+place M3_dff_8  @(2,0,0);
+
+
+endmodule

@@ -1,0 +1,68 @@
+module M3_screen_plug (
+    input I_clk,
+    input I_clear_n,
+    input I_din,
+    input I_wr_ena,
+    input I_wr_col[4],
+    input I_wr_row[4],
+    input I_refresh,
+    input I_rd_col[4],
+    input I_rd_row[4],
+    input I_rd_ena,
+    output O_dout[4],
+
+    output O_clk,
+    output O_clear_n,
+    output O_din,
+    output O_wr_ena,
+    output O_wr_col[4],
+    output O_wr_row[4],
+    output O_refresh,
+    output O_rd_col[4],
+    output O_rd_row[4],
+    output O_rd_ena,
+    input  I_dout[4]
+);
+
+
+gate buf_clk     = buf(I_clk    );
+gate buf_clear_n = buf(I_clear_n);
+gate buf_din     = buf(I_din    );
+gate buf_wr_ena  = buf(I_wr_ena );
+gate buf_wr_col  = buf(I_wr_col );
+gate buf_wr_row  = buf(I_wr_row );
+gate buf_refresh = buf(I_refresh);
+gate buf_rd_row  = buf(I_rd_row );
+gate buf_rd_col  = buf(I_rd_col );
+gate buf_rd_ena  = buf(I_rd_ena );
+
+assign O_clk     = {buf_clk    };
+assign O_clear_n = {buf_clear_n};
+assign O_din     = {buf_din    };
+assign O_wr_ena  = {buf_wr_ena };
+assign O_wr_col  = {buf_wr_col };
+assign O_wr_row  = {buf_wr_row };
+assign O_refresh = {buf_refresh};
+assign O_rd_col  = {buf_rd_row };
+assign O_rd_row  = {buf_rd_col };
+assign O_rd_ena  = {buf_rd_ena };
+
+
+gate dout = buf(I_dout);
+assign O_dout = {dout};
+
+
+place buf_clk     @(0,0,0);
+place buf_clear_n @(0,1,0);
+place buf_din     @(0,2,0);
+place buf_wr_ena  @(0,3,0);
+place buf_wr_row  @(0,4,0);
+place buf_wr_col  @(0,5,0);
+place buf_refresh @(0,6,0);
+place buf_rd_row  @(0,7,0);
+place buf_rd_col  @(0,8,0);
+place buf_rd_ena  @(0,9,0);
+place dout        @(0,24,0);
+
+
+endmodule

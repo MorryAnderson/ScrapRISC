@@ -1,0 +1,122 @@
+module M3_mem (
+    input I_a_in[32],
+    input I_m_in[32],
+    output O_a[32],
+    output O_m[32],
+    input I_pc_in[32],
+    output O_pc[32],
+    output O_pc4[32],
+    input I_mem_ctrl_in[8],
+    input I_wb_ctrl_in[8],
+    output O_wb_ctrl[8],
+    output O_misalign,
+    input I_ram_dout[32],
+    output O_ram_adr[32],
+    output O_ram_re,
+    output O_ram_we,
+    output O_ram_be[4],
+    output O_ram_din[32]
+);
+
+
+wire pc4[32];
+
+assign O_pc = {I_pc_in};
+
+sub M3_incr4_32 (
+    .I_ena <= VCC,
+    .I_in <= I_pc_in,
+    .O_out => pc4
+);
+
+assign O_pc4 = {pc4};
+
+
+wire mask[2];
+wire uext;
+wire is_store;
+wire is_branch;
+wire is_jal;
+wire is_jalr;
+
+assign mask = {I_mem_ctrl_in[1],I_mem_ctrl_in[0]};
+assign uext = {I_mem_ctrl_in[2]};
+assign is_store = {I_mem_ctrl_in[3]};
+assign is_branch = {I_mem_ctrl_in[4]};
+assign is_jal = {I_mem_ctrl_in[5]};
+assign is_jalr = {I_mem_ctrl_in[6]};
+
+wire rd_sel[5];
+wire reg_we;
+wire is_load;
+
+assign O_wb_ctrl = {I_wb_ctrl_in};
+assign rd_sel = {I_wb_ctrl_in[4:0]};
+assign reg_we = {I_wb_ctrl_in[5]};
+assign is_load = {I_wb_ctrl_in[6]};
+
+wire adr_lsb[2];
+assign adr_lsb = {I_a_in[1],I_a_in[0]};
+
+
+gate a_mux_sel = nor(is_jal,is_jalr);
+
+sub M3_mux2_32 (
+    .I_sel <= a_mux_sel,
+    .I_d0  <= pc4,
+    .I_d1  <= I_a_in,
+    .O_q   => O_a
+);
+
+
+wire ram_din[32];
+wire ram_be[4];
+
+
+sub M3_align (
+    .I_in_dat <= I_m_in,
+    .I_adr_lsb <= adr_lsb,
+    .I_mask <= mask,
+    .O_out_dat => ram_din,
+    .O_byte_ena => ram_be
+);
+
+
+assign O_ram_adr = {I_a_in[31:2],GND,GND};
+assign O_ram_re = {is_load};
+assign O_ram_we = {is_store};
+assign O_ram_be = {ram_be};
+assign O_ram_din = {ram_din};
+
+
+sub M3_dealign (
+    .I_in_dat  <= I_ram_dout,
+    .I_adr_lsb <= adr_lsb,
+    .I_mask    <= mask,
+    .I_ext     <= uext,
+    .O_out_dat => O_m
+);
+
+
+sub M3_misalign (
+    .I_adr_lsb  <= adr_lsb,
+    .I_mask     <= mask,
+    .I_is_store <= is_store,
+    .I_is_load  <= is_load,
+    .O_misalign => O_misalign
+);
+
+
+place M3_dealign  @(0,0,0);
+place M3_align    @(4,1,0);
+place M3_mux2_32  @(0,1,0);
+place M3_incr4_32 @(3,1,0);
+
+place M3_misalign @(0,0,10);
+
+place GND @(4,1,4);
+place VCC @(4,1,5);
+place a_mux_sel @(4,1,6);
+
+
+endmodule

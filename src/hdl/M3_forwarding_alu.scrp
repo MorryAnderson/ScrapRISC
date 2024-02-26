@@ -1,0 +1,67 @@
+module M3_forwarding_alu (
+    input I_id_is_store,
+    input I_id_rs_sel[5],
+    input I_ex_rd_we,
+    input I_ex_rd_sel[5],
+    input I_mem_is_load,
+    input I_mem_rd_we,
+    input I_mem_rd_sel[5],
+    input I_wb_rd_we,
+    input I_wb_rd_sel[5],  
+    output O_reg_vld,
+    output O_ex_vld,  
+    output O_mem_vld,  
+    output O_wb_vld
+);
+
+
+gate rst = and(I_id_is_store,I_mem_is_load);
+
+wire d1;
+wire d2;
+wire d3;
+
+sub M3_dependency (
+    .I_rd_we  <= I_ex_rd_we,
+    .I_rd_sel <= I_ex_rd_sel,
+    .I_rs_sel <= I_id_rs_sel,
+    .O_vld    => d1
+);
+place M3_dependency @(0,0,0);
+
+
+sub M3_dependency (
+    .I_rd_we  <= I_mem_rd_we,
+    .I_rd_sel <= I_mem_rd_sel,
+    .I_rs_sel <= I_id_rs_sel,
+    .O_vld    => d2
+);
+place M3_dependency @(0,0,6);
+
+
+sub M3_dependency (
+    .I_rd_we  <= I_wb_rd_we,
+    .I_rd_sel <= I_wb_rd_sel,
+    .I_rs_sel <= I_id_rs_sel,
+    .O_vld    => d3
+);
+place M3_dependency @(0,0,12);
+
+
+sub M3_priority (
+    .I_rst  <= rst,
+    .I_d1   <= d1,
+    .I_d2   <= d2,
+    .I_d3   <= d3,
+    .O_none => O_reg_vld,
+    .O_q1   => O_ex_vld,
+    .O_q2   => O_mem_vld,
+    .O_q3   => O_wb_vld
+);
+place M3_priority @(2,0,0);
+
+
+place rst @(2,0,18);
+
+
+endmodule

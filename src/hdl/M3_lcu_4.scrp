@@ -1,0 +1,57 @@
+module M3_lcu_4 (
+    input I_p[4],
+    input I_g[4],
+
+    input I_c0,
+    output O_c[4],
+
+    output O_pg,
+    output O_gg
+);
+
+
+gate c1_and1 = and(I_c0, I_p[0]);
+gate c1 = or(I_g[0], c1_and1);
+
+gate c2_and1 = and(I_c0, I_p[0], I_p[1]);
+gate c2_and2 = and(I_g[0], I_p[1]);
+gate c2 = or(I_g[1], c2_and1, c2_and2);
+
+gate c3_and1 = and(I_c0, I_p[0], I_p[1], I_p[2]);
+gate c3_and2 = and(I_g[0], I_p[1], I_p[2]);
+gate c3_and3 = and(I_g[1], I_p[2]);
+gate c3 = or(I_g[2], c3_and1, c3_and2, c3_and3);
+
+gate c4_and1 = and(I_c0, I_p[0], I_p[1], I_p[2], I_p[3]);
+gate c4_and2 = and(I_g[0], I_p[1], I_p[2], I_p[3]);
+gate c4_and3 = and(I_g[1], I_p[2], I_p[3]);
+gate c4_and4 = and(I_g[2], I_p[3]);
+gate c4 = or(I_g[3], c4_and1, c4_and2, c4_and3, c4_and4);
+
+gate pg = and(I_p[3:0]);
+assign O_pg= {pg};
+
+assign O_c = {c4,c3,c2,c1};
+
+assign O_gg = {c4};
+
+
+place c1_and1 @(0,0,5);
+place c2_and1 @(0,0,6);
+place c2_and2 @(0,0,7);
+place c3_and1 @(0,0,13);
+place c3_and2 @(0,0,14);
+place c3_and3 @(0,0,15);
+place c4_and1 @(0,0,21);
+place c4_and2 @(0,0,22);
+place c4_and3 @(0,0,23);
+place c4_and4 @(0,0,29);
+place c1 @(0,0,30);
+place c2 @(0,0,31);
+place c3 @(0,0,32);
+place c4 @(1,0,32);
+place pg @(2,0,32);
+
+
+endmodule
+

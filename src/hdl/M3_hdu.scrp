@@ -1,0 +1,85 @@
+module M3_hdu (
+    input I_id_rs1_sel[5],
+    input I_id_rs2_sel[5],
+    input I_ex_wb_ctrl[8],
+    input I_mem_wb_ctrl[8],
+    input I_id_mem_ctrl[8],
+    output O_stall_n
+);
+
+
+wire ex_is_load;
+wire ex_rd_we;
+wire ex_rd_sel[5];
+wire mem_is_load;
+wire mem_rd_we;
+wire mem_rd_sel[5];
+wire id_is_store;
+
+assign ex_is_load   = {I_ex_wb_ctrl[6]};
+assign ex_rd_we     = {I_ex_wb_ctrl[5]};
+assign ex_rd_sel    = {I_ex_wb_ctrl[4],I_ex_wb_ctrl[3],I_ex_wb_ctrl[2],I_ex_wb_ctrl[1],I_ex_wb_ctrl[0]};
+assign mem_is_load  = {I_mem_wb_ctrl[6]};
+assign mem_rd_we    = {I_mem_wb_ctrl[5]};
+assign mem_rd_sel   = {I_mem_wb_ctrl[4],I_mem_wb_ctrl[3],I_mem_wb_ctrl[2],I_mem_wb_ctrl[1],I_mem_wb_ctrl[0]};
+assign id_is_store  = {I_id_mem_ctrl[3]};
+
+wire vld1;
+wire vld2;
+wire vld3;
+wire vld4;
+
+
+sub M3_dependency (
+    .I_rd_we  <= ex_rd_we,
+    .I_rd_sel <= ex_rd_sel,
+    .I_rs_sel <= I_id_rs1_sel,
+    .O_vld    => vld1
+);
+place M3_dependency @(0,0,0);
+
+sub M3_dependency (
+    .I_rd_we  <= ex_rd_we,
+    .I_rd_sel <= ex_rd_sel,
+    .I_rs_sel <= I_id_rs2_sel,
+    .O_vld    => vld2
+);
+place M3_dependency @(0,1,0);
+
+sub M3_dependency (
+    .I_rd_we  <= mem_rd_we,
+    .I_rd_sel <= mem_rd_sel,
+    .I_rs_sel <= I_id_rs1_sel,
+    .O_vld    => vld3
+);
+place M3_dependency @(0,2,0);
+
+sub M3_dependency (
+    .I_rd_we  <= mem_rd_we,
+    .I_rd_sel <= mem_rd_sel,
+    .I_rs_sel <= I_id_rs2_sel,
+    .O_vld    => vld4
+);
+place M3_dependency @(0,3,0);
+
+
+gate na1 = nand(ex_is_load,id_is_store);
+gate a1 = and(na1,vld1);
+gate a2 = and(na1,vld2);
+gate id_not_store = not(id_is_store);
+gate a3 = and(mem_is_load,id_not_store,vld3);
+gate a4 = and(mem_is_load,id_not_store,vld4);
+gate stall_n = nor(a1,a2,a3,a4);
+assign O_stall_n = {stall_n};
+
+
+place na1          @(2,0,4);
+place id_not_store @(2,3,4);
+place a1           @(2,0,3);
+place a2           @(2,1,3);
+place a3           @(2,2,3);
+place a4           @(2,3,3);
+place stall_n      @(3,0,0);
+
+
+endmodule

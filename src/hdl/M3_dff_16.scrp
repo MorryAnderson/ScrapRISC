@@ -1,0 +1,67 @@
+module M3_dff_16 (
+    input  I_clk,
+    input  I_rstn,
+    input  I_ena,
+    input  I_d[16],
+    output O_q[16]
+);
+
+
+wire clk_buf;
+wire rst_buf;
+wire ena_buf;
+wire d_buf[16];
+
+assign clk_buf  = {I_clk};
+assign rst_buf  = {I_rstn};
+assign ena_buf  = {I_ena};
+assign d_buf    = {I_d};
+
+gate ena_q = buf(ena_buf);
+gate rst_q = not(rst_buf);
+gate w_ena = or(ena_q, rst_q);
+
+wire w_tl[16];
+wire w_tm[16];
+wire w_tr[16];
+wire w_bl[16];
+wire w_bm[16];
+wire w_br[16];
+
+
+gate tl_q = buf(w_tl);
+gate bm_q = buf(w_bm);
+gate br_q = buf(w_br);
+
+gate tl = nand(w_tm, d_buf, rst_buf);
+gate tm = nand(tl_q, w_ena, clk_buf, w_bm);
+gate tr = nand(w_tm, br_q);
+gate bl = nand(w_tl, bm_q);
+gate bm = nand(w_bl, w_ena, clk_buf);
+gate br = nand(w_tr, w_bm);
+
+assign w_tl = {tl};
+assign w_tm = {tm};
+assign w_tr = {tr};
+assign w_bl = {bl};
+assign w_bm = {bm};
+assign w_br = {br};
+
+assign O_q = {w_br};
+
+
+place w_ena   @(0,0,0);
+place ena_q   @(1,0,0);
+place rst_q   @(2,0,0);
+place tm      @(3,0,0);
+place bm      @(4,0,0);
+place tl      @(5,0,0);
+place tr      @(6,0,0);
+place bl      @(7,0,0);
+place tl_q    @(8,0,0);
+place bm_q    @(9,0,0);
+place br_q    @(10,0,0);
+place br      @(11,0,0);
+
+
+endmodule

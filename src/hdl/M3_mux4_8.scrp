@@ -1,0 +1,38 @@
+module M3_mux4_8 (
+    input I_sel[2],
+    input I_d0[8],
+    input I_d1[8],
+    input I_d2[8],
+    input I_d3[8],
+    output O_q[8]
+);
+
+
+wire sel0_p;
+wire sel1_p;
+
+assign sel0_p = {I_sel[0]};
+assign sel1_p = {I_sel[1]};
+
+gate sel0_n = not(I_sel[0]);
+gate sel1_n = not(I_sel[1]);
+
+gate a3 = and(I_d3,sel1_p,sel0_p);
+gate a2 = and(I_d2,sel1_p,sel0_n);
+gate a1 = and(I_d1,sel1_n,sel0_p);
+gate a0 = and(I_d0,sel1_n,sel0_n);
+
+gate q = or(a0,a1,a2,a3);
+assign O_q = {q};
+
+
+place sel0_n @(0,0,0);
+place sel1_n @(1,0,0);
+place a0     @(2,0,0);
+place a1     @(3,0,0);
+place a2     @(4,0,0);
+place a3     @(5,0,0);
+place q      @(6,0,0);
+
+
+endmodule

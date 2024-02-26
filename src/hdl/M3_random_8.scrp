@@ -1,0 +1,71 @@
+module M3_random_8 (
+    input I_clk,
+    input I_rstn,
+    output O_q[8]
+);
+
+
+gate w_x1 = xor(O_q[0], O_q[4]);
+gate w_x2 = xor(w_x1, O_q[5]);
+gate w_x3 = xor(w_x2, O_q[6]);
+
+wire d[8];
+assign d = {w_x3, O_q[7:1]};
+
+
+gate clk_buf = buf(I_clk);
+gate rst_q = not(I_rstn);
+gate d_buf = or(d, rst_q);
+
+
+wire w_tl[8];
+wire w_tm[8];
+wire w_tr[8];
+wire w_bl[8];
+wire w_bm[8];
+wire w_br[8];
+
+
+gate tl_q = buf(w_tl);
+gate bm_q = buf(w_bm);
+gate br_q = buf(w_br);
+
+gate tl = nand(w_tm, d_buf);
+gate tm = nand(tl_q, clk_buf, w_bm);
+gate tr = nand(w_tm, br_q);
+gate bl = nand(w_tl, bm_q);
+gate bm = nand(w_bl, clk_buf);
+gate br = nand(w_tr, w_bm);
+
+assign w_tl = {tl};
+assign w_tm = {tm};
+assign w_tr = {tr};
+assign w_bl = {bl};
+assign w_bm = {bm};
+assign w_br = {br};
+
+assign O_q = {w_br};
+
+
+place clk_buf @(0,0,0);
+place rst_q   @(0,1,0); 
+place br      @(4,0,0);
+
+place tl      @(1,0,0);
+place tl_q    @(1,1,0);
+place tm      @(1,2,0);
+
+place bl      @(2,0,0);
+place bm      @(2,1,0);
+place bm_q    @(2,2,0);
+
+place br_q    @(3,0,0);
+place tr      @(3,1,0);
+place d_buf   @(3,2,0);
+
+place w_x1 @(4,1,0);
+place w_x2 @(4,2,0);
+place w_x3 @(0,2,0);
+
+
+endmodule

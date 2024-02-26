@@ -1,0 +1,32 @@
+module M3_bht (
+    input  I_clk        ,
+    input  I_rstn       ,
+    input  I_rd_adr_1[4],
+    input  I_rd_adr_2[4],
+    input  I_wr_adr[4]  ,
+    input  I_we         ,
+    input  I_din[2]     ,
+    output O_dout_1[2]  ,
+    output O_dout_2[2]    
+);
+
+
+gate buf_clk      = buf(I_clk);
+gate buf_rstn     = buf(I_rstn);
+gate buf_rd_adr_1 = buf(I_rd_adr_1);
+gate buf_rd_adr_2 = buf(I_rd_adr_2);
+gate buf_wr_adr   = buf(I_wr_adr);
+gate buf_we       = buf(I_we);
+gate buf_din      = buf(I_din);
+
+gate dout_1 = buf(buf_din);
+gate dout_2 = buf(buf_din);
+
+assign O_dout_1 = {dout_1};
+assign O_dout_2 = {dout_2};
+
+place dout_1 @(6,0,0);
+place dout_2 @(6,1,0);
+
+
+endmodule

@@ -1,0 +1,17 @@
+module M3_is_equal_5 (
+    input I_a[5],
+    input I_b[5],
+    output O_equal
+);
+
+
+gate x = xnor(I_a, I_b);
+gate y = and(x[4:0]);
+assign O_equal = {y};
+
+
+place y @(0,0,0);
+place x @(0,0,1);
+
+
+endmodule

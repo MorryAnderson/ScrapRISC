@@ -1,0 +1,133 @@
+module M3_ppl_id_ex (
+    input I_clk,
+    input I_rstn,
+    input I_ena,
+    input I_d1[32],
+    input I_d2[32],
+    input I_d3[32],
+    input I_d4[32],
+    input I_d5[32],
+    input I_d6[32],
+    input I_d7[8],
+    input I_d8[8],
+    input I_d9[8],
+    input I_d10[5],
+    output O_q1[32],
+    output O_q2[32],
+    output O_q3[32],
+    output O_q4[32],
+    output O_q5[32],
+    output O_q6[32],
+    output O_q7[8],
+    output O_q8[8],
+    output O_q9[8],
+    output O_q10[5]
+);
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2_1 = buf(clk_buf);
+gate clk_buf2_2 = buf(clk_buf);
+
+gate rstn_buf_1 = buf(I_rstn);
+gate rstn_buf_2 = buf(I_rstn);
+
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_1,
+    .I_rstn <= rstn_buf_1,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d1,
+    .O_q    => O_q1
+);
+place M3_dff_32 @(0,0,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_1,
+    .I_rstn <= rstn_buf_1,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d2,
+    .O_q    => O_q2
+);
+place M3_dff_32 @(0,1,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_1,
+    .I_rstn <= rstn_buf_1,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d3,
+    .O_q    => O_q3
+);
+place M3_dff_32 @(0,2,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_2,
+    .I_rstn <= rstn_buf_2,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d4,
+    .O_q    => O_q4
+);
+place M3_dff_32 @(0,3,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_2,
+    .I_rstn <= rstn_buf_2,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d5,
+    .O_q    => O_q5
+);
+place M3_dff_32 @(0,4,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2_2,
+    .I_rstn <= rstn_buf_2,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d6,
+    .O_q    => O_q6
+);
+place M3_dff_32 @(0,5,0);
+
+sub M3_dff_8 (
+    .I_clk  <= clk_buf2_1,
+    .I_rstn <= rstn_buf_1,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d7,
+    .O_q    => O_q7
+);
+place M3_dff_8 @(0,6,0);
+
+sub M3_dff_8 (
+    .I_clk  <= clk_buf2_1,
+    .I_rstn <= rstn_buf_1,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d8,
+    .O_q    => O_q8
+);
+place M3_dff_8 @(0,7,0);
+
+sub M3_dff_8 (
+    .I_clk  <= clk_buf2_2,
+    .I_rstn <= rstn_buf_2,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d9,
+    .O_q    => O_q9
+);
+place M3_dff_8 @(0,8,0);
+
+sub M3_dff_5 (
+    .I_clk  <= clk_buf2_2,
+    .I_rstn <= rstn_buf_2,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d10,
+    .O_q    => O_q10
+);
+place M3_dff_5 @(0,9,0);
+
+
+place clk_buf    @(3,0,32);
+place rstn_buf_1 @(4,0,32);
+place rstn_buf_2 @(5,0,32);
+place clk_buf2_1 @(6,0,32);
+place clk_buf2_2 @(7,0,32);
+
+
+endmodule

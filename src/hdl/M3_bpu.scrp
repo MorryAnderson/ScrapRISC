@@ -1,0 +1,138 @@
+module M3_bpu (
+    input I_clk,
+    input I_rstn,
+    input I_if_pc[32],
+    input I_if_branch,
+    input I_if_jal,
+    input I_if_jalr,
+    input I_mem_pc[32],
+    input I_mem_pc4[32],
+    input I_mem_ctrl[8],
+    input I_mem_branch,
+    input I_mem_jal,
+    input I_mem_jalr,
+    input I_mem_a[32],
+    input I_mem_b,
+    output O_pred_adr[32],
+    output O_jump_adr[32],
+    output O_jump,
+    output O_pred
+);
+
+
+wire if_adr[4];
+wire mem_adr[4];
+wire next_adr[32];
+wire cur_adr[32];
+wire cur_b;
+wire mem_branch;
+wire mem_jal;
+wire mem_jalr;
+
+assign if_adr     = {I_if_pc[5:2]};
+assign mem_adr    = {I_mem_pc[5:2]};
+assign next_adr   = {I_mem_pc4};
+assign cur_adr    = {I_mem_a};
+assign cur_b      = {I_mem_b};
+assign mem_branch = {I_mem_ctrl[4]};
+assign mem_jal    = {I_mem_ctrl[5]};
+assign mem_jalr   = {I_mem_ctrl[6]};
+
+
+gate if_jump = or(I_if_branch,I_if_jal,I_if_jalr);
+gate mem_jump = or(mem_branch,mem_jal,mem_jalr);
+
+
+sub M3_mux2_32 (
+    .I_sel <= cur_b,
+    .I_d0 <= next_adr,
+    .I_d1 <= cur_adr,
+    .O_q  => O_jump_adr
+);
+
+
+wire btb_rd_dat_2[32];
+wire bht_rd_dat_1[2];
+wire bht_rd_dat_2[2];
+wire fsm_in[3];
+wire fsm_out[2];
+wire right_adr;
+wire update;
+
+
+sub M3_btb (
+    .I_clk      <= I_clk,
+    .I_rstn     <= I_rstn,
+    .I_rd_adr_1 <= if_adr,
+    .I_rd_adr_2 <= mem_adr,
+    .I_wr_adr   <= mem_adr,
+    .I_we       <= update,
+    .I_din      <= O_jump_adr,
+    .O_dout_1   => O_pred_adr,
+    .O_dout_2   => btb_rd_dat_2
+);
+
+sub M3_is_equal_32 (
+    .I_a <= btb_rd_dat_2,
+    .I_b <= O_jump_adr,
+    .O_equal => right_adr
+);
+
+gate wrong_adr = not(right_adr);
+
+
+sub M3_bht (
+    .I_clk      <= I_clk,
+    .I_rstn     <= I_rstn,
+    .I_rd_adr_1 <= if_adr,
+    .I_rd_adr_2 <= mem_adr,
+    .I_wr_adr   <= mem_adr,
+    .I_we       <= update,
+    .I_din      <= fsm_out,
+    .O_dout_1   => bht_rd_dat_1,
+    .O_dout_2   => bht_rd_dat_2
+);
+
+gate pred = and(if_jump,bht_rd_dat_1[1]);
+assign O_pred = {pred};
+
+assign fsm_in = {cur_b,bht_rd_dat_2[1],bht_rd_dat_2[0]};
+gate wrong_pred = xor(cur_b,bht_rd_dat_2[1]);
+gate pred_jump  = and(cur_b,bht_rd_dat_2[1]);
+
+
+sub M3_bpu_fsm (
+    .I_i <= fsm_in,
+    .O_o => fsm_out
+);
+
+
+gate a1 = and(wrong_adr,pred_jump);
+gate o1 = or(a1, wrong_pred);
+gate jump = and(o1,mem_jump);
+assign update = {jump};
+assign O_jump = {jump};
+
+
+
+place M3_is_equal_32  @(0,0,0);
+
+place M3_bpu_fsm      @(1,0,0);
+place pred            @(1,0,9);
+place jump            @(1,0,10);
+
+place if_jump         @(2,0,0);
+place mem_jump        @(2,0,1);
+place wrong_adr       @(2,0,2);
+place wrong_pred      @(2,0,3);
+place pred_jump       @(2,0,4);
+place a1              @(2,0,5);
+place o1              @(2,0,6);
+
+place M3_mux2_32      @(3,0,0);
+
+place M3_bht          @(0,7,0);
+place M3_btb          @(2,22,0);
+
+
+endmodule

@@ -1,0 +1,42 @@
+module M3_btb (
+    input  I_clk        ,
+    input  I_rstn       ,
+    input  I_rd_adr_1[4],
+    input  I_rd_adr_2[4],
+    input  I_wr_adr[4]  ,
+    input  I_we         ,
+    input  I_din[32]    ,
+    output O_dout_1[32] ,
+    output O_dout_2[32]    
+);
+
+
+gate buf_clk      = buf(I_clk);
+gate buf_rstn     = buf(I_rstn);
+gate buf_rd_adr_1 = buf(I_rd_adr_1);
+gate buf_rd_adr_2 = buf(I_rd_adr_2);
+gate buf_wr_adr   = buf(I_wr_adr);
+gate buf_din      = buf(I_din);
+gate buf_we       = buf(I_we);
+
+wire nc[32];
+gate dout_1 = buf(nc);
+gate dout_2 = buf(nc);
+
+assign O_dout_1 = {dout_1};
+assign O_dout_2 = {dout_2};
+
+
+place buf_clk      @(0,0,0);
+place buf_rstn     @(0,1,0);
+place buf_rd_adr_1 @(0,2,0);
+place buf_rd_adr_2 @(0,3,0);
+place buf_wr_adr   @(0,4,0);
+place buf_din      @(0,5,0);
+place buf_we       @(0,6,0);
+place dout_1       @(40,0,0);
+place dout_2       @(40,1,0);
+
+
+
+endmodule

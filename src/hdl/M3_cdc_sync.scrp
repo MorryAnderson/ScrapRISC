@@ -1,0 +1,48 @@
+module M3_cdc_sync (
+    input I_clk,
+    input I_rstn,
+    
+    input I_d,
+    output O_q
+);
+
+
+gate rst_q1         = buf(I_rstn);
+gate rst_q2         = buf(rst_q1);
+gate rst_q3         = buf(rst_q2);
+gate clk_n          = not(I_clk);
+gate clk_pulse      = and(I_clk, clk_n);
+gate clk_pulse_q1   = buf(clk_pulse);
+gate clk_pulse_q2   = buf(clk_pulse_q1);
+gate clk_pulse_3    = or(clk_pulse, clk_pulse_q1, clk_pulse_q2);
+gate clk_pulse_3_q  = buf(clk_pulse_3);
+gate d_clk_pulse    = and(I_d, clk_pulse);
+gate d_clk_pulse_q1 = buf(d_clk_pulse);
+gate d_clk_pulse_q2 = buf(d_clk_pulse_q1);
+gate d_clk_pulse_3  = or(d_clk_pulse, d_clk_pulse_q1, d_clk_pulse_q2);
+
+sub M3_d_latch (
+    .I_rstn <= rst_q3,
+    .I_en   <= clk_pulse_3_q,
+    .I_d    <= d_clk_pulse_3,
+    .O_q    => O_q
+);
+
+
+place clk_n          @(0,0,0);
+place clk_pulse      @(0,0,1);
+place clk_pulse_q1   @(0,0,2);
+place clk_pulse_q2   @(0,0,3);
+place clk_pulse_3    @(0,0,4);
+place clk_pulse_3_q  @(0,0,5);
+place d_clk_pulse    @(0,0,6);
+place d_clk_pulse_q1 @(0,0,7);
+place d_clk_pulse_q2 @(0,0,8);
+place d_clk_pulse_3  @(0,0,9);
+place rst_q1         @(0,0,10);
+place rst_q2         @(0,0,11);
+place rst_q3         @(0,0,12);
+place M3_d_latch     @(0,0,13);
+
+
+endmodule

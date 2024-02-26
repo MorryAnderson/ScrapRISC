@@ -1,0 +1,46 @@
+module M3_adder_cla_8 (
+    input I_a[8],
+    input I_b[8],
+    input I_c0,
+    output O_p,
+    output O_g,
+    output O_c8,
+    output O_s[8]
+);
+
+
+wire c[8];
+wire p[8];
+wire g[8];
+
+wire c8_1[8];
+
+
+sub M3_full_adder_pg_8 (
+    .I_a <= I_a,
+    .I_b <= I_b,
+    .I_c <= c,
+    .O_p => p,
+    .O_g => g,
+    .O_s => O_s
+);
+
+
+sub M3_lcu_8 (
+    .I_p  <= p,
+    .I_g  <= g,
+    .I_c0 <= I_c0,
+    .O_c  => c8_1,
+    .O_pg => O_p,
+    .O_gg => O_g
+);
+
+assign c = {c8_1[6:0],I_c0};
+assign O_c8 = {c8_1[7]};
+
+
+place M3_lcu_8 @(0,0,0);
+place M3_full_adder_pg_8 @(6,0,0);
+
+
+endmodule

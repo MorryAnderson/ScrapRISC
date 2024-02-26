@@ -1,0 +1,46 @@
+module M3_incr_8 (
+    input I_ena,
+    input I_in[8],
+    output O_out[8]
+);
+
+
+gate and_1 = and(I_ena, I_in[0]);
+gate and_2 = and(I_ena, I_in[1:0]);
+gate and_3 = and(I_ena, I_in[2:0]);
+gate and_4 = and(I_ena, I_in[3:0]);
+gate and_5 = and(I_ena, I_in[4:0]);
+gate and_6 = and(I_ena, I_in[5:0]);
+gate and_7 = and(I_ena, I_in[6:0]);
+
+gate xor_0 = xor(I_in[0], I_ena);
+gate xor_1 = xor(I_in[1], and_1);
+gate xor_2 = xor(I_in[2], and_2);
+gate xor_3 = xor(I_in[3], and_3);
+gate xor_4 = xor(I_in[4], and_4);
+gate xor_5 = xor(I_in[5], and_5);
+gate xor_6 = xor(I_in[6], and_6);
+gate xor_7 = xor(I_in[7], and_7);
+
+assign O_out = {xor_7,xor_6,xor_5,xor_4,xor_3,xor_2,xor_1,xor_0};
+
+
+place and_1 @(0,0,0);
+place and_2 @(0,0,1);
+place and_3 @(0,0,2);
+place and_4 @(0,0,3);
+place and_5 @(0,0,4);
+place and_6 @(0,0,5);
+place and_7 @(0,0,6);
+
+place xor_0 @(1,0,0);
+place xor_1 @(1,0,1);
+place xor_2 @(1,0,2);
+place xor_3 @(1,0,3);
+place xor_4 @(1,0,4);
+place xor_5 @(1,0,5);
+place xor_6 @(1,0,6);
+place xor_7 @(1,0,7);
+
+
+endmodule

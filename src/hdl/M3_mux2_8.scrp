@@ -1,0 +1,24 @@
+module M3_mux2_8 (
+    input I_sel,
+    input I_d0[8],
+    input I_d1[8],
+    output O_q[8]
+);
+
+
+gate sel_n = not(I_sel);
+
+gate a1 = and(I_d1,I_sel);
+gate a0 = and(I_d0,sel_n);
+
+gate q = or(a0,a1);
+assign O_q = {q};
+
+
+place a0    @(0,0,0);
+place a1    @(1,0,0);
+place q     @(2,0,0);
+place sel_n @(0,0,8);
+
+
+endmodule

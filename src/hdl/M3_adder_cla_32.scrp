@@ -1,0 +1,118 @@
+module M3_adder_cla_32 (
+    input I_a[32],
+    input I_b[32],
+    input I_ci,
+    output O_co,
+    output O_s[32]
+);
+
+
+wire c[4];
+wire c1;
+wire c2;
+wire c3;
+wire c4;
+
+assign c1 = {c[0]};
+assign c2 = {c[1]};
+assign c3 = {c[2]};
+assign c4 = {c[3]};
+
+
+wire p0;
+wire p1;
+wire p2;
+wire p3;
+
+wire g0;
+wire g1;
+wire g2;
+wire g3;
+
+wire p[4];
+wire g[4];
+
+assign p = {p3,p2,p1,p0};
+assign g = {g3,g2,g1,g0};
+
+
+wire a0[8];
+wire a1[8];
+wire a2[8];
+wire a3[8];
+
+wire b0[8];
+wire b1[8];
+wire b2[8];
+wire b3[8];
+
+wire s0[8];
+wire s1[8];
+wire s2[8];
+wire s3[8];
+
+assign a0 = {I_a[7:0]};
+assign a1 = {I_a[15:8]};
+assign a2 = {I_a[23:16]};
+assign a3 = {I_a[31:24]};
+
+assign b0 = {I_b[7:0]};
+assign b1 = {I_b[15:8]};
+assign b2 = {I_b[23:16]};
+assign b3 = {I_b[31:24]};
+
+
+sub M3_adder_cla_8 (
+    .I_a  <= a0,
+    .I_b  <= b0,
+    .I_c0 <= I_ci,
+    .O_p  => p0,
+    .O_g  => g0,
+    .O_s  => s0
+);
+place M3_adder_cla_8 @(0,0,0);
+
+sub M3_adder_cla_8 (
+    .I_a  <= a1,
+    .I_b  <= b1,
+    .I_c0 <= c1,
+    .O_p  => p1,
+    .O_g  => g1,
+    .O_s  => s1
+);
+place M3_adder_cla_8 @(0,0,8);
+
+sub M3_adder_cla_8 (
+    .I_a  <= a2,
+    .I_b  <= b2,
+    .I_c0 <= c2,
+    .O_p  => p2,
+    .O_g  => g2,
+    .O_s  => s2
+);
+place M3_adder_cla_8 @(0,0,16);
+
+sub M3_adder_cla_8 (
+    .I_a  <= a3,
+    .I_b  <= b3,
+    .I_c0 <= c3,
+    .O_p  => p3,
+    .O_g  => g3,
+    .O_s  => s3,
+    .O_c8 => O_co
+);
+place M3_adder_cla_8 @(0,0,24);
+
+sub M3_lcu_4 (
+    .I_p <= p,
+    .I_g <= g,
+    .I_c0 <= I_ci,
+    .O_c => c
+);
+place M3_lcu_4 @(0,0,0);
+
+
+assign O_s = {s3,s2,s1,s0};
+
+
+endmodule

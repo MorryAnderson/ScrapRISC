@@ -1,0 +1,48 @@
+module M3_cu (
+    input I_stall_n,
+    input I_jump,
+    input I_intr,
+    input I_rstn,
+    output O_pc_we,
+    output O_if_stall_n,
+    output O_if_id_ena,
+    output O_id_ex_ena,
+    output O_ex_mem_ena,
+    output O_mem_wb_ena,
+    output O_id_ex_srn,
+    output O_if_id_srn,
+    output O_ex_mem_srn,
+    output O_mem_wb_srn
+);
+
+gate rst = not(I_rstn);
+gate stall = not(I_stall_n);
+
+assign O_pc_we      = {VCC};
+assign O_if_stall_n = {I_stall_n};
+assign O_if_id_ena  = {I_stall_n};
+assign O_id_ex_ena  = {VCC};
+assign O_ex_mem_ena = {VCC};
+assign O_mem_wb_ena = {VCC};
+
+gate id_ex_srn    = nor(stall,rst,I_jump,I_intr);
+gate if_id_srn    = nor(rst,I_jump,I_intr);
+gate ex_mem_srn   = nor(rst,I_jump,I_intr);
+
+assign O_id_ex_srn  = {id_ex_srn };
+assign O_if_id_srn  = {if_id_srn };
+assign O_ex_mem_srn = {ex_mem_srn};
+assign O_mem_wb_srn = {I_rstn};
+
+
+
+place GND        @(1,0,0);
+place VCC        @(1,1,0);
+place rst        @(1,2,0);
+place stall      @(1,3,0);
+place if_id_srn  @(0,1,0);
+place id_ex_srn  @(0,2,0);
+place ex_mem_srn @(0,3,0);
+
+
+endmodule

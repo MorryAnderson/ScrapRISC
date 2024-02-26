@@ -1,0 +1,53 @@
+module M3_data_ram_plug (
+    input  I_clk        ,
+    input  I_rstn       ,
+    input  I_rd_adr_1[6],
+    input  I_wr_adr[6]  ,
+    input  I_din[32]    ,
+    input  I_we         ,
+    input  I_be[4]      ,
+    output O_dout_1[32] ,
+
+    output O_clk        ,
+    output O_rstn       ,
+    output O_rd_adr_1[6],
+    output O_wr_adr[6]  ,
+    output O_din[32]    ,
+    output O_we         ,
+    output O_be[4]      ,
+    input  I_dout_1[32] 
+);
+
+
+gate buf_clk      = buf(I_clk);
+gate buf_rstn     = buf(I_rstn);
+gate buf_rd_adr_1 = buf(I_rd_adr_1);
+gate buf_wr_adr   = buf(I_wr_adr);
+gate buf_din      = buf(I_din);
+gate buf_we       = buf(I_we);
+gate buf_be       = buf(I_be);
+
+assign O_clk      = {buf_clk     };
+assign O_rstn     = {buf_rstn    };
+assign O_rd_adr_1 = {buf_rd_adr_1};
+assign O_wr_adr   = {buf_wr_adr  };
+assign O_din      = {buf_din     };
+assign O_we       = {buf_we      };
+assign O_be       = {buf_be      };
+
+
+gate dout_1 = buf(I_dout_1);
+
+assign O_dout_1 = {dout_1};
+
+place buf_clk      @(0,0,0);
+place buf_rstn     @(0,1,0);
+place buf_rd_adr_1 @(0,2,0);
+place buf_wr_adr   @(0,3,0);
+place buf_din      @(0,4,0);
+place buf_we       @(0,5,0);
+place buf_be       @(0,6,0);
+place dout_1       @(40,0,0);
+
+
+endmodule

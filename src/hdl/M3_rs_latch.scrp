@@ -1,0 +1,27 @@
+module M3_rs_latch (
+    input I_rn,
+    input I_r,
+    input I_s,
+    output O_q
+);
+
+
+wire w_s;
+
+
+gate rnn = not(I_rn);
+gate q = nor(I_r, rnn, w_s);
+gate s = nor(I_s, q);
+gate ss = buf(s);
+
+assign w_s = {ss};
+
+assign O_q = {q};
+
+place rnn @(0,0,0);
+place s   @(0,0,1);
+place ss  @(0,0,2);
+place q   @(0,0,3);
+
+
+endmodule

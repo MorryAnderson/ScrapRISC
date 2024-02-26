@@ -1,0 +1,112 @@
+module M3_id (
+    input I_instr[32],
+    input I_is_branch,
+    input I_is_jal,
+    input I_is_jalr,
+    input I_pc_in[32],
+    input I_rs1_src[32],
+    input I_rs2_src[32],
+    output O_unknown,
+    output O_ex_ctrl[8],
+    output O_mem_ctrl[8],
+    output O_wb_ctrl[8],
+    output O_rs1_sel[5],
+    output O_rs2_sel[5],
+    output O_pc[32],
+    output O_a1[32],
+    output O_a2[32],
+    output O_b1[32],
+    output O_b2[32],
+    output O_m[32]
+);
+
+
+
+wire id_ctrl[8];
+
+wire fmt[5];
+wire alu_a_sel[2];
+wire alu_b_sel;
+assign fmt = {id_ctrl[4:0]};
+assign alu_a_sel = {id_ctrl[6],id_ctrl[5]};
+assign alu_b_sel = {id_ctrl[7]};
+
+
+wire imm_i[32];
+wire imm_s[32];
+wire imm_b[32];
+wire imm_u[32];
+wire imm_j[32];
+wire imm[32];
+wire zero[32];
+assign zero = {{32{GND}}};
+
+place GND @(3,3,0);
+
+
+sub M3_decoder (
+    .I_instr      <= I_instr,
+    .I_is_branch  <= I_is_branch,
+    .I_is_jal     <= I_is_jal,
+    .I_is_jalr    <= I_is_jalr,
+    .O_unknown    => O_unknown,
+    .O_id_ctrl    => id_ctrl,
+    .O_ex_ctrl    => O_ex_ctrl ,
+    .O_mem_ctrl   => O_mem_ctrl,
+    .O_wb_ctrl    => O_wb_ctrl ,
+    .O_rs1_sel    => O_rs1_sel ,
+    .O_rs2_sel    => O_rs2_sel 
+);
+place M3_decoder @(0,0,0);
+
+
+sub M3_imm_gen (
+    .I_instr <= I_instr,
+    .O_imm_i => imm_i,
+    .O_imm_s => imm_s,
+    .O_imm_b => imm_b,
+    .O_imm_u => imm_u,
+    .O_imm_j => imm_j
+);
+place M3_imm_gen @(2,6,0);
+
+
+sub M3_imm_mux (
+    .I_fmt   <= fmt,
+    .I_imm_i <= imm_i,
+    .I_imm_s <= imm_s,
+    .I_imm_b <= imm_b,
+    .I_imm_u <= imm_u,
+    .I_imm_j <= imm_j,
+    .O_imm   => imm
+);
+place M3_imm_mux @(4,0,0);
+
+
+sub M3_mux4_32 (
+    .I_sel <= alu_a_sel,
+    .I_d0  <= I_rs1_src,
+    .I_d1  <= I_pc_in,
+    .I_d2  <= zero,
+    .I_d3  <= zero,
+    .O_q   => O_a1
+);
+place M3_mux4_32 @(5,0,0);
+
+
+sub M3_mux2_32 (
+    .I_sel <= alu_b_sel,
+    .I_d0  <= imm,
+    .I_d1  <= I_rs2_src,
+    .O_q   => O_a2
+);
+place M3_mux2_32 @(4,5,0);
+
+
+assign O_pc = {I_pc_in};
+assign O_b1 = {I_rs1_src};
+assign O_b2 = {I_rs2_src};
+assign O_m  = {I_rs2_src};
+
+
+endmodule

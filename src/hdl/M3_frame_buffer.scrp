@@ -1,0 +1,75 @@
+module M3_frame_buffer (
+    input I_clk,
+    input I_rstn,
+    input I_d,
+    input I_we,
+    input I_pos[8],
+    output O_line_0[16],
+    output O_line_1[16],
+    output O_line_2[16],
+    output O_line_3[16],
+    output O_line_4[16],
+    output O_line_5[16],
+    output O_line_6[16],
+    output O_line_7[16],
+    output O_line_8[16],
+    output O_line_9[16],
+    output O_line_a[16],
+    output O_line_b[16],
+    output O_line_c[16],
+    output O_line_d[16],
+    output O_line_e[16],
+    output O_line_f[16]
+);
+
+
+wire col[4];
+wire row[4];
+wire col_sel[16];
+wire row_sel[16];
+
+
+assign col = {I_pos[3:0]};
+assign row = {I_pos[7:4]};
+
+
+sub M3_demux16 (
+    .I_ena <= I_we,
+    .I_mux <= col,
+    .O_out => col_sel
+);
+
+
+sub M3_demux16 (
+    .I_ena <= I_we,
+    .I_mux <= row,
+    .O_out => row_sel
+);
+
+
+sub M3_pixel_array (
+    .I_clk    <= I_clk,
+    .I_rstn   <= I_rstn,
+    .I_d      <= I_d,
+    .I_col    <= col_sel,
+    .I_row    <= row_sel,
+    .O_line_0 => O_line_0,
+    .O_line_1 => O_line_1,
+    .O_line_2 => O_line_2,
+    .O_line_3 => O_line_3,
+    .O_line_4 => O_line_4,
+    .O_line_5 => O_line_5,
+    .O_line_6 => O_line_6,
+    .O_line_7 => O_line_7,
+    .O_line_8 => O_line_8,
+    .O_line_9 => O_line_9,
+    .O_line_a => O_line_a,
+    .O_line_b => O_line_b,
+    .O_line_c => O_line_c,
+    .O_line_d => O_line_d,
+    .O_line_e => O_line_e,
+    .O_line_f => O_line_f
+);
+
+
+endmodule

@@ -1,0 +1,90 @@
+module M3_bcu (
+    input I_b1[32],
+    input I_b2[32],
+    input I_op[3],
+    input I_is_branch,
+    input I_is_jal,
+    input I_is_jalr,
+    output O_b
+);
+
+
+wire e0;
+wire l0;
+wire l1;
+
+
+sub M3_comparator_32 (
+    .I_a <= I_b1,
+    .I_b <= I_b2,
+    .I_sgn <= GND,
+    .O_e => e0,
+    .O_l => l0
+);
+place M3_comparator_32 @(0,1,0);
+
+
+sub M3_comparator_32 (
+    .I_a <= I_b1,
+    .I_b <= I_b2,
+    .I_sgn <= VCC,
+    .O_l => l1
+);
+place M3_comparator_32 @(0,2,0);
+
+
+gate e0_n = not(e0);
+gate l0_n = not(l0);
+gate l1_n = not(l1);
+
+
+gate is_jump = or(I_is_jal,I_is_jalr);
+gate is_bj = or(is_jump,I_is_branch);
+gate not_jump = not(is_jump);
+
+gate sel0 = or(I_op[0],is_jump);
+gate sel1 = or(I_op[1],is_jump);
+gate sel2 = and(I_op[2],not_jump);
+
+wire sel[3];
+assign sel = {sel2,sel1,sel0};
+
+wire mx;
+
+sub M3_mux8 (
+    .I_sel <= sel,
+    .I_d0  <= e0,
+    .I_d1  <= e0_n,
+    .I_d2  <= GND,
+    .I_d3  <= VCC,
+    .I_d4  <= l0,
+    .I_d5  <= l0_n,
+    .I_d6  <= l1,
+    .I_d7  <= l1_n,
+    .O_q   => mx
+);
+place M3_mux8 @(3,0,0);
+
+
+gate b = and(mx,is_bj);
+assign O_b= {b};
+
+
+
+place GND @(0,0,0);
+place VCC @(0,0,1);
+
+place e0_n     @(1,0,0);
+place l0_n     @(1,0,1);
+place l1_n     @(1,0,2);
+place not_jump @(1,0,3);
+place is_jump  @(1,0,4);
+place is_bj    @(1,0,5);
+place sel0     @(1,0,6);
+place sel1     @(1,0,7);
+place sel2     @(1,0,8);
+place b        @(6,0,0);
+
+
+
+endmodule

@@ -1,0 +1,54 @@
+module M3_mux8 (
+    input I_sel[3],
+    input I_d0,
+    input I_d1,
+    input I_d2,
+    input I_d3,
+    input I_d4,
+    input I_d5,
+    input I_d6,
+    input I_d7,
+    output O_q
+);
+
+
+wire sel0_p;
+wire sel1_p;
+wire sel2_p;
+
+assign sel0_p = {I_sel[0]};
+assign sel1_p = {I_sel[1]};
+assign sel2_p = {I_sel[2]};
+
+gate sel0_n = not(I_sel[0]);
+gate sel1_n = not(I_sel[1]);
+gate sel2_n = not(I_sel[2]);
+
+gate a7 = and(I_d7,sel2_p,sel1_p,sel0_p);
+gate a6 = and(I_d6,sel2_p,sel1_p,sel0_n);
+gate a5 = and(I_d5,sel2_p,sel1_n,sel0_p);
+gate a4 = and(I_d4,sel2_p,sel1_n,sel0_n);
+gate a3 = and(I_d3,sel2_n,sel1_p,sel0_p);
+gate a2 = and(I_d2,sel2_n,sel1_p,sel0_n);
+gate a1 = and(I_d1,sel2_n,sel1_n,sel0_p);
+gate a0 = and(I_d0,sel2_n,sel1_n,sel0_n);
+
+gate q = or(a0,a1,a2,a3,a4,a5,a6,a7);
+assign O_q = {q};
+
+
+place a0     @(1,0,0);
+place a1     @(1,0,1);
+place a2     @(1,0,2);
+place a3     @(1,0,3);
+place a4     @(1,0,4);
+place a5     @(1,0,5);
+place a6     @(1,0,6);
+place a7     @(1,0,7);
+place sel0_n @(0,0,0);
+place sel1_n @(0,0,1);
+place sel2_n @(0,0,2);
+place q      @(2,0,0);
+
+
+endmodule

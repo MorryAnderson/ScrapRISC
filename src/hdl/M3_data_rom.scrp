@@ -1,0 +1,8 @@
+module M3_data_rom (
+    input I_adr[6],
+    output O_dat[32]    
+);
+
+
+
+endmodule

@@ -1,0 +1,50 @@
+module M3_counter_8 (
+    input I_clk ,
+    input I_rstn,
+    input I_ena,
+    input I_d[8],
+    input I_load,
+    output O_q[8]
+);
+
+
+wire incr[8];
+wire mux[8];
+wire q[8];
+
+
+sub M3_incr_8 (
+    .I_ena <= I_ena,
+    .I_in  <= q,
+    .O_out => incr
+);
+
+
+sub M3_mux2_8 (
+    .I_sel  <= I_load,
+    .I_d0   <= incr,
+    .I_d1   <= I_d,
+    .O_q    => mux
+);
+
+
+sub M3_dff_8 (
+    .I_clk  <= I_clk,
+    .I_rstn <= I_rstn,
+    .I_ena  <= VCC,
+    .I_d    <= mux,
+    .O_q    => q
+);
+
+
+assign O_q = {q};
+
+
+place M3_incr_8 @(1,0,8);
+place M3_mux2_8 @(0,0,0);
+place M3_dff_8 @(3,0,0);
+place GND @(7,0,11);
+place VCC @(7,0,12);
+
+
+endmodule

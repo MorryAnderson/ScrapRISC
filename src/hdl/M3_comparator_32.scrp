@@ -1,0 +1,112 @@
+module M3_comparator_32 (
+    input I_a[32],
+    input I_b[32],
+    input I_sgn,
+    output O_g,
+    output O_e,
+    output O_l
+);
+
+
+wire a[32];
+wire b[32];
+
+sub M3_msbn_32 (
+    .I_in  <= I_a,
+    .I_n   <= I_sgn,
+    .O_out => a
+);
+place M3_msbn_32 @(1,0,32);
+
+
+sub M3_msbn_32 (
+    .I_in  <= I_b,
+    .I_n   <= I_sgn,
+    .O_out => b
+);
+place M3_msbn_32 @(2,0,32);
+
+
+wire a3[8];
+wire a2[8];
+wire a1[8];
+wire a0[8];
+
+wire b3[8];
+wire b2[8];
+wire b1[8];
+wire b0[8];
+
+
+assign a3 = {a[31:24]};
+assign a2 = {a[23:16]};
+assign a1 = {a[15:8]};
+assign a0 = {a[7:0]};
+
+assign b3 = {b[31:24]};
+assign b2 = {b[23:16]};
+assign b1 = {b[15:8]};
+assign b0 = {b[7:0]};
+
+
+wire g[4];
+wire l[4];
+
+wire g_0;
+wire g_1;
+wire g_2;
+wire g_3;
+
+wire l_0;
+wire l_1;
+wire l_2;
+wire l_3;
+
+
+assign g = {g_3, g_2, g_1, g_0};
+assign l = {l_3, l_2, l_1, l_0};
+
+
+sub M3_comparator_8 (
+    .I_a <= a3,
+    .I_b <= b3,
+    .O_g => g_3,
+    .O_l => l_3
+);
+place M3_comparator_8 @(0,0,24);
+
+sub M3_comparator_8 (
+    .I_a <= a2,
+    .I_b <= b2,
+    .O_g => g_2,
+    .O_l => l_2
+);
+place M3_comparator_8 @(0,0,16);
+
+sub M3_comparator_8 (
+    .I_a <= a1,
+    .I_b <= b1,
+    .O_g => g_1,
+    .O_l => l_1
+);
+place M3_comparator_8 @(0,0,8);
+
+sub M3_comparator_8 (
+    .I_a <= a0,
+    .I_b <= b0,
+    .O_g => g_0,
+    .O_l => l_0
+);
+place M3_comparator_8 @(0,0,0);
+
+sub M3_comparator_4 (
+    .I_a <= g,
+    .I_b <= l,
+    .O_g => O_g,
+    .O_e => O_e,
+    .O_l => O_l
+);
+place M3_comparator_4 @(5,0,0);
+
+endmodule
+

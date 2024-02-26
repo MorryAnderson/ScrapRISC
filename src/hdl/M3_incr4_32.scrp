@@ -1,0 +1,25 @@
+module M3_incr4_32 (
+    input I_ena,
+    input I_in[32],
+    output O_out[32]
+);
+
+
+wire in[32];
+wire out[32];
+
+assign in = {GND,GND,I_in[31:2]};
+assign O_out = {out[29:0],I_in[1],I_in[0]};
+
+
+sub M3_incr_32 (
+    .I_ena <= I_ena,
+    .I_in  <= in,
+    .O_out => out
+);
+
+
+place M3_incr_32 @(0,0,0);
+place GND @(0,0,31);
+
+endmodule

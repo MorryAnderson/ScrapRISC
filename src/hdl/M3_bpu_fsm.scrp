@@ -1,0 +1,33 @@
+module M3_bpu_fsm (
+    input I_i[3],
+    output O_o[2]
+);
+
+
+gate i0n = not(I_i[0]);
+
+gate and11 = and(I_i[2],I_i[1]);
+gate and12 = and(I_i[2],i0n);
+gate and13 = and(I_i[1],i0n);
+gate or1 = or(and11,and12,and13);
+
+gate and21 = and(I_i[2],I_i[1]);
+gate and22 = and(I_i[2],I_i[0]);
+gate and23 = and(I_i[1],I_i[0]);
+gate or2 = or(and21,and22,and23);
+
+assign O_o = {or2,or1};
+
+
+place i0n   @(0,0,0);
+place and11 @(0,0,1);
+place and12 @(0,0,2);
+place and13 @(0,0,3);
+place or1   @(0,0,4);
+place and21 @(0,0,5);
+place and22 @(0,0,6);
+place and23 @(0,0,7);
+place or2   @(0,0,8);
+
+
+endmodule

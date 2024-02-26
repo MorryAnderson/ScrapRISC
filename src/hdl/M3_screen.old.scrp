@@ -1,0 +1,179 @@
+module M3_screen (
+    input I_clk,
+    input I_clear_n,
+    input I_din,
+    input I_wr_ena,
+    input I_wr_col[4],
+    input I_wr_row[4],
+    input I_refresh,
+    input I_rd_col[4],
+    input I_rd_row[4],
+    input I_rd_ena,
+    output O_dout[4]
+);
+
+
+
+wire w_buffer_line_0[16];
+wire w_buffer_line_1[16];
+wire w_buffer_line_2[16];
+wire w_buffer_line_3[16];
+wire w_buffer_line_4[16];
+wire w_buffer_line_5[16];
+wire w_buffer_line_6[16];
+wire w_buffer_line_7[16];
+wire w_buffer_line_8[16];
+wire w_buffer_line_9[16];
+wire w_buffer_line_a[16];
+wire w_buffer_line_b[16];
+wire w_buffer_line_c[16];
+wire w_buffer_line_d[16];
+wire w_buffer_line_e[16];
+wire w_buffer_line_f[16];
+
+wire w_line_0[16];
+wire w_line_1[16];
+wire w_line_2[16];
+wire w_line_3[16];
+wire w_line_4[16];
+wire w_line_5[16];
+wire w_line_6[16];
+wire w_line_7[16];
+wire w_line_8[16];
+wire w_line_9[16];
+wire w_line_a[16];
+wire w_line_b[16];
+wire w_line_c[16];
+wire w_line_d[16];
+wire w_line_e[16];
+wire w_line_f[16];
+
+
+wire wr_pos[8];
+assign wr_pos = {I_wr_row,I_wr_col};
+
+sub M3_frame_buffer (
+    .I_clk    <= I_clk,
+    .I_rstn   <= I_clear_n,
+    .I_d      <= I_din,
+    .I_wr_ena <= I_wr_ena,
+    .I_pos    <= wr_pos,
+    .O_line_0 => w_buffer_line_0,
+    .O_line_1 => w_buffer_line_1,
+    .O_line_2 => w_buffer_line_2,
+    .O_line_3 => w_buffer_line_3,
+    .O_line_4 => w_buffer_line_4,
+    .O_line_5 => w_buffer_line_5,
+    .O_line_6 => w_buffer_line_6,
+    .O_line_7 => w_buffer_line_7,
+    .O_line_8 => w_buffer_line_8,
+    .O_line_9 => w_buffer_line_9,
+    .O_line_a => w_buffer_line_a,
+    .O_line_b => w_buffer_line_b,
+    .O_line_c => w_buffer_line_c,
+    .O_line_d => w_buffer_line_d,
+    .O_line_e => w_buffer_line_e,
+    .O_line_f => w_buffer_line_f
+);
+
+
+sub M3_frame (
+    .I_clk     <= I_clk,
+    .I_rstn    <= I_clear_n,
+    .I_refresh <= I_refresh,
+
+    .I_line_0  <= w_buffer_line_0,
+    .I_line_1  <= w_buffer_line_1,
+    .I_line_2  <= w_buffer_line_2,
+    .I_line_3  <= w_buffer_line_3,
+    .I_line_4  <= w_buffer_line_4,
+    .I_line_5  <= w_buffer_line_5,
+    .I_line_6  <= w_buffer_line_6,
+    .I_line_7  <= w_buffer_line_7,
+    .I_line_8  <= w_buffer_line_8,
+    .I_line_9  <= w_buffer_line_9,
+    .I_line_a  <= w_buffer_line_a,
+    .I_line_b  <= w_buffer_line_b,
+    .I_line_c  <= w_buffer_line_c,
+    .I_line_d  <= w_buffer_line_d,
+    .I_line_e  <= w_buffer_line_e,
+    .I_line_f  <= w_buffer_line_f,
+
+    .O_line_0 => w_line_0,
+    .O_line_1 => w_line_1,
+    .O_line_2 => w_line_2,
+    .O_line_3 => w_line_3,
+    .O_line_4 => w_line_4,
+    .O_line_5 => w_line_5,
+    .O_line_6 => w_line_6,
+    .O_line_7 => w_line_7,
+    .O_line_8 => w_line_8,
+    .O_line_9 => w_line_9,
+    .O_line_a => w_line_a,
+    .O_line_b => w_line_b,
+    .O_line_c => w_line_c,
+    .O_line_d => w_line_d,
+    .O_line_e => w_line_e,
+    .O_line_f => w_line_f
+);
+
+
+wire reg_adr_7_4[4];
+wire reg_adr_3_2[2];
+
+assign reg_adr_7_4 = {I_rd_row};
+assign reg_adr_3_2 = {I_rd_col[3],I_rd_col[2]};
+
+wire line_mux_16[16];
+
+
+sub M3_mux16_16 (
+    .I_sel <= reg_adr_7_4,
+    .I_d0  <= w_line_0,
+    .I_d1  <= w_line_1,
+    .I_d2  <= w_line_2,
+    .I_d3  <= w_line_3,
+    .I_d4  <= w_line_4,
+    .I_d5  <= w_line_5,
+    .I_d6  <= w_line_6,
+    .I_d7  <= w_line_7,
+    .I_d8  <= w_line_8,
+    .I_d9  <= w_line_9,
+    .I_d10 <= w_line_a,
+    .I_d11 <= w_line_b,
+    .I_d12 <= w_line_c,
+    .I_d13 <= w_line_d,
+    .I_d14 <= w_line_e,
+    .I_d15 <= w_line_f,
+    .O_q   => line_mux_16
+);
+
+
+wire line_mux16_3_0[4];
+wire line_mux16_7_4[4];
+wire line_mux16_b_8[4];
+wire line_mux16_f_c[4];
+wire line_mux_4[4];
+
+
+assign line_mux16_3_0 = {line_mux_16[3:0]};
+assign line_mux16_7_4 = {line_mux_16[7:4]};
+assign line_mux16_b_8 = {line_mux_16[11:8]};
+assign line_mux16_f_c = {line_mux_16[15:12]};
+
+
+sub M3_mux4_4 (
+    .I_sel <= reg_adr_3_2,
+    .I_d0  <= line_mux16_f_c,
+    .I_d1  <= line_mux16_b_8,
+    .I_d2  <= line_mux16_7_4,
+    .I_d3  <= line_mux16_3_0,
+    .O_q   => line_mux_4
+);
+
+
+gate g = and(line_mux_4, I_rd_ena);
+assign O_dout = {g};
+
+
+endmodule

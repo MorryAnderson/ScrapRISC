@@ -1,0 +1,64 @@
+module M3_ppl_mem_wb (
+    input I_clk,
+    input I_rstn,
+    input I_ena,
+    input I_d1[32],
+    input I_d2[32],
+    input I_d3[32],
+    input I_d4[8],
+    output O_q1[32],
+    output O_q2[32],
+    output O_q3[32],
+    output O_q4[8]
+);
+
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+gate rstn_buf = buf(I_rstn);
+
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d1,
+    .O_q    => O_q1
+);
+place M3_dff_32 @(0,0,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d2,
+    .O_q    => O_q2
+);
+place M3_dff_32 @(0,1,0);
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d3,
+    .O_q    => O_q3
+);
+place M3_dff_32 @(0,2,0);
+
+sub M3_dff_8 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= I_ena,
+    .I_d    <= I_d4,
+    .O_q    => O_q4
+);
+place M3_dff_8 @(0,3,0);
+
+
+place clk_buf  @(4,0,32);
+place rstn_buf @(5,0,32);
+place clk_buf2 @(6,0,32);
+
+
+endmodule

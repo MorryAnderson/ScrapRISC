@@ -1,0 +1,152 @@
+module M3_ppl_exception (
+    input I_clk,
+    input I_if_id_srn,
+    input I_id_ex_srn,
+    input I_ex_mem_srn,
+    input I_mem_wb_srn,
+    input I_ecall,
+    input I_ebreak,
+    input I_unknown,
+    input I_misalign,
+    output O_ecall,
+    output O_ebreak,
+    output O_unknown,
+    output O_misalign
+);
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+wire s1_ecall;
+wire s2_ecall;
+wire s3_ecall;
+
+wire s1_ebreak;
+wire s2_ebreak;
+wire s3_ebreak;
+
+wire s2_unknown;
+wire s3_unknown;
+
+
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_if_id_srn,
+    .I_ena  <= VCC,
+    .I_d    <= I_ecall,
+    .O_q    => s1_ecall
+);
+place M3_dff @(0,0,0);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_id_ex_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s1_ecall,
+    .O_q    => s2_ecall
+);
+place M3_dff @(0,0,1);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_ex_mem_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s2_ecall,
+    .O_q    => s3_ecall
+);
+place M3_dff @(0,0,2);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_mem_wb_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s3_ecall,
+    .O_q    => O_ecall
+);
+place M3_dff @(0,0,3);
+
+
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_if_id_srn,
+    .I_ena  <= VCC,
+    .I_d    <= I_ebreak,
+    .O_q    => s1_ebreak
+);
+place M3_dff @(0,0,4);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_id_ex_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s1_ebreak,
+    .O_q    => s2_ebreak
+);
+place M3_dff @(0,0,5);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_ex_mem_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s2_ebreak,
+    .O_q    => s3_ebreak
+);
+place M3_dff @(0,0,6);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_mem_wb_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s3_ebreak,
+    .O_q    => O_ebreak
+);
+place M3_dff @(0,0,7);
+
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_id_ex_srn,
+    .I_ena  <= VCC,
+    .I_d    <= I_unknown,
+    .O_q    => s2_unknown
+);
+place M3_dff @(0,0,8);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_ex_mem_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s2_unknown,
+    .O_q    => s3_unknown
+);
+place M3_dff @(0,0,9);
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_mem_wb_srn,
+    .I_ena  <= VCC,
+    .I_d    <= s3_unknown,
+    .O_q    => O_unknown
+);
+place M3_dff @(0,0,10);
+
+
+sub M3_dff (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= I_mem_wb_srn,
+    .I_ena  <= VCC,
+    .I_d    <= I_misalign,
+    .O_q    => O_misalign
+);
+place M3_dff @(0,0,11);
+
+
+place clk_buf  @(5,0,12);
+place clk_buf2 @(6,0,12);
+place GND @(7,0,12);
+place VCC @(8,0,12);
+
+
+endmodule

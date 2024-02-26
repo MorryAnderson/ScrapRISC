@@ -1,0 +1,20 @@
+module M3_imm_gen (
+    input I_instr[32],
+    output O_imm_i[32],
+    output O_imm_s[32],
+    output O_imm_b[32],
+    output O_imm_u[32],
+    output O_imm_j[32]
+);
+
+
+assign O_imm_i = {{20{I_instr[31]}},I_instr[31:20]};
+assign O_imm_s = {{20{I_instr[31]}},I_instr[31:25],I_instr[11:7]};
+assign O_imm_b = {{20{I_instr[31]}},I_instr[7],I_instr[30:25],I_instr[11:8],GND};
+assign O_imm_u = {I_instr[31:12],{12{GND}}};
+assign O_imm_j = {{12{I_instr[31]}},I_instr[19:12],I_instr[20],I_instr[30:21],GND};
+
+place GND @(0,0,0);
+
+
+endmodule

@@ -1,0 +1,73 @@
+module M3_comparator_8 (
+    input I_a[8],
+    input I_b[8],
+    output O_g,
+    output O_e,
+    output O_l
+);
+
+
+wire a_p[8];
+wire b_p[8];
+
+assign a_p = {I_a};
+assign b_p = {I_b};
+
+gate a_n = not(I_a);
+gate b_n = not(I_b);
+
+gate ab_xn = xnor(I_a,I_b);
+gate e = and(ab_xn[7:0]);
+assign O_e = {e};
+
+gate g7 = and(a_p[7],b_n[7]);
+gate g6 = and(a_p[6],b_n[6],ab_xn[7]);
+gate g5 = and(a_p[5],b_n[5],ab_xn[7:6]);
+gate g4 = and(a_p[4],b_n[4],ab_xn[7:5]);
+gate g3 = and(a_p[3],b_n[3],ab_xn[7:4]);
+gate g2 = and(a_p[2],b_n[2],ab_xn[7:3]);
+gate g1 = and(a_p[1],b_n[1],ab_xn[7:2]);
+gate g0 = and(a_p[0],b_n[0],ab_xn[7:1]);
+
+gate g = or(g7,g6,g5,g4,g3,g2,g1,g0);
+assign O_g = {g};
+
+
+gate l7 = and(a_n[7],b_p[7]);
+gate l6 = and(a_n[6],b_p[6],ab_xn[7]);
+gate l5 = and(a_n[5],b_p[5],ab_xn[7:6]);
+gate l4 = and(a_n[4],b_p[4],ab_xn[7:5]);
+gate l3 = and(a_n[3],b_p[3],ab_xn[7:4]);
+gate l2 = and(a_n[2],b_p[2],ab_xn[7:3]);
+gate l1 = and(a_n[1],b_p[1],ab_xn[7:2]);
+gate l0 = and(a_n[0],b_p[0],ab_xn[7:1]);
+
+gate l = or(l7,l6,l5,l4,l3,l2,l1,l0);
+assign O_l = {l};
+
+
+place a_n @(0,0,0);
+place b_n @(1,0,0);
+place ab_xn @(2,0,0);
+place g7 @(3,0,0);
+place g6 @(3,0,1);
+place g5 @(3,0,2);
+place g4 @(3,0,3);
+place g3 @(3,0,4);
+place g2 @(3,0,5);
+place g1 @(3,0,6);
+place g0 @(3,0,7);
+place l7 @(4,0,0);
+place l6 @(4,0,1);
+place l5 @(4,0,2);
+place l4 @(4,0,3);
+place l3 @(4,0,4);
+place l2 @(4,0,5);
+place l1 @(4,0,6);
+place l0 @(4,0,7);
+place l  @(5,0,0);
+place e  @(5,0,1);
+place g  @(5,0,2);
+
+
+endmodule

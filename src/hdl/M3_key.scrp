@@ -1,0 +1,88 @@
+module M3_key (
+    input I_clk  ,
+    input I_rstn ,
+    input I_csn  ,
+    input I_up   ,
+    input I_down ,
+    input I_left ,
+    input I_right,
+    input I_x    ,
+    input I_y    ,
+    input I_ok   ,
+    input I_esc  ,
+    output O_key[32]
+);
+
+
+gate clk_buf = buf(I_clk);
+gate clk_buf2 = buf(clk_buf);
+
+gate rstn_buf = buf(I_rstn);
+
+
+wire w_LR[8];
+wire w_UD[8];
+wire w_ctrl[8];
+wire w_rand[8];
+wire w_key[32];
+wire w_key_q[32];
+
+gate Rn   = not(I_right);
+gate LR_0 = xor(I_right, I_left);
+gate LR_1 = and(Rn, I_left);
+assign  w_LR = {LR_1,LR_1,LR_1,LR_1,LR_1,LR_1,LR_1,LR_0};
+
+gate Dn   = not(I_down);
+gate UD_0 = xor(I_down, I_up);
+gate UD_1 = and(Dn, I_up);
+assign  w_UD = {UD_1,UD_1,UD_1,UD_1,UD_1,UD_1,UD_1,UD_0};
+
+assign w_ctrl = {I_esc,I_esc, I_ok,I_ok, I_y,I_y, I_x,I_x};
+
+sub M3_random_8 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .O_q    => w_rand
+);
+
+assign w_key = {w_rand, w_ctrl, w_UD, w_LR};
+
+
+sub M3_dff_32 (
+    .I_clk  <= clk_buf2,
+    .I_rstn <= rstn_buf,
+    .I_ena  <= VCC,
+    .I_d    <= w_key,
+    .O_q    => w_key_q
+);
+
+gate cs = not(I_csn);
+gate key_out = and(w_key_q, cs);
+
+assign O_key = {key_out};
+
+
+
+place M3_random_8 @(0,0,0);
+place M3_dff_32 @(2,6,0);
+
+place clk_buf  @(0,4,0);
+place clk_buf2 @(0,4,1);
+place rstn_buf @(0,4,2);
+
+place Rn       @(0,5,0);
+place LR_0     @(0,5,1);
+place LR_1     @(0,5,2);
+
+place Dn       @(0,6,0);
+place UD_0     @(0,6,1);
+place UD_1     @(0,6,2);
+
+place cs       @(0,8,0);
+place key_out  @(0,9,0);
+
+place GND @(4,4,0);
+place VCC @(4,4,1);
+
+
+endmodule

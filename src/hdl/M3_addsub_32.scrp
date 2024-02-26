@@ -1,0 +1,22 @@
+module M3_addsub_32 (
+    input I_a[32],
+    input I_b[32],
+    input I_neg,
+    output O_s[32]
+);
+
+
+gate n = xor(I_b,I_neg);
+
+sub M3_adder_cla_32 (
+    .I_a  <= I_a ,
+    .I_b  <= n,
+    .I_ci <= I_neg,
+    .O_s => O_s
+);
+
+place n @(0,0,0);
+place M3_adder_cla_32 @(1,0,0);
+
+
+endmodule
