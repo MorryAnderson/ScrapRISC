@@ -5,7 +5,7 @@ Email: morry4c@163.com
 
 ./outputs/exe/make.ps1 = ScrapHDLCompiler.exe  -> log.txt
 
-![image-20240208011156435](.\RV32I.png)
+![image-20240208011156435](RV32I.png)
 
 [Overall]
 --------------------------------------------------------------------------------
