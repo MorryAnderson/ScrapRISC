@@ -1,0 +1,7872 @@
+{"bodies":[{"childs":[
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-25, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":1,
+		"controllers":[
+			{"id":2},
+			{"id":13},
+			{"id":14},
+			{"id":15},
+			{"id":20},
+			{"id":30},
+			{"id":31},
+			{"id":32},
+			{"id":33},
+			{"id":34},
+			{"id":35},
+			{"id":36},
+			{"id":38},
+			{"id":39},
+			{"id":40},
+			{"id":41},
+			{"id":42},
+			{"id":43},
+			{"id":44},
+			{"id":46},
+			{"id":47},
+			{"id":48},
+			{"id":49},
+			{"id":50},
+			{"id":51},
+			{"id":52},
+			{"id":54},
+			{"id":55},
+			{"id":56},
+			{"id":57},
+			{"id":58},
+			{"id":59},
+			{"id":60},
+			{"id":29},
+			{"id":37},
+			{"id":45}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-25, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":2,
+		"controllers":[
+			{"id":16},
+			{"id":17},
+			{"id":18},
+			{"id":19}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":3,
+		"controllers":[
+			{"id":12},
+			{"id":120},
+			{"id":146},
+			{"id":147},
+			{"id":148},
+			{"id":149},
+			{"id":150},
+			{"id":151},
+			{"id":152},
+			{"id":153},
+			{"id":239},
+			{"id":265},
+			{"id":266},
+			{"id":267},
+			{"id":268},
+			{"id":269},
+			{"id":270},
+			{"id":271},
+			{"id":272},
+			{"id":354},
+			{"id":380},
+			{"id":381},
+			{"id":382},
+			{"id":383},
+			{"id":384},
+			{"id":385},
+			{"id":386},
+			{"id":387},
+			{"id":431},
+			{"id":448},
+			{"id":449},
+			{"id":450},
+			{"id":451},
+			{"id":452}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":4,
+		"controllers":[
+			{"id":94}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":5,
+		"controllers":[
+			{"id":6},
+			{"id":7},
+			{"id":8}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":6,
+		"controllers":[
+			{"id":76},
+			{"id":196},
+			{"id":197},
+			{"id":198},
+			{"id":199},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":203}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":7,
+		"controllers":[
+			{"id":213},
+			{"id":214},
+			{"id":215},
+			{"id":216},
+			{"id":217},
+			{"id":218},
+			{"id":219},
+			{"id":220},
+			{"id":221}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":8,
+		"controllers":[
+			{"id":9},
+			{"id":11}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":9,
+		"controllers":[
+			{"id":85}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":10,
+		"controllers":[
+			{"id":11}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":11,
+		"controllers":[
+			{"id":12}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-4, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":12,
+		"controllers":[
+			{"id":74}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":13,
+		"controllers":[
+			{"id":105}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":14,
+		"controllers":[
+			{"id":106}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":15,
+		"controllers":[
+			{"id":107}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":16,
+		"controllers":[
+			{"id":108}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":17,
+		"controllers":[
+			{"id":109}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":18,
+		"controllers":[
+			{"id":110}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":19,
+		"controllers":[
+			{"id":111}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-24, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":20,
+		"controllers":[
+			{"id":112}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":21,
+		"controllers":[
+			{"id":53}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":22,
+		"controllers":[
+			{"id":54}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":23,
+		"controllers":[
+			{"id":55}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":24,
+		"controllers":[
+			{"id":56}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":25,
+		"controllers":[
+			{"id":57}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":26,
+		"controllers":[
+			{"id":58}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":27,
+		"controllers":[
+			{"id":59}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-4, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":28,
+		"controllers":[
+			{"id":60}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":29,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":30,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":31,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":32,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":33,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":34,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":35,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":36,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":37,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":38,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":39,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":40,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":41,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":42,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":43,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":44,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":16},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":45,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":17},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":46,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":18},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":47,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":19},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":48,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":20},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":49,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":21},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":50,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":22},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":51,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":23},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":52,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":24},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":53,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":25},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":54,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":26},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":55,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":27},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":56,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":28},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":57,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":29},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":58,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":30},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":59,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"0000ee",
+	"xaxis":3,
+	"zaxis":2,
+	"pos":{"x":15, "y":-5, "z":31},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":60,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":61,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":62,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":63,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":64,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":65,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":66,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":67,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"ee00ee",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":0, "y":-26, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":68,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":69,
+		"controllers":[
+			{"id":70},
+			{"id":329},
+			{"id":330},
+			{"id":331},
+			{"id":332},
+			{"id":333},
+			{"id":334},
+			{"id":335},
+			{"id":336},
+			{"id":147},
+			{"id":148},
+			{"id":149},
+			{"id":150},
+			{"id":151},
+			{"id":152},
+			{"id":153}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":70,
+		"controllers":[
+			{"id":313},
+			{"id":314},
+			{"id":315},
+			{"id":316},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":320},
+			{"id":119}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":71,
+		"controllers":[
+			{"id":72}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":72,
+		"controllers":[
+			{"id":238}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":73,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":74,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":75,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-2, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":76,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-4, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":77,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-4, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":78,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-4, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":79,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-4, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":80,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-3, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":81,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-3, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":82,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-3, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":83,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-3, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":84,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-5, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":85,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-6, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":86,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-6, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":87,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-6, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":88,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-6, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":89,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-7, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":90,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-7, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":91,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-7, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":92,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-7, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":93,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":94,
+		"controllers":[
+
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-23, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":95,
+		"controllers":[
+			{"id":29}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-23, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":96,
+		"controllers":[
+			{"id":37}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-23, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":97,
+		"controllers":[
+			{"id":45}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"eeeeee",
+	"xaxis":3,
+	"zaxis":-2,
+	"pos":{"x":1, "y":-23, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":98,
+		"controllers":[
+			{"id":53}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":101,
+		"controllers":[
+			{"id":102}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":102,
+		"controllers":[
+			{"id":353}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":105,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":106,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":107,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":108,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":109,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":110,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":111,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":5,
+		"id":112,
+		"controllers":[
+			{"id":113}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":113,
+		"controllers":[
+			{"id":328},
+			{"id":329},
+			{"id":330},
+			{"id":331},
+			{"id":332},
+			{"id":333},
+			{"id":334},
+			{"id":335},
+			{"id":336},
+			{"id":448}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":18},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":114,
+		"controllers":[
+			{"id":115}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":19},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":115,
+		"controllers":[
+			{"id":430}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":17},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":116,
+		"controllers":[
+			{"id":146}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":119,
+		"controllers":[
+			{"id":121}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":120,
+		"controllers":[
+			{"id":121}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":121,
+		"controllers":[
+			{"id":154},
+			{"id":155},
+			{"id":156},
+			{"id":157},
+			{"id":158},
+			{"id":159},
+			{"id":160},
+			{"id":161},
+			{"id":178},
+			{"id":179},
+			{"id":180},
+			{"id":181},
+			{"id":182},
+			{"id":183},
+			{"id":184},
+			{"id":185}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":122,
+		"controllers":[
+			{"id":154}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":123,
+		"controllers":[
+			{"id":155}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":124,
+		"controllers":[
+			{"id":156}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":125,
+		"controllers":[
+			{"id":157}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":126,
+		"controllers":[
+			{"id":158}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":127,
+		"controllers":[
+			{"id":159}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":128,
+		"controllers":[
+			{"id":160}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":129,
+		"controllers":[
+			{"id":161}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":130,
+		"controllers":[
+			{"id":170}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":131,
+		"controllers":[
+			{"id":171}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":132,
+		"controllers":[
+			{"id":172}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":133,
+		"controllers":[
+			{"id":173}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":134,
+		"controllers":[
+			{"id":174}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":135,
+		"controllers":[
+			{"id":175}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":136,
+		"controllers":[
+			{"id":176}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":137,
+		"controllers":[
+			{"id":177}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":138,
+		"controllers":[
+			{"id":162}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":139,
+		"controllers":[
+			{"id":163}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":140,
+		"controllers":[
+			{"id":164}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":141,
+		"controllers":[
+			{"id":165}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":142,
+		"controllers":[
+			{"id":166}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":143,
+		"controllers":[
+			{"id":167}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":144,
+		"controllers":[
+			{"id":168}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":145,
+		"controllers":[
+			{"id":169}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":146,
+		"controllers":[
+			{"id":122},
+			{"id":170}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":147,
+		"controllers":[
+			{"id":123},
+			{"id":171}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":148,
+		"controllers":[
+			{"id":124},
+			{"id":172}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":149,
+		"controllers":[
+			{"id":125},
+			{"id":173}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":150,
+		"controllers":[
+			{"id":126},
+			{"id":174}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":151,
+		"controllers":[
+			{"id":127},
+			{"id":175}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":152,
+		"controllers":[
+			{"id":128},
+			{"id":176}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":153,
+		"controllers":[
+			{"id":129},
+			{"id":177}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":154,
+		"controllers":[
+			{"id":146},
+			{"id":162}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":155,
+		"controllers":[
+			{"id":147},
+			{"id":163}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":156,
+		"controllers":[
+			{"id":148},
+			{"id":164}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":157,
+		"controllers":[
+			{"id":149},
+			{"id":165}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":158,
+		"controllers":[
+			{"id":150},
+			{"id":166}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":159,
+		"controllers":[
+			{"id":151},
+			{"id":167}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":160,
+		"controllers":[
+			{"id":152},
+			{"id":168}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":161,
+		"controllers":[
+			{"id":153},
+			{"id":169}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":162,
+		"controllers":[
+			{"id":186}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":163,
+		"controllers":[
+			{"id":187}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":164,
+		"controllers":[
+			{"id":188}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":165,
+		"controllers":[
+			{"id":189}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":166,
+		"controllers":[
+			{"id":190}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":167,
+		"controllers":[
+			{"id":191}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":168,
+		"controllers":[
+			{"id":192}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":169,
+		"controllers":[
+			{"id":193}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":170,
+		"controllers":[
+			{"id":178}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":171,
+		"controllers":[
+			{"id":179}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":172,
+		"controllers":[
+			{"id":180}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":173,
+		"controllers":[
+			{"id":181}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":174,
+		"controllers":[
+			{"id":182}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":175,
+		"controllers":[
+			{"id":183}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":176,
+		"controllers":[
+			{"id":184}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":177,
+		"controllers":[
+			{"id":185}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":178,
+		"controllers":[
+			{"id":130},
+			{"id":154},
+			{"id":186}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":179,
+		"controllers":[
+			{"id":131},
+			{"id":155},
+			{"id":187}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":180,
+		"controllers":[
+			{"id":132},
+			{"id":156},
+			{"id":188}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":181,
+		"controllers":[
+			{"id":133},
+			{"id":157},
+			{"id":189}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":182,
+		"controllers":[
+			{"id":134},
+			{"id":158},
+			{"id":190}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":183,
+		"controllers":[
+			{"id":135},
+			{"id":159},
+			{"id":191}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":184,
+		"controllers":[
+			{"id":136},
+			{"id":160},
+			{"id":192}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":185,
+		"controllers":[
+			{"id":137},
+			{"id":161},
+			{"id":193}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":186,
+		"controllers":[
+			{"id":138},
+			{"id":21}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":187,
+		"controllers":[
+			{"id":139},
+			{"id":22}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":188,
+		"controllers":[
+			{"id":140},
+			{"id":23}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":189,
+		"controllers":[
+			{"id":141},
+			{"id":24}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":190,
+		"controllers":[
+			{"id":142},
+			{"id":25}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":191,
+		"controllers":[
+			{"id":143},
+			{"id":26}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":192,
+		"controllers":[
+			{"id":144},
+			{"id":27}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":193,
+		"controllers":[
+			{"id":145},
+			{"id":28}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":196,
+		"controllers":[
+			{"id":204}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":197,
+		"controllers":[
+			{"id":205}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":198,
+		"controllers":[
+			{"id":206}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":199,
+		"controllers":[
+			{"id":207}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":200,
+		"controllers":[
+			{"id":208}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":201,
+		"controllers":[
+			{"id":209}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":202,
+		"controllers":[
+			{"id":210}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":203,
+		"controllers":[
+			{"id":222}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":204,
+		"controllers":[
+			{"id":223}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":205,
+		"controllers":[
+			{"id":224}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":206,
+		"controllers":[
+			{"id":225}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":207,
+		"controllers":[
+			{"id":226}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":208,
+		"controllers":[
+			{"id":227}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":209,
+		"controllers":[
+			{"id":228}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":210,
+		"controllers":[
+			{"id":229}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":213,
+		"controllers":[
+			{"id":222},
+			{"id":223},
+			{"id":224},
+			{"id":225},
+			{"id":226},
+			{"id":227},
+			{"id":228},
+			{"id":229}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":214,
+		"controllers":[
+			{"id":230}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":215,
+		"controllers":[
+			{"id":231}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":216,
+		"controllers":[
+			{"id":232}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":217,
+		"controllers":[
+			{"id":233}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":218,
+		"controllers":[
+			{"id":234}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":219,
+		"controllers":[
+			{"id":235}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":220,
+		"controllers":[
+			{"id":236}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":221,
+		"controllers":[
+			{"id":237}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":222,
+		"controllers":[
+			{"id":230}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":223,
+		"controllers":[
+			{"id":231}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":224,
+		"controllers":[
+			{"id":232}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":225,
+		"controllers":[
+			{"id":233}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":226,
+		"controllers":[
+			{"id":234}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":227,
+		"controllers":[
+			{"id":235}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":228,
+		"controllers":[
+			{"id":236}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":229,
+		"controllers":[
+			{"id":237}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":230,
+		"controllers":[
+			{"id":265}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":231,
+		"controllers":[
+			{"id":266}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":232,
+		"controllers":[
+			{"id":267}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":233,
+		"controllers":[
+			{"id":268}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":234,
+		"controllers":[
+			{"id":269}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":235,
+		"controllers":[
+			{"id":270}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":236,
+		"controllers":[
+			{"id":271}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":237,
+		"controllers":[
+			{"id":272}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":238,
+		"controllers":[
+			{"id":240}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":239,
+		"controllers":[
+			{"id":240}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":240,
+		"controllers":[
+			{"id":273},
+			{"id":274},
+			{"id":275},
+			{"id":276},
+			{"id":277},
+			{"id":278},
+			{"id":279},
+			{"id":280},
+			{"id":297},
+			{"id":298},
+			{"id":299},
+			{"id":300},
+			{"id":301},
+			{"id":302},
+			{"id":303},
+			{"id":304}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":241,
+		"controllers":[
+			{"id":273}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":242,
+		"controllers":[
+			{"id":274}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":243,
+		"controllers":[
+			{"id":275}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":244,
+		"controllers":[
+			{"id":276}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":245,
+		"controllers":[
+			{"id":277}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":246,
+		"controllers":[
+			{"id":278}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":247,
+		"controllers":[
+			{"id":279}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":248,
+		"controllers":[
+			{"id":280}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":249,
+		"controllers":[
+			{"id":289}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":250,
+		"controllers":[
+			{"id":290}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":251,
+		"controllers":[
+			{"id":291}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":252,
+		"controllers":[
+			{"id":292}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":253,
+		"controllers":[
+			{"id":293}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":254,
+		"controllers":[
+			{"id":294}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":255,
+		"controllers":[
+			{"id":295}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":256,
+		"controllers":[
+			{"id":296}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":257,
+		"controllers":[
+			{"id":281}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":258,
+		"controllers":[
+			{"id":282}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":259,
+		"controllers":[
+			{"id":283}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":260,
+		"controllers":[
+			{"id":284}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":261,
+		"controllers":[
+			{"id":285}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":262,
+		"controllers":[
+			{"id":286}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":263,
+		"controllers":[
+			{"id":287}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":-8, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":264,
+		"controllers":[
+			{"id":288}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":265,
+		"controllers":[
+			{"id":241},
+			{"id":289}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":266,
+		"controllers":[
+			{"id":242},
+			{"id":290}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":267,
+		"controllers":[
+			{"id":243},
+			{"id":291}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":268,
+		"controllers":[
+			{"id":244},
+			{"id":292}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":269,
+		"controllers":[
+			{"id":245},
+			{"id":293}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":270,
+		"controllers":[
+			{"id":246},
+			{"id":294}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":271,
+		"controllers":[
+			{"id":247},
+			{"id":295}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":272,
+		"controllers":[
+			{"id":248},
+			{"id":296}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":273,
+		"controllers":[
+			{"id":265},
+			{"id":281}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":274,
+		"controllers":[
+			{"id":266},
+			{"id":282}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":275,
+		"controllers":[
+			{"id":267},
+			{"id":283}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":276,
+		"controllers":[
+			{"id":268},
+			{"id":284}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":277,
+		"controllers":[
+			{"id":269},
+			{"id":285}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":278,
+		"controllers":[
+			{"id":270},
+			{"id":286}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":279,
+		"controllers":[
+			{"id":271},
+			{"id":287}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":280,
+		"controllers":[
+			{"id":272},
+			{"id":288}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":281,
+		"controllers":[
+			{"id":305}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":282,
+		"controllers":[
+			{"id":306}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":283,
+		"controllers":[
+			{"id":307}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":284,
+		"controllers":[
+			{"id":308}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":285,
+		"controllers":[
+			{"id":309}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":286,
+		"controllers":[
+			{"id":310}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":287,
+		"controllers":[
+			{"id":311}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":-8, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":288,
+		"controllers":[
+			{"id":312}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":289,
+		"controllers":[
+			{"id":297}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":290,
+		"controllers":[
+			{"id":298}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":291,
+		"controllers":[
+			{"id":299}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":292,
+		"controllers":[
+			{"id":300}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":293,
+		"controllers":[
+			{"id":301}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":294,
+		"controllers":[
+			{"id":302}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":295,
+		"controllers":[
+			{"id":303}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":296,
+		"controllers":[
+			{"id":304}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":297,
+		"controllers":[
+			{"id":249},
+			{"id":273},
+			{"id":305}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":298,
+		"controllers":[
+			{"id":250},
+			{"id":274},
+			{"id":306}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":299,
+		"controllers":[
+			{"id":251},
+			{"id":275},
+			{"id":307}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":300,
+		"controllers":[
+			{"id":252},
+			{"id":276},
+			{"id":308}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":301,
+		"controllers":[
+			{"id":253},
+			{"id":277},
+			{"id":309}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":302,
+		"controllers":[
+			{"id":254},
+			{"id":278},
+			{"id":310}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":303,
+		"controllers":[
+			{"id":255},
+			{"id":279},
+			{"id":311}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":-8, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":304,
+		"controllers":[
+			{"id":256},
+			{"id":280},
+			{"id":312}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":305,
+		"controllers":[
+			{"id":257},
+			{"id":196},
+			{"id":197},
+			{"id":198},
+			{"id":199},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":203},
+			{"id":77}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":306,
+		"controllers":[
+			{"id":258},
+			{"id":197},
+			{"id":198},
+			{"id":199},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":204},
+			{"id":78}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":307,
+		"controllers":[
+			{"id":259},
+			{"id":198},
+			{"id":199},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":205},
+			{"id":79}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":308,
+		"controllers":[
+			{"id":260},
+			{"id":199},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":206},
+			{"id":80}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":309,
+		"controllers":[
+			{"id":261},
+			{"id":200},
+			{"id":201},
+			{"id":202},
+			{"id":207},
+			{"id":81}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":310,
+		"controllers":[
+			{"id":262},
+			{"id":201},
+			{"id":202},
+			{"id":208},
+			{"id":82}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":311,
+		"controllers":[
+			{"id":263},
+			{"id":202},
+			{"id":209},
+			{"id":83}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":-8, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":312,
+		"controllers":[
+			{"id":264},
+			{"id":210},
+			{"id":84}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":313,
+		"controllers":[
+			{"id":321}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":314,
+		"controllers":[
+			{"id":322}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":315,
+		"controllers":[
+			{"id":323}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":316,
+		"controllers":[
+			{"id":324}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":317,
+		"controllers":[
+			{"id":325}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":318,
+		"controllers":[
+			{"id":326}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":319,
+		"controllers":[
+			{"id":327}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":320,
+		"controllers":[
+			{"id":337}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":321,
+		"controllers":[
+			{"id":338}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":322,
+		"controllers":[
+			{"id":339}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":323,
+		"controllers":[
+			{"id":340}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":324,
+		"controllers":[
+			{"id":341}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":325,
+		"controllers":[
+			{"id":342}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":326,
+		"controllers":[
+			{"id":343}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":2,
+		"id":327,
+		"controllers":[
+			{"id":344}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":328,
+		"controllers":[
+			{"id":337},
+			{"id":338},
+			{"id":339},
+			{"id":340},
+			{"id":341},
+			{"id":342},
+			{"id":343},
+			{"id":344}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":329,
+		"controllers":[
+			{"id":345}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":330,
+		"controllers":[
+			{"id":346}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":331,
+		"controllers":[
+			{"id":347}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":332,
+		"controllers":[
+			{"id":348}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":333,
+		"controllers":[
+			{"id":349}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":334,
+		"controllers":[
+			{"id":350}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":335,
+		"controllers":[
+			{"id":351}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":336,
+		"controllers":[
+			{"id":352}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":337,
+		"controllers":[
+			{"id":345}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":338,
+		"controllers":[
+			{"id":346}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":339,
+		"controllers":[
+			{"id":347}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":340,
+		"controllers":[
+			{"id":348}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":341,
+		"controllers":[
+			{"id":349}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":342,
+		"controllers":[
+			{"id":350}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":343,
+		"controllers":[
+			{"id":351}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":0,
+		"id":344,
+		"controllers":[
+			{"id":352}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":345,
+		"controllers":[
+			{"id":380}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":346,
+		"controllers":[
+			{"id":381}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":347,
+		"controllers":[
+			{"id":382}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":348,
+		"controllers":[
+			{"id":383}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":349,
+		"controllers":[
+			{"id":384}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":350,
+		"controllers":[
+			{"id":385}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":351,
+		"controllers":[
+			{"id":386}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":352,
+		"controllers":[
+			{"id":387}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":353,
+		"controllers":[
+			{"id":355}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":354,
+		"controllers":[
+			{"id":355}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":355,
+		"controllers":[
+			{"id":388},
+			{"id":389},
+			{"id":390},
+			{"id":391},
+			{"id":392},
+			{"id":393},
+			{"id":394},
+			{"id":395},
+			{"id":412},
+			{"id":413},
+			{"id":414},
+			{"id":415},
+			{"id":416},
+			{"id":417},
+			{"id":418},
+			{"id":419}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":356,
+		"controllers":[
+			{"id":388}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":357,
+		"controllers":[
+			{"id":389}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":358,
+		"controllers":[
+			{"id":390}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":359,
+		"controllers":[
+			{"id":391}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":360,
+		"controllers":[
+			{"id":392}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":361,
+		"controllers":[
+			{"id":393}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":362,
+		"controllers":[
+			{"id":394}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":363,
+		"controllers":[
+			{"id":395}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":364,
+		"controllers":[
+			{"id":404}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":365,
+		"controllers":[
+			{"id":405}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":366,
+		"controllers":[
+			{"id":406}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":367,
+		"controllers":[
+			{"id":407}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":368,
+		"controllers":[
+			{"id":408}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":369,
+		"controllers":[
+			{"id":409}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":370,
+		"controllers":[
+			{"id":410}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":371,
+		"controllers":[
+			{"id":411}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":372,
+		"controllers":[
+			{"id":396}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":373,
+		"controllers":[
+			{"id":397}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":374,
+		"controllers":[
+			{"id":398}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":375,
+		"controllers":[
+			{"id":399}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":376,
+		"controllers":[
+			{"id":400}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":377,
+		"controllers":[
+			{"id":401}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":378,
+		"controllers":[
+			{"id":402}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":14, "y":0, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":379,
+		"controllers":[
+			{"id":403}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":380,
+		"controllers":[
+			{"id":356},
+			{"id":404}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":381,
+		"controllers":[
+			{"id":357},
+			{"id":405}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":382,
+		"controllers":[
+			{"id":358},
+			{"id":406}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":383,
+		"controllers":[
+			{"id":359},
+			{"id":407}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":384,
+		"controllers":[
+			{"id":360},
+			{"id":408}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":385,
+		"controllers":[
+			{"id":361},
+			{"id":409}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":386,
+		"controllers":[
+			{"id":362},
+			{"id":410}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":387,
+		"controllers":[
+			{"id":363},
+			{"id":411}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":388,
+		"controllers":[
+			{"id":380},
+			{"id":396}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":389,
+		"controllers":[
+			{"id":381},
+			{"id":397}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":390,
+		"controllers":[
+			{"id":382},
+			{"id":398}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":391,
+		"controllers":[
+			{"id":383},
+			{"id":399}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":392,
+		"controllers":[
+			{"id":384},
+			{"id":400}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":393,
+		"controllers":[
+			{"id":385},
+			{"id":401}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":394,
+		"controllers":[
+			{"id":386},
+			{"id":402}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":395,
+		"controllers":[
+			{"id":387},
+			{"id":403}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":396,
+		"controllers":[
+			{"id":420}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":397,
+		"controllers":[
+			{"id":421}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":398,
+		"controllers":[
+			{"id":422}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":399,
+		"controllers":[
+			{"id":423}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":400,
+		"controllers":[
+			{"id":424}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":401,
+		"controllers":[
+			{"id":425}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":402,
+		"controllers":[
+			{"id":426}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":12, "y":0, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":403,
+		"controllers":[
+			{"id":427}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":404,
+		"controllers":[
+			{"id":412}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":405,
+		"controllers":[
+			{"id":413}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":406,
+		"controllers":[
+			{"id":414}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":407,
+		"controllers":[
+			{"id":415}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":408,
+		"controllers":[
+			{"id":416}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":409,
+		"controllers":[
+			{"id":417}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":410,
+		"controllers":[
+			{"id":418}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":13, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":411,
+		"controllers":[
+			{"id":419}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":412,
+		"controllers":[
+			{"id":364},
+			{"id":388},
+			{"id":420}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":413,
+		"controllers":[
+			{"id":365},
+			{"id":389},
+			{"id":421}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":414,
+		"controllers":[
+			{"id":366},
+			{"id":390},
+			{"id":422}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":415,
+		"controllers":[
+			{"id":367},
+			{"id":391},
+			{"id":423}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":416,
+		"controllers":[
+			{"id":368},
+			{"id":392},
+			{"id":424}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":417,
+		"controllers":[
+			{"id":369},
+			{"id":393},
+			{"id":425}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":418,
+		"controllers":[
+			{"id":370},
+			{"id":394},
+			{"id":426}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":11, "y":0, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":419,
+		"controllers":[
+			{"id":371},
+			{"id":395},
+			{"id":427}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":420,
+		"controllers":[
+			{"id":372},
+			{"id":313},
+			{"id":314},
+			{"id":315},
+			{"id":316},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":320},
+			{"id":105},
+			{"id":61}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":421,
+		"controllers":[
+			{"id":373},
+			{"id":314},
+			{"id":315},
+			{"id":316},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":321},
+			{"id":106},
+			{"id":62}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":422,
+		"controllers":[
+			{"id":374},
+			{"id":315},
+			{"id":316},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":322},
+			{"id":107},
+			{"id":63}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":423,
+		"controllers":[
+			{"id":375},
+			{"id":316},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":323},
+			{"id":108},
+			{"id":64}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":424,
+		"controllers":[
+			{"id":376},
+			{"id":317},
+			{"id":318},
+			{"id":319},
+			{"id":324},
+			{"id":109},
+			{"id":65}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":425,
+		"controllers":[
+			{"id":377},
+			{"id":318},
+			{"id":319},
+			{"id":325},
+			{"id":110},
+			{"id":66}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":426,
+		"controllers":[
+			{"id":378},
+			{"id":319},
+			{"id":326},
+			{"id":111},
+			{"id":67}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":15, "y":0, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":427,
+		"controllers":[
+			{"id":379},
+			{"id":327},
+			{"id":112},
+			{"id":68}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":430,
+		"controllers":[
+			{"id":432}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":4,
+		"id":431,
+		"controllers":[
+			{"id":432}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":16},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":432,
+		"controllers":[
+			{"id":453},
+			{"id":454},
+			{"id":455},
+			{"id":456},
+			{"id":457},
+			{"id":468},
+			{"id":469},
+			{"id":470},
+			{"id":471},
+			{"id":472}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":433,
+		"controllers":[
+			{"id":453}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":16},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":434,
+		"controllers":[
+			{"id":454}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":17},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":435,
+		"controllers":[
+			{"id":455}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":18},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":436,
+		"controllers":[
+			{"id":456}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":19},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":437,
+		"controllers":[
+			{"id":457}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":438,
+		"controllers":[
+			{"id":463}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":439,
+		"controllers":[
+			{"id":464}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":440,
+		"controllers":[
+			{"id":465}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":441,
+		"controllers":[
+			{"id":466}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":442,
+		"controllers":[
+			{"id":467}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":443,
+		"controllers":[
+			{"id":458}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":444,
+		"controllers":[
+			{"id":459}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":445,
+		"controllers":[
+			{"id":460}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":446,
+		"controllers":[
+			{"id":461}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":1,
+		"id":447,
+		"controllers":[
+			{"id":462}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":448,
+		"controllers":[
+			{"id":433},
+			{"id":463}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":449,
+		"controllers":[
+			{"id":434},
+			{"id":464}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":450,
+		"controllers":[
+			{"id":435},
+			{"id":465}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":451,
+		"controllers":[
+			{"id":436},
+			{"id":466}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":14},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":452,
+		"controllers":[
+			{"id":437},
+			{"id":467}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":453,
+		"controllers":[
+			{"id":448},
+			{"id":458}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":10},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":454,
+		"controllers":[
+			{"id":449},
+			{"id":459}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":11},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":455,
+		"controllers":[
+			{"id":450},
+			{"id":460}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":12},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":456,
+		"controllers":[
+			{"id":451},
+			{"id":461}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":10, "y":1, "z":13},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":457,
+		"controllers":[
+			{"id":452},
+			{"id":462}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":5},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":458,
+		"controllers":[
+			{"id":473}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":6},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":459,
+		"controllers":[
+			{"id":474}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":7},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":460,
+		"controllers":[
+			{"id":475}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":8},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":461,
+		"controllers":[
+			{"id":476}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":9},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":462,
+		"controllers":[
+			{"id":477}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":463,
+		"controllers":[
+			{"id":468}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":464,
+		"controllers":[
+			{"id":469}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":465,
+		"controllers":[
+			{"id":470}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":466,
+		"controllers":[
+			{"id":471}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":467,
+		"controllers":[
+			{"id":472}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":15},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":468,
+		"controllers":[
+			{"id":438},
+			{"id":453},
+			{"id":473}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":16},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":469,
+		"controllers":[
+			{"id":439},
+			{"id":454},
+			{"id":474}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":17},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":470,
+		"controllers":[
+			{"id":440},
+			{"id":455},
+			{"id":475}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":18},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":471,
+		"controllers":[
+			{"id":441},
+			{"id":456},
+			{"id":476}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":9, "y":1, "z":19},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":472,
+		"controllers":[
+			{"id":442},
+			{"id":457},
+			{"id":477}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":0},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":473,
+		"controllers":[
+			{"id":443},
+			{"id":116},
+			{"id":449}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":1},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":474,
+		"controllers":[
+			{"id":444},
+			{"id":116},
+			{"id":450}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":2},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":475,
+		"controllers":[
+			{"id":445},
+			{"id":116},
+			{"id":451}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":3},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":476,
+		"controllers":[
+			{"id":446},
+			{"id":116},
+			{"id":452}
+		]
+	}
+},
+{
+	"shapeId":"9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+	"color":"df7f01",
+	"xaxis":3,
+	"zaxis":1,
+	"pos":{"x":8, "y":1, "z":4},
+	"controller":{
+		"active":false,
+		"joints":null,
+		"mode":3,
+		"id":477,
+		"controllers":[
+			{"id":447},
+			{"id":116}
+		]
+	}
+},
+{
+	"bounds":{"x":16, "y":28, "z":1},
+	"pos":{"x":0, "y":-27, "z":-1},
+	"shapeId":"628b2d61-5ceb-43e9-8334-a4135566df7a",
+	"xaxis":1,
+	"zaxis":3,
+	"color":"222222"
+}
+
+]}],
+"version":4
+}
