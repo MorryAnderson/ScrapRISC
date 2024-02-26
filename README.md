@@ -8,12 +8,12 @@ Email: morry4c@163.com
 [Overall]
 --------------------------------------------------------------------------------
 
-- 42022 logic gatese
-- 115197 wirings
+- 42022 logic gates
+- 115197 wiree
 
 - Clock period：20 ticks (2Hz)
 - RV32E instructions set (39 instructions)
-- 5 stages pipline：
+- 5 stage pipeline:
   - (Instruction Fetch, IF)
   - (Instruction Decode, ID)
   - (Execution, EX)
@@ -148,7 +148,7 @@ Email: morry4c@163.com
 --------------------------------------------------------------------------------
 
 - generate control signal
-  
+
 - generate immediate & operand
 
 - undefined instruction detection
