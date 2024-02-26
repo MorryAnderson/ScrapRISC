@@ -1,0 +1,38 @@
+ascii_char ::= range(1,255)
+nonewline_char ::= range(0,9) | range(11,255)
+alphabet_char  ::= rang('a', 'z') | range('A', 'Z')
+digit_char ::= range('0', '9')
+space_char ::= " " | "\t"
+delimiter_char ::= " " | "\t" | "\r" | "\n"
+identifier_char ::= alphabet_char | "_" | digit_char 
+
+identifier ::= alphabet_char {identifier_char}
+integer ::= digit_char {digit_char }
+range ::= integer  [":" integer ]
+index_range ::= integer | range
+signal_index ::= "[" index_range"]"
+variable_selection =  identifier [signal_index]
+variable_duplication = "{" integer "{" variable_selection "}" "}"
+signal ::= variable_selection | variable_duplication
+
+module_declaration ::= "module" identifier "(" [port_list] ");" {module_item} "endmodule"
+module_item ::= gate_instantiation | module_instantiation | wire_decl | wire_assign | physical_constraints | debug_clause
+
+port_list ::= port_declaration {, port_declaration}
+port_declaration ::= port_direction  variable_selection
+port_direction ::= "input" | "output"
+
+gate_instantiation ::= "gate" identifier "=" gate_type "(" signal {"," signal } ")" ";"
+gate_type ::= "and" | "or" | "xor" | "nand" | "nor" | "xnor" | "buf" | "not"
+
+module_instantiation ::= "sub" identifier "(" port_connection {"," port_connection} ")" ";"
+port_connection ::= input_connect | output_connect
+input_connect ::= "." identifier "<=" identifier 
+output_connect ::= "." identifier "=>" identifier 
+
+wire_decl ::= "wire" variable_selection ";"
+wire_assign ::= "assign" variable_selection "="  "{" signal {"," signal } "}" ";"
+
+physical_constraints ::= "place" identifier "@" "(" integer "," integer "," integer ")" ";"
+
+debug_clause := "debug" identifier ";"

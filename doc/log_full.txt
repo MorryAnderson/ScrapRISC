@@ -1,0 +1,151 @@
+
+================================================================================
+ScrapHDL Compiler @Morry4C (worryanderson@gmail.com) (morry4c@163.com)
+================================================================================
+
+Info: loading makefile "../../src/hdl/Makefile.make"
+Info: Makefile parsed
+
+================================================================================
+Makefile Info
+--------------------------------------------------------------------------------
+SRC_DIR    = "E:/Projects/personal/cpu_in_game/src/hdl"
+NET_DIR    = "E:/Projects/personal/cpu_in_game/outputs/net"
+OUTPUT_DIR = "E:/Projects/personal/cpu_in_game/outputs/temp"
+TOP_FILE   = "E:/Projects/personal/cpu_in_game/src/hdl/M4_top.scrp"
+--------------------------------------------------------------------------------
+KEEP_HIER  = true
+SHAPE      = "cube"
+--------------------------------------------------------------------------------
+DEFAULT ORIENT = "front"
+INPUT   ORIENT = "left"
+OUTPUT  ORIENT = "right"
+DEBUG   ORIENT = "front"
+--------------------------------------------------------------------------------
+DEFAULT COLOR = "df7f01"
+INPUT   COLOR = "00ee00"
+OUTPUT  COLOR = "0000ee"
+DEBUG   COLOR = "ee00ee"
+================================================================================
+
+Info: parsing module  "M4_top"
+Info: reading netlist of module  "M3_clk_gen"
+Info: reading netlist of module  "M3_rst_gen"
+Info: reading netlist of module  "M3_cdc_sync"
+Info: reading netlist of module  "M3_rs_latch"
+Info: reading netlist of module  "M3_dbg_clk_filter"
+Info: reading netlist of module  "M3_mux2"
+Info: reading netlist of module  "M3_input_sync"
+Info: reading netlist of module  "M3_key"
+Info: reading netlist of module  "M3_led"
+Info: parsing module  "M3_matrix"
+Info: reading netlist of module  "M3_instr_rom_plug"
+Info: reading netlist of module  "M3_instr_rom"
+Info: reading netlist of module  "M3_data_rom_plug"
+Info: reading netlist of module  "M3_data_rom"
+Info: reading netlist of module  "M3_data_ram_plug"
+Info: reading netlist of module  "M3_data_ram"
+Info: reading netlist of module  "M3_bus_interconnect"
+Info: parsing module  "M4_cpu"
+Info: parsing module  "M3_vsync"
+Info: parsing module  "M3_counter_8"
+Info: reading netlist of module  "M3_screen_plug"
+Info: reading netlist of module  "M3_screen"
+Info: reading netlist of module  "M3_if"
+Info: reading netlist of module  "M3_id"
+Info: reading netlist of module  "M3_ex"
+Info: reading netlist of module  "M3_mem"
+Info: reading netlist of module  "M3_wb"
+Info: reading netlist of module  "M3_ppl_if_id"
+Info: reading netlist of module  "M3_ppl_id_ex"
+Info: reading netlist of module  "M3_ppl_ex_mem"
+Info: reading netlist of module  "M3_ppl_mem_wb"
+Info: reading netlist of module  "M3_ppl_exception"
+Info: reading netlist of module  "M3_cu"
+Info: reading netlist of module  "M3_dfu"
+Info: reading netlist of module  "M3_hdu"
+Info: reading netlist of module  "M3_eiu"
+Info: reading netlist of module  "M3_reg_file"
+Info: reading netlist of module  "M3_bpu"
+Info: parsing module  "M3_is_equal_8"
+Info: parsing module  "M3_pulse_expansion"
+Info: parsing module  "M3_dff_8"
+Info: parsing module  "M3_incr_8"
+Info: parsing module  "M3_mux2_8"
+Info: parsing module  "M3_dff_5"
+Compiler Info: manifesting module  "M4_top" ...
+Compiler Info: generating netlist ...
+
+================================================================================
+Matrix Module Info: Module  "M4_top" , Total 51 instances of submodule
+--------------------------------------------------------------------------------
+                M4_top :   1 *    60 =    60 gates (  1 %), size(103 *  52)
+                M3_bpu :   1 *  4364 =  4364 gates ( 11 %), size(  0 *   0)
+   M3_bus_interconnect :   1 *   173 =   173 gates (  1 %), size(  0 *   0)
+           M3_cdc_sync :   3 *    22 =    66 gates (  1 %), size(  0 *   0)
+            M3_clk_gen :   1 *    22 =    22 gates (  1 %), size(  0 *   0)
+          M3_counter_8 :   2 *     2 =     4 gates (  1 %), size(  8 *   1)
+                 M3_cu :   1 *     7 =     7 gates (  1 %), size(  0 *   0)
+           M3_data_ram :   1 * 12747 = 12747 gates ( 31 %), size(  0 *   0)
+      M3_data_ram_plug :   1 *    83 =    83 gates (  1 %), size(  0 *   0)
+           M3_data_rom :   1 *  2194 =  2194 gates (  6 %), size(  0 *   0)
+      M3_data_rom_plug :   1 *    38 =    38 gates (  1 %), size(  0 *   0)
+     M3_dbg_clk_filter :   1 *     5 =     5 gates (  1 %), size(  0 *   0)
+              M3_dff_5 :   1 *    48 =    48 gates (  1 %), size(  3 *   1)
+              M3_dff_8 :   3 *    75 =   225 gates (  1 %), size(  5 *   1)
+                M3_dfu :   1 *   543 =   543 gates (  2 %), size(  0 *   0)
+                M3_eiu :   1 *   333 =   333 gates (  1 %), size(  0 *   0)
+                 M3_ex :   1 *  2238 =  2238 gates (  6 %), size(  0 *   0)
+                M3_hdu :   1 *    67 =    67 gates (  1 %), size(  0 *   0)
+                 M3_id :   1 *   481 =   481 gates (  2 %), size(  0 *   0)
+                 M3_if :   1 *   608 =   608 gates (  2 %), size(  0 *   0)
+             M3_incr_8 :   2 *    15 =    30 gates (  1 %), size(  2 *   1)
+         M3_input_sync :   1 *   179 =   179 gates (  1 %), size(  0 *   0)
+          M3_instr_rom :   1 *  4309 =  4309 gates ( 11 %), size(  0 *   0)
+     M3_instr_rom_plug :   1 *    39 =    39 gates (  1 %), size(  0 *   0)
+         M3_is_equal_8 :   1 *     9 =     9 gates (  1 %), size(  1 *   1)
+                M3_key :   1 *   420 =   420 gates (  1 %), size(  0 *   0)
+                M3_led :   1 *    79 =    79 gates (  1 %), size(  0 *   0)
+             M3_matrix :   1 *    68 =    68 gates (  1 %), size( 16 *  28)
+                M3_mem :   1 *   676 =   676 gates (  2 %), size(  0 *   0)
+               M3_mux2 :   1 *     4 =     4 gates (  1 %), size(  0 *   0)
+             M3_mux2_8 :   2 *    25 =    50 gates (  1 %), size(  3 *   1)
+         M3_ppl_ex_mem :   1 *  1088 =  1088 gates (  3 %), size(  0 *   0)
+      M3_ppl_exception :   1 *   148 =   148 gates (  1 %), size(  0 *   0)
+          M3_ppl_id_ex :   1 *  2024 =  2024 gates (  5 %), size(  0 *   0)
+          M3_ppl_if_id :   1 *   621 =   621 gates (  2 %), size(  0 *   0)
+         M3_ppl_mem_wb :   1 *   951 =   951 gates (  3 %), size(  0 *   0)
+    M3_pulse_expansion :   1 *     3 =     3 gates (  1 %), size(  3 *   1)
+           M3_reg_file :   1 *  3863 =  3863 gates ( 10 %), size(  0 *   0)
+           M3_rs_latch :   1 *     4 =     4 gates (  1 %), size(  0 *   0)
+            M3_rst_gen :   1 *    20 =    20 gates (  1 %), size(  0 *   0)
+             M3_screen :   1 *  3004 =  3004 gates (  8 %), size(  0 *   0)
+        M3_screen_plug :   1 *    26 =    26 gates (  1 %), size(  0 *   0)
+              M3_vsync :   1 *     2 =     2 gates (  1 %), size(  8 *   1)
+                 M3_wb :   1 *    97 =    97 gates (  1 %), size(  0 *   0)
+                M4_cpu :   1 *     2 =     2 gates (  1 %), size( 10 *   1)
+--------------------------------------------------------------------------------
+                 Total :   1 * 42022 = 42022 gates
+================================================================================
+
+
+================================================================================
+Matrix Number info: Module  "M4_top" , Total 42022 gates , 115197 wirings
+--------------------------------------------------------------------------------
+# "AND " = 17939
+# "OR  " = 4299
+# "XOR " = 214
+# "NAND" = 18629
+# "NOR " = 677
+# "XNOR" = 264
+================================================================================
+
+Compiler Info: netlist generated, "E:/Projects/personal/cpu_in_game/outputs/temp/M4_top.net"
+Compiler Info: generating blueprint ...
+
+--------------------------------------------------------------------------------
+BpGenerator Warning: folder overwritten, "E:/Projects/personal/cpu_in_game/outputs/temp/4d345f74-6f70-4d34-8f74-6f704d345f74"
+BpGenerator Info: blueprint generated, "E:/Projects/personal/cpu_in_game/outputs/temp/4d345f74-6f70-4d34-8f74-6f704d345f74"
+--------------------------------------------------------------------------------
+
+Compiler Info: complilation complete

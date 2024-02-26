@@ -1,0 +1,43 @@
+hex_char              ::= range('0', '9') | rang('a', 'f') | range('A', 'F')
+alphabet_char         ::= rang('a', 'z') | range('A', 'Z')
+digit_char            ::= range('0', '9')
+path_delimiter        ::= ":" | "\" | "/" | "." | " "
+identifier_char       ::= alphabet_char | "_" | digit_char 
+path_char             ::= identifier_char | path_delimiter
+
+assignments           ::= {assignment_clause}
+assignment_clause     ::= src_dir_clause | net_dir_clause | out_path_clause | 
+                          top_name_clause | hierarchy_clause |
+                          shape_clause | x_len_clause | y_len_clause |
+                          default_orient_clause | input_orient_clause | output_orient_clause| debug_orient_clause | 
+                          default_color_clause| input_color_clause  | output_color_clause | debug_color_clause ;
+
+top_name_clause       ::= "TOP" "=" identifier 
+identifier            ::= alphabet_char {identifier_char}
+
+src_dir_clause        ::= "SRC_DIR" "=" path
+net_dir_clause        ::= "NET_DIR" "=" path
+out_path_clause       ::= "OUTPUT_DIR" "=" path
+path                  ::= """ {path_char} """
+
+hierarchy_clause      ::= "KEEP_HIERARCHY" "=" logic 
+logic                 ::= "true" | "false"
+
+shape_clause          ::= "SHAPE" "=" shape
+shape                 ::= "cube" | "plane"
+
+x_len_clause          ::= "X_LEN" "=" number
+y_len_clause          ::= "Y_LEN" "=" number
+number                ::= ["-"] digit_char {digit_char}	
+
+default_orient_clause ::= "DEFAULT_ORIENT" "=" orient
+input_orient_clause   ::= "INPUT_ORIENT" "=" orient
+output_orient_clause  ::= "OUTPUT_ORIENT" "=" orient
+debug_orient_clause   ::= "DEBUG_ORIENT" "=" orient
+orient                ::= "up" | "down" | "front" | "back" | "left" | "right"
+
+default_color_clause  ::= "DEFAULT_COLOR" "=" color
+input_color_clause    ::= "INPUT_COLOR" "=" color
+output_color_clause   ::= "OUTPUT_COLOR" "=" color
+debug_color_clause    ::= "DEBUG_COLOR" "=" color
+color                 ::= hex_char  hex_char  hex_char  hex_char  hex_char  hex_char 
