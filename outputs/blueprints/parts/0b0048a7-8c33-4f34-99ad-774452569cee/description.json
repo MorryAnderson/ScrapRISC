@@ -1,0 +1,7 @@
+{
+   "description" : "#{STEAM_WORKSHOP_NO_DESCRIPTION}",
+   "localId" : "0b0048a7-8c33-4f34-99ad-774452569cee",
+   "name" : "p-input_sync",
+   "type" : "Blueprint",
+   "version" : 0
+}

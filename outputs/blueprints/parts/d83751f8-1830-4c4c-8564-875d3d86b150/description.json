@@ -1,0 +1,7 @@
+{
+   "description" : "#{STEAM_WORKSHOP_NO_DESCRIPTION}",
+   "localId" : "d83751f8-1830-4c4c-8564-875d3d86b150",
+   "name" : "p_instr_rom",
+   "type" : "Blueprint",
+   "version" : 0
+}
