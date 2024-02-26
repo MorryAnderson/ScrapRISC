@@ -8,6 +8,7 @@ Email: morry4c@163.com
 [Overall]
 --------------------------------------------------------------------------------
 
+- This is a 32-bit RSIC-V CPU in the game "Scrap Mechanic"
 - 42022 logic gates
 - 115197 wires
 
