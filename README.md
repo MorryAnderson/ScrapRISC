@@ -21,7 +21,7 @@ Email: morry4c@163.com
   - (Write Back, WB)
 - Data Forwarding
 - Dynamic branch prediction
-- Exception & interrupt
+- Exception
 - Single step debug mode
 
 
