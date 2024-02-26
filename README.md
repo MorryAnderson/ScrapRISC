@@ -9,11 +9,11 @@ Email: morry4c@163.com
 --------------------------------------------------------------------------------
 
 - 42022 logic gates
-- 115197 wiree
+- 115197 wires
 
 - Clock period：20 ticks (2Hz)
 - RV32E instructions set (39 instructions)
-- 5 stage pipeline:
+- 5 stage pipeline：
   - (Instruction Fetch, IF)
   - (Instruction Decode, ID)
   - (Execution, EX)
@@ -46,9 +46,9 @@ Email: morry4c@163.com
 --------------------------------------------------------------------------------
 
 - system input: clk_ena / reset_n / ext_intr
-- gamepad input：up/down/left/right/X/Y/esc/ok
-- debug input：step/halt/run
-- status output：8 leds
+- gamepad input: up/down/left/right/X/Y/esc/ok
+- debug input: step/halt/run
+- status output：8 LEDs
 
 
 
@@ -56,7 +56,7 @@ Email: morry4c@163.com
 [Input Sync]
 --------------------------------------------------------------------------------
 
-- clock domain cross, aysnc input, sync output
+- clock domain cross, asynced input, synced output
 
   
 
@@ -130,7 +130,7 @@ Email: morry4c@163.com
 [Bus Arbiter]
 --------------------------------------------------------------------------------
 
-- slave peripherals：Instruction ROM / Data ROM / Data RAM / Screen / Key / Led
+- slave peripherals: Instruction ROM / Data ROM / Data RAM / Screen / Key / Led
 
 
 
